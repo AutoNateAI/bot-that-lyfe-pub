@@ -7,3 +7,4 @@ character-engine/episodes/*
 character-engine/**/__pycache__/
 character-engine/dance-lab/.venv/
 .DS_Store
+package-lock.json
