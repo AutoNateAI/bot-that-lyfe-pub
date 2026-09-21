@@ -1,0 +1,228 @@
+<!doctype html>
+    <html lang="en">
+      <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>GitHub Just Made Agent Orchestration a Normal Part of Shipping Code. Almost No CS Program Teaches It Yet. | Bot That Lyfe</title>
+        <meta name="description" content="If employers increasingly hire engineers to orchestrate, evaluate and secure AI agents, which university curricula are already teaching the workflow skills that map to the emerging job — and which are still teaching around it?" />
+        <meta name="robots" content="index,follow" />
+        <link rel="canonical" href="https://botthatlyfe.com/research-and-case-studies/cs-degree-workflow-degree" />
+        <link rel="icon" href="/assets/brand/favicon.ico" />
+        <link rel="apple-touch-icon" href="/assets/brand/logo.png" />
+        <meta property="og:title" content="GitHub Just Made Agent Orchestration a Normal Part of Shipping Code. Almost No CS Program Teaches It Yet." />
+        <meta property="og:description" content="If employers increasingly hire engineers to orchestrate, evaluate and secure AI agents, which university curricula are already teaching the workflow skills that map to the emerging job — and which are still teaching around it?" />
+        <meta property="og:url" content="https://botthatlyfe.com/research-and-case-studies/cs-degree-workflow-degree" />
+        <meta property="og:image" content="https://botthatlyfe.com/assets/og/cs-degree-workflow-degree.jpg" />
+        <meta property="og:site_name" content="Bot That Lyfe" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="GitHub Just Made Agent Orchestration a Normal Part of Shipping Code. Almost No CS Program Teaches It Yet." />
+        <meta name="twitter:description" content="If employers increasingly hire engineers to orchestrate, evaluate and secure AI agents, which university curricula are already teaching the workflow skills that map to the emerging job — and which are still teaching around it?" />
+        <meta name="twitter:image" content="https://botthatlyfe.com/assets/og/cs-degree-workflow-degree.jpg" />
+        <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Bot That Lyfe","url":"https://botthatlyfe.com","logo":"https://botthatlyfe.com/assets/brand/logo.png","founder":{"@type":"Person","name":"Nathan Baker","jobTitle":"Founder, Bot That Lyfe"}}</script>
+        <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Bot That Lyfe","url":"https://botthatlyfe.com","description":"Bot That Lyfe tracks funding, research, people, technology, and jobs across a network of U.S. universities — the agentic AI frontier, the university research economy, and the path from classwork to a career — researched, sourced, and published free by Nathan Baker."}</script>
+        <script>
+          (function () {
+            var stored = localStorage.getItem("anai-theme");
+            var theme = stored || "light";
+            document.documentElement.setAttribute("data-theme", theme);
+          })();
+        </script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,420..680&family=Space+Grotesk:wght@500;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/styles.css" />
+      </head>
+      <body>
+        
+    <header class="top-shell ">
+      <nav class="top-nav">
+        <a class="brand" href="/">Bot That Lyfe<span class="brand-dot">_</span></a>
+        <div class="nav-links" data-mobile-menu><a class="" href="/">Intelligence</a><a class="active" href="/research-and-case-studies">Research & Case Studies</a><a class="" href="/work-with-us">Work With Us</a><a class="" href="/about">About</a></div>
+        <div class="nav-actions">
+          <button class="mobile-menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-mobile-menu-toggle><span class="material-symbols-outlined">menu</span></button>
+          <button class="theme-toggle" aria-label="Toggle dark mode" data-theme-toggle><span class="material-symbols-outlined">dark_mode</span></button>
+          <a class="nav-cta" href="/work-with-us">Work With Us</a>
+        </div>
+      </nav>
+    </header>
+  
+        
+    <main class="article-page">
+      <nav class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/research-and-case-studies">Research &amp; Case Studies</a><span>/</span><b>GitHub Just Made Agent Orchestration a Normal Part of Shipping Code. Almost No CS Program Teaches It Yet.</b></nav>
+      <article class="article-detail">
+        <header>
+          <span class="kicker"><span class="material-symbols-outlined">school</span> Open Question &middot; Answered</span>
+          <h1>GitHub Just Made Agent Orchestration a Normal Part of Shipping Code. Almost No CS Program Teaches It Yet.</h1>
+          <p>If employers increasingly hire engineers to orchestrate, evaluate and secure AI agents, which university curricula are already teaching the workflow skills that map to the emerging job — and which are still teaching around it?</p>
+          <div class="tag-row"><span>Agentic AI · Curriculum</span></div>
+        </header>
+        <img src="/assets/og/cs-degree-workflow-degree.jpg" alt="" class="captioned-thumb" />
+
+        <div class="markdown-body"><h3>Short Answer</h3>
+<p>Partly, and only at a small, named set of programs. GitHub's own product — the thing employers actually use to ship code — now has a governance layer built explicitly around orchestrating, evaluating, and securing AI agents: assigning agents to issues, comparing outputs across providers, and an enterprise &quot;control plane&quot; for which agents and models are allowed to touch a repo. That is a real, current, named job description hiding inside a product feature list. On the teaching side, exactly two Stanford courses (CS224V, CS329Z) and one HBCU degree track (N.C. A&amp;T's B.S. in Artificial Intelligence) explicitly name agentic-AI primitives — tool use, agent loops, evaluation, orchestration — in their own public course descriptions. What we don't have, and won't pretend to have, is a reliable count of how many other CS programs are teaching this same material under a different name, or a solid labor-market dataset proving how many jobs actually require it today. That second gap is real enough that we're treating &quot;which curricula are still teaching around it&quot; as an open question, not a finding — see Methodology.</p>
+<h3>Why the Question Changed Shape in 2026</h3>
+<p>A year ago, &quot;agentic AI&quot; in a syllabus would have meant a research seminar. That's no longer true because the employer side moved first. GitHub introduced Agent HQ at GitHub Universe on October 28, 2025 — a genuine product shift, not a demo — giving developers a &quot;fleet of specialized agents&quot; from multiple providers (Anthropic, OpenAI, Google, Cognition, xAI) that can be assigned to issues, compared against each other, and merged through normal pull-request review. By February 2026, GitHub had pushed agentic workflows directly into GitHub Actions, in public preview, letting teams automate issue triage, PR review, and CI-failure analysis with agents running natively in their existing repo. None of that is optional or experimental anymore inside a GitHub-based engineering org — and it comes bundled with an enterprise &quot;control plane&quot; for security policies, audit logging, and deciding which agents and models are even allowed to run. Orchestrate, evaluate, and secure is no longer an abstract phrase from a job posting; it's literally what the admin panel is for.</p>
+<figure class="markdown-figure"><img src="/assets/meme/cs-degree-workflow-degree-01.jpg" alt="A cartoon IT admin sits at a control panel with rows of glowing toggle switches labeled with different AI agent names, nervously deciding which ones get a badge" loading="lazy" /></figure>
+<h3>How This Connects</h3>
+<figure class="research-graph" data-graph="{&quot;title&quot;:&quot;How This Connects&quot;,&quot;nodes&quot;:[{&quot;id&quot;:&quot;agenthq&quot;,&quot;label&quot;:&quot;GitHub Agent HQ\n(launched Oct 28, 2025)&quot;,&quot;rank&quot;:0,&quot;detail&quot;:&quot;Multi-provider agent fleet (Anthropic, OpenAI, Google, Cognition, xAI), issue assignment, PR-based review, and an enterprise control plane for security policy, audit logging, and which agents/models are allowed.&quot;},{&quot;id&quot;:&quot;actions&quot;,&quot;label&quot;:&quot;Agentic Workflows in\nGitHub Actions (Feb 2026)&quot;,&quot;rank&quot;:0,&quot;detail&quot;:&quot;Public preview: agents run natively inside CI/CD for issue triage, PR review, and failure analysis, written in plain Markdown instead of YAML.&quot;},{&quot;id&quot;:&quot;primitives&quot;,&quot;label&quot;:&quot;What the job now requires:\ntool use, evaluation, guardrails&quot;,&quot;rank&quot;:1,&quot;evidence&quot;:&quot;verified&quot;},{&quot;id&quot;:&quot;cs329z&quot;,&quot;label&quot;:&quot;Stanford CS329Z:\nEngineering AI Agents&quot;,&quot;rank&quot;:2,&quot;detail&quot;:&quot;Tool use, agent loops, compound AI systems, DSPy, evaluation, design tradeoffs — students build agent components from scratch, Fall 2026.&quot;},{&quot;id&quot;:&quot;cs224v&quot;,&quot;label&quot;:&quot;Stanford CS224V:\nAgentic AI&quot;,&quot;rank&quot;:2,&quot;detail&quot;:&quot;RAG, hybrid knowledge reasoning, scientific knowledge curation, formal methods, Fall 2026.&quot;},{&quot;id&quot;:&quot;ncat&quot;,&quot;label&quot;:&quot;N.C. A&amp;T B.S. AI:\nnames \&quot;Agentic AI\&quot; directly&quot;,&quot;rank&quot;:2,&quot;detail&quot;:&quot;Undergraduate degree track explicitly listing agentic AI alongside ML, deep learning, robotics, computer vision, and generative AI/LLMs as core topics.&quot;},{&quot;id&quot;:&quot;mst&quot;,&quot;label&quot;:&quot;Missouri S&amp;T: industry-sponsored\nTeam Innovation Projects&quot;,&quot;rank&quot;:2,&quot;detail&quot;:&quot;A different model entirely — not a syllabus topic, but real sponsor problems assigned to student teams through the Kummer Center, learn-by-doing rather than learn-then-do.&quot;},{&quot;id&quot;:&quot;unknown&quot;,&quot;label&quot;:&quot;Everyone else:\nunconfirmed&quot;,&quot;rank&quot;:3,&quot;detail&quot;:&quot;No dataset exists yet showing how many other CS programs teach this content under a different course name — a real gap, not a finding.&quot;},{&quot;id&quot;:&quot;graduate&quot;,&quot;label&quot;:&quot;\&quot;Workflow-ready\&quot;\ngraduate&quot;,&quot;rank&quot;:4,&quot;output&quot;:true}],&quot;edges&quot;:[{&quot;from&quot;:&quot;agenthq&quot;,&quot;to&quot;:&quot;primitives&quot;,&quot;evidence&quot;:&quot;verified&quot;,&quot;label&quot;:&quot;GitHub's own blog: assign/compare agents, review PRs, control-plane governance&quot;},{&quot;from&quot;:&quot;actions&quot;,&quot;to&quot;:&quot;primitives&quot;,&quot;evidence&quot;:&quot;verified&quot;,&quot;label&quot;:&quot;GitHub Changelog, Feb 13, 2026: agentic workflows in Actions, public preview&quot;},{&quot;from&quot;:&quot;primitives&quot;,&quot;to&quot;:&quot;cs329z&quot;,&quot;evidence&quot;:&quot;verified&quot;,&quot;label&quot;:&quot;CS329Z's own syllabus names tool use, agent loops, and evaluation directly&quot;},{&quot;from&quot;:&quot;primitives&quot;,&quot;to&quot;:&quot;cs224v&quot;,&quot;evidence&quot;:&quot;estimated&quot;,&quot;label&quot;:&quot;RAG and hybrid reasoning are adjacent primitives, not the orchestration/governance layer specifically&quot;},{&quot;from&quot;:&quot;primitives&quot;,&quot;to&quot;:&quot;ncat&quot;,&quot;evidence&quot;:&quot;verified&quot;,&quot;label&quot;:&quot;N.C. A&amp;T's own program page names Agentic AI as a degree topic&quot;},{&quot;from&quot;:&quot;primitives&quot;,&quot;to&quot;:&quot;mst&quot;,&quot;evidence&quot;:&quot;estimated&quot;,&quot;label&quot;:&quot;Sponsor-project exposure is a plausible but unconfirmed path to the same skills&quot;},{&quot;from&quot;:&quot;cs329z&quot;,&quot;to&quot;:&quot;graduate&quot;,&quot;evidence&quot;:&quot;hypothesis&quot;,&quot;label&quot;:&quot;No placement data yet confirms CS329Z graduates land agent-orchestration roles specifically&quot;},{&quot;from&quot;:&quot;unknown&quot;,&quot;to&quot;:&quot;graduate&quot;,&quot;evidence&quot;:&quot;hypothesis&quot;,&quot;label&quot;:&quot;This is the actual open question this piece can't yet close&quot;}],&quot;sourceLabel&quot;:&quot;'Verified' edges trace to GitHub's own blog/changelog or a university's own program page. The 'unknown' node and its edge are the honest limit of this research pass — see Methodology.&quot;}" data-graph-id="graph-3">
+    <figcaption class="graph-title">How This Connects</figcaption>
+    <p class="graph-tap-hint"><span class="material-symbols-outlined">open_with</span> Drag nodes to rearrange, tap one for the evidence behind it — pinch or scroll to zoom.</p>
+    <div class="graph-canvas-wrap">
+      <div class="graph-zoom-controls">
+    <button type="button" data-graph-zoom-in aria-label="Zoom in"><span class="material-symbols-outlined">add</span></button>
+    <button type="button" data-graph-zoom-out aria-label="Zoom out"><span class="material-symbols-outlined">remove</span></button>
+    <button type="button" data-graph-zoom-reset aria-label="Reset view"><span class="material-symbols-outlined">restart_alt</span></button>
+  </div>
+      <svg viewBox="0 0 936 728" role="img" aria-label="How This Connects" data-graph-svg data-graph-base-width="936" data-graph-base-height="728">
+        <defs><marker id="graph-arrow-verified" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" /></marker><marker id="graph-arrow-estimated" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" /></marker><marker id="graph-arrow-hypothesis" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" /></marker></defs>
+        <g class="graph-viewport" data-graph-viewport><g class="graph-edge graph-edge-verified" data-edge-from="agenthq" data-edge-to="primitives">
+        <path id="graph-3-edge-0" d="M 352 96 C 352 139, 468 139, 468 182" fill="none" marker-end="url(#graph-arrow-verified)" />
+        <circle r="3.5" class="graph-edge-flow-dot"><animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#graph-3-edge-0" xlink:href="#graph-3-edge-0" /></animateMotion></circle>
+        <text x="420" y="139" text-anchor="start" class="graph-edge-label">GitHub's own blog: assign/compare agents, review PRs, control-plane governance</text>
+      </g><g class="graph-edge graph-edge-verified" data-edge-from="actions" data-edge-to="primitives">
+        <path id="graph-3-edge-1" d="M 584 96 C 584 139, 468 139, 468 182" fill="none" marker-end="url(#graph-arrow-verified)" />
+        <circle r="3.5" class="graph-edge-flow-dot"><animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#graph-3-edge-1" xlink:href="#graph-3-edge-1" /></animateMotion></circle>
+        <text x="536" y="139" text-anchor="start" class="graph-edge-label">GitHub Changelog, Feb 13, 2026: agentic workflows in Actions, public preview</text>
+      </g><g class="graph-edge graph-edge-verified" data-edge-from="primitives" data-edge-to="cs329z">
+        <path id="graph-3-edge-2" d="M 468 246 C 468 289, 120 289, 120 332" fill="none" marker-end="url(#graph-arrow-verified)" />
+        <circle r="3.5" class="graph-edge-flow-dot"><animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#graph-3-edge-2" xlink:href="#graph-3-edge-2" /></animateMotion></circle>
+        <text x="304" y="289" text-anchor="start" class="graph-edge-label">CS329Z's own syllabus names tool use, agent loops, and evaluation directly</text>
+      </g><g class="graph-edge graph-edge-estimated" data-edge-from="primitives" data-edge-to="cs224v">
+        <path id="graph-3-edge-3" d="M 468 246 C 468 289, 352 289, 352 332" fill="none" marker-end="url(#graph-arrow-estimated)" />
+        <circle r="3.5" class="graph-edge-flow-dot"><animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#graph-3-edge-3" xlink:href="#graph-3-edge-3" /></animateMotion></circle>
+        <text x="420" y="289" text-anchor="start" class="graph-edge-label">RAG and hybrid reasoning are adjacent primitives, not the orchestration/governance layer specifically</text>
+      </g><g class="graph-edge graph-edge-verified" data-edge-from="primitives" data-edge-to="ncat">
+        <path id="graph-3-edge-4" d="M 468 246 C 468 289, 584 289, 584 332" fill="none" marker-end="url(#graph-arrow-verified)" />
+        <circle r="3.5" class="graph-edge-flow-dot"><animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#graph-3-edge-4" xlink:href="#graph-3-edge-4" /></animateMotion></circle>
+        <text x="536" y="289" text-anchor="start" class="graph-edge-label">N.C. A&amp;T's own program page names Agentic AI as a degree topic</text>
+      </g><g class="graph-edge graph-edge-estimated" data-edge-from="primitives" data-edge-to="mst">
+        <path id="graph-3-edge-5" d="M 468 246 C 468 289, 816 289, 816 332" fill="none" marker-end="url(#graph-arrow-estimated)" />
+        <circle r="3.5" class="graph-edge-flow-dot"><animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#graph-3-edge-5" xlink:href="#graph-3-edge-5" /></animateMotion></circle>
+        <text x="652" y="289" text-anchor="start" class="graph-edge-label">Sponsor-project exposure is a plausible but unconfirmed path to the same skills</text>
+      </g><g class="graph-edge graph-edge-hypothesis" data-edge-from="cs329z" data-edge-to="graduate">
+        <path id="graph-3-edge-6" d="M 120 396 C 120 514, 468 514, 468 632" fill="none" marker-end="url(#graph-arrow-hypothesis)" />
+        
+        <text x="304" y="514" text-anchor="start" class="graph-edge-label">No placement data yet confirms CS329Z graduates land agent-orchestration roles specifically</text>
+      </g><g class="graph-edge graph-edge-hypothesis" data-edge-from="unknown" data-edge-to="graduate">
+        <path id="graph-3-edge-7" d="M 468 546 C 468 589, 468 589, 468 632" fill="none" marker-end="url(#graph-arrow-hypothesis)" />
+        
+        <text x="478" y="589" text-anchor="start" class="graph-edge-label">This is the actual open question this piece can't yet close</text>
+      </g><g class="graph-node graph-node-has-detail" data-node-id="agenthq" tabindex="0" role="button" aria-label="GitHub Agent HQ (launched Oct 28, 2025) — show details">
+        <rect x="264" y="32" width="176" height="64" rx="16" />
+        <text x="352" y="56.5" text-anchor="middle"><tspan x="352" dy="0">GitHub Agent HQ</tspan><tspan x="352" dy="15">(launched Oct 28, 2025)</tspan></text>
+        <circle class="graph-node-detail-dot" cx="430" cy="42" r="4" />
+      </g><g class="graph-node graph-node-has-detail" data-node-id="actions" tabindex="0" role="button" aria-label="Agentic Workflows in GitHub Actions (Feb 2026) — show details">
+        <rect x="496" y="32" width="176" height="64" rx="16" />
+        <text x="584" y="56.5" text-anchor="middle"><tspan x="584" dy="0">Agentic Workflows in</tspan><tspan x="584" dy="15">GitHub Actions (Feb 2026)</tspan></text>
+        <circle class="graph-node-detail-dot" cx="662" cy="42" r="4" />
+      </g><g class="graph-node" data-node-id="primitives">
+        <rect x="380" y="182" width="176" height="64" rx="16" />
+        <text x="468" y="206.5" text-anchor="middle"><tspan x="468" dy="0">What the job now requires:</tspan><tspan x="468" dy="15">tool use, evaluation, guardrails</tspan></text>
+        
+      </g><g class="graph-node graph-node-has-detail" data-node-id="cs329z" tabindex="0" role="button" aria-label="Stanford CS329Z: Engineering AI Agents — show details">
+        <rect x="32" y="332" width="176" height="64" rx="16" />
+        <text x="120" y="356.5" text-anchor="middle"><tspan x="120" dy="0">Stanford CS329Z:</tspan><tspan x="120" dy="15">Engineering AI Agents</tspan></text>
+        <circle class="graph-node-detail-dot" cx="198" cy="342" r="4" />
+      </g><g class="graph-node graph-node-has-detail" data-node-id="cs224v" tabindex="0" role="button" aria-label="Stanford CS224V: Agentic AI — show details">
+        <rect x="264" y="332" width="176" height="64" rx="16" />
+        <text x="352" y="356.5" text-anchor="middle"><tspan x="352" dy="0">Stanford CS224V:</tspan><tspan x="352" dy="15">Agentic AI</tspan></text>
+        <circle class="graph-node-detail-dot" cx="430" cy="342" r="4" />
+      </g><g class="graph-node graph-node-has-detail" data-node-id="ncat" tabindex="0" role="button" aria-label="N.C. A&amp;T B.S. AI: names &quot;Agentic AI&quot; directly — show details">
+        <rect x="496" y="332" width="176" height="64" rx="16" />
+        <text x="584" y="356.5" text-anchor="middle"><tspan x="584" dy="0">N.C. A&amp;T B.S. AI:</tspan><tspan x="584" dy="15">names &quot;Agentic AI&quot; directly</tspan></text>
+        <circle class="graph-node-detail-dot" cx="662" cy="342" r="4" />
+      </g><g class="graph-node graph-node-has-detail" data-node-id="mst" tabindex="0" role="button" aria-label="Missouri S&amp;T: industry-sponsored Team Innovation Projects — show details">
+        <rect x="728" y="332" width="176" height="64" rx="16" />
+        <text x="816" y="356.5" text-anchor="middle"><tspan x="816" dy="0">Missouri S&amp;T: industry-sponsored</tspan><tspan x="816" dy="15">Team Innovation Projects</tspan></text>
+        <circle class="graph-node-detail-dot" cx="894" cy="342" r="4" />
+      </g><g class="graph-node graph-node-has-detail" data-node-id="unknown" tabindex="0" role="button" aria-label="Everyone else: unconfirmed — show details">
+        <rect x="380" y="482" width="176" height="64" rx="16" />
+        <text x="468" y="506.5" text-anchor="middle"><tspan x="468" dy="0">Everyone else:</tspan><tspan x="468" dy="15">unconfirmed</tspan></text>
+        <circle class="graph-node-detail-dot" cx="546" cy="492" r="4" />
+      </g><g class="graph-node graph-node-output" data-node-id="graduate">
+        <rect x="380" y="632" width="176" height="64" rx="16" />
+        <text x="468" y="647.5" text-anchor="middle"><tspan x="468" dy="0">&quot;Workflow-ready&quot;</tspan><tspan x="468" dy="15">graduate</tspan><tspan x="468" dy="17" class="graph-node-value" data-node-value="graduate"></tspan></text>
+        
+      </g></g>
+      </svg>
+    </div>
+    <div class="graph-detail-panel" data-graph-detail hidden>
+        <button type="button" class="graph-detail-close" data-graph-detail-close aria-label="Close"><span class="material-symbols-outlined">close</span></button>
+        <h4 data-graph-detail-title></h4>
+        <p data-graph-detail-text></p>
+      </div>
+    <div class="graph-legend">
+    <span class="graph-legend-item graph-legend-verified">Verified — disclosed figure</span>
+    <span class="graph-legend-item graph-legend-estimated">Estimated — reasoned from public data</span>
+    <span class="graph-legend-item graph-legend-hypothesis">Hypothesis — not provable from public data yet</span>
+  </div>
+    
+    <figcaption>'Verified' edges trace to GitHub's own blog/changelog or a university's own program page. The 'unknown' node and its edge are the honest limit of this research pass — see Methodology.</figcaption>
+  </figure>
+<h3>The Skills Map Against the Syllabus — Where It Actually Lines Up</h3>
+<p>Line up GitHub's own description of what Agent HQ requires from a developer against what CS329Z's public syllabus says it teaches, and the overlap is almost exact. GitHub wants someone who can assign the right agent to the right task, compare outputs across providers, review agent-authored pull requests, and set policy on which agents are even allowed to run. CS329Z's syllabus: tool use, agent loops, compound AI systems, evaluation, and &quot;design tradeoffs&quot; — the class literally has students build the components, not just call an API. That's not a coincidence; it's the same skill under two names. CS224V is adjacent but not identical — RAG, hybrid knowledge reasoning, and scientific knowledge curation are closer to &quot;building a smart research assistant&quot; than &quot;governing a fleet of coding agents in production.&quot; N.C. A&amp;T's B.S. in Artificial Intelligence names &quot;Agentic AI&quot; directly as a topic inside a full undergraduate degree, not a single seminar — a meaningfully different bet: breadth across four years versus depth in one quarter.</p>
+<p>Missouri S&amp;T is the interesting outlier. Its Kummer Center runs &quot;Team Innovation Projects&quot; — real, industry-sponsored problems assigned to student teams, not a course unit on agent architecture. If the workflow-orchestration skill set can also be picked up by doing rather than being taught, that's a second legitimate path this piece can point to — and it's worth naming as a real alternative, not dismissing because it doesn't show up in a syllabus.</p>
+<figure class="markdown-figure"><img src="/assets/meme/cs-degree-workflow-degree-02.jpg" alt="A student stands between two doors, one labeled Take The Seminar and one labeled Join The Sponsor Project, both leading to the same glowing trophy labeled Can Actually Run An Agent" loading="lazy" /></figure>
+<h3>The Numbers So Far</h3>
+<figure class="research-chart" data-chart="{&quot;type&quot;:&quot;bar&quot;,&quot;title&quot;:&quot;Named technical primitives on each program's own public page&quot;,&quot;labels&quot;:[&quot;CS329Z (single course)&quot;,&quot;CS224V (single course)&quot;,&quot;N.C. A&amp;T B.S. AI (full degree)&quot;],&quot;series&quot;:[{&quot;name&quot;:&quot;Primitives named&quot;,&quot;data&quot;:[6,4,9],&quot;color&quot;:&quot;#c9a227&quot;}],&quot;sourceLabel&quot;:&quot;Counted directly from each program's own public course/degree description (Stanford CS329Z: tool use, agent loops, compound AI systems, DSPy, evaluation, design tradeoffs; CS224V: RAG, hybrid knowledge reasoning, scientific knowledge curation, formal methods; N.C. A&amp;T B.S. AI: ML, deep learning, programming, robotics, decision making, computer vision, generative AI, LLMs, agentic AI). Not apples-to-apples — one is a single quarter-long seminar, one is a full four-year degree — shown together only to size what each page actually commits to teaching, not to rank the programs.&quot;}"><div class="chart-canvas-wrap"><canvas></canvas></div><figcaption>Counted directly from each program's own public course/degree description (Stanford CS329Z: tool use, agent loops, compound AI systems, DSPy, evaluation, design tradeoffs; CS224V: RAG, hybrid knowledge reasoning, scientific knowledge curation, formal methods; N.C. A&amp;T B.S. AI: ML, deep learning, programming, robotics, decision making, computer vision, generative AI, LLMs, agentic AI). Not apples-to-apples — one is a single quarter-long seminar, one is a full four-year degree — shown together only to size what each page actually commits to teaching, not to rank the programs.</figcaption></figure>
+<h3>Where This Is Happening</h3>
+<figure class="research-map" data-map="{&quot;title&quot;:&quot;The programs and the platform, mapped&quot;,&quot;center&quot;:[38,-95],&quot;zoom&quot;:4,&quot;markers&quot;:[{&quot;lat&quot;:37.4275,&quot;lng&quot;:-122.1697,&quot;label&quot;:&quot;Stanford University — CS224V (Agentic AI) and CS329Z (Engineering AI Agents), Fall 2026&quot;},{&quot;lat&quot;:36.0726,&quot;lng&quot;:-79.792,&quot;label&quot;:&quot;North Carolina A&amp;T State University (Greensboro, NC) — B.S. Artificial Intelligence, names Agentic AI directly&quot;},{&quot;lat&quot;:37.9515,&quot;lng&quot;:-91.7715,&quot;label&quot;:&quot;Missouri University of Science and Technology (Rolla, MO) — Kummer Center Team Innovation Projects, industry-sponsored&quot;},{&quot;lat&quot;:37.7749,&quot;lng&quot;:-122.4194,&quot;label&quot;:&quot;San Francisco, CA — GitHub Universe 2026 (Oct 28-29), where Agent HQ's governance layer keeps expanding&quot;}],&quot;sourceLabel&quot;:&quot;Main-campus/event-city coordinates — not the address of a specific building or venue.&quot;}"><div class="map-canvas"></div><figcaption>Main-campus/event-city coordinates — not the address of a specific building or venue.</figcaption></figure>
+<figure class="markdown-figure"><img src="/assets/meme/cs-degree-workflow-degree-03.jpg" alt="A cartoon United States map with four glowing pins connected by dotted lines forming a rough triangle, a tiny graduation cap icon floating in the middle" loading="lazy" /></figure>
+<h3>Ground Truth: The Control Plane Is a Real Screen, Not a Concept</h3>
+<p>Every claim in the &quot;why now&quot; section above is checkable against a real product, not a press quote. GitHub's own blog post on Agent HQ describes an actual admin screen where an enterprise sets &quot;security policies, audit logging, and manage access all in one place&quot; and decides &quot;which agents are allowed&quot; and &quot;access to models&quot; — that's the literal, current, shipping version of &quot;secure AI agents&quot; from the dossier's own framing of this question. It's not a hypothetical future job description. Someone, right now, at any company running GitHub Enterprise with Agent HQ turned on, is the person who configures that screen.</p>
+<h3>Methodology</h3>
+<p>This piece draws on GitHub's own blog and changelog posts for Agent HQ and Agentic Workflows, Stanford's own public course pages for CS224V and CS329Z, N.C. A&amp;T's own undergraduate program page, and Missouri S&amp;T's own Kummer Center research-programs page (see the companion pieces on AI entering university labs and the $100M compute map for the underlying university-funding citations reused here). What's explicitly missing, and what keeps this piece's back half honestly hedged rather than confident: we do not have a dataset of CS program syllabi broad enough to say which schools are &quot;still teaching around&quot; this material — that would require pulling and coding hundreds of course catalogs, which this pass didn't do. We also don't have a verified, primary-source job-posting dataset (BLS or a specific job board's own data export) confirming the labor-market size of &quot;agent orchestration&quot; roles; the numbers circulating in secondhand coverage weren't independently confirmed against primary data this pass, so we're leaving them out rather than repeating an unverified figure. That's a real gap for a future research pass to close, not a finding we're willing to round up to.</p>
+<figure class="markdown-figure"><img src="/assets/meme/cs-degree-workflow-degree-04.jpg" alt="A researcher stands in front of a giant filing cabinet labeled Every CS Syllabus In America, holding a single folder, visibly overwhelmed" loading="lazy" /></figure>
+<h3>Moral of the Story</h3>
+<p><strong>If you're a student:</strong> read CS329Z's public syllabus even if you don't go to Stanford — it's public, and the skill it's grading (build a tool-using agent, evaluate it, understand the cost/design tradeoffs) is the same skill GitHub's control plane assumes someone on the other end of it already has. Pair that with a real repo running Agent HQ or GitHub Actions' agentic workflows and you have a portfolio project that maps directly to a real admin screen, not a toy demo.</p>
+<p><strong>If you're a professor or curriculum designer:</strong> audit your own syllabus against GitHub's actual product surface, not against last year's assumption of what &quot;AI in software engineering&quot; means — assigning work to an agent, comparing agent output, and setting governance policy are now three separate, nameable skills, and a course that only covers &quot;prompting&quot; is teaching last year's version of this job.</p>
+<figure class="markdown-figure"><img src="/assets/meme/cs-degree-workflow-degree-05.jpg" alt="A professor stands at a chalkboard erasing the word PROMPTING and writing ORCHESTRATION, EVALUATION, GOVERNANCE in its place" loading="lazy" /></figure>
+<p><strong>If you're hiring:</strong> don't assume a &quot;used Copilot in class&quot; line on a resume means someone can run GitHub's actual control plane. Ask directly whether they've configured agent permissions, compared multiple agents on the same task, or reviewed an agent-authored PR — three concrete, checkable things, not a vibe.</p>
+<p><strong>If you're a founder or program builder:</strong> Missouri S&amp;T's Team Innovation Projects model is worth copying even if you're not a university — sponsoring a real, bounded problem for a student team to solve with agent tooling is a faster, cheaper way to find this skill set than waiting for a curriculum committee to catch up.</p>
+<h3>Related Research</h3></div>
+
+        <div class="detail-field-grid">
+          <div class="detail-field"><h3>Where This Stands</h3><p><strong>Answered</strong></p></div>
+          <div class="detail-field"><h3>Our Best Guess So Far</h3><p>Our best guess: the specific, nameable skills GitHub's Agent HQ now requires (assigning/comparing agents, reviewing agent-authored PRs, setting agent/model governance policy) are currently taught explicitly at only a small, named set of programs — but we don't have the syllabus dataset needed to say confidently which other programs are or aren't covering the same material under a different name, so the 'who's teaching around it' half of this question stays genuinely open.</p></div>
+        </div>
+
+        <div class="detail-field"><h3>What Got Us Asking This</h3><ul class="industry-capabilities"><li><span class="material-symbols-outlined">link</span><span><a href="https://github.blog/news-insights/company-news/welcome-home-agents/">GitHub Agent HQ — launched Oct 28, 2025</a> — A real admin control plane for assigning, comparing, and governing multi-provider coding agents inside a repo.</span></li><li><span class="material-symbols-outlined">link</span><span><a href="https://github.blog/changelog/2026-02-13-github-agentic-workflows-are-now-in-technical-preview/">GitHub Agentic Workflows in GitHub Actions — public preview, Feb 2026</a> — Agents now run natively in CI/CD for issue triage, PR review, and failure analysis.</span></li><li><span class="material-symbols-outlined">link</span><span><a href="https://cs329z.stanford.edu/">Stanford CS329Z — Engineering AI Agents</a> — Tool use, agent loops, compound AI systems, DSPy, evaluation — students build agent components from scratch.</span></li><li><span class="material-symbols-outlined">link</span><span><a href="https://www.ncat.edu/coe/departments/cs/undergrad-programs/bs-ai-en.php">N.C. A&amp;T B.S. Artificial Intelligence</a> — Names 'Agentic AI' directly as a core undergraduate degree topic.</span></li></ul></div>
+
+        <h2>How This Connects</h2><div class="detail-field-grid">
+                <div class="detail-field"><h3>The Physical Side</h3><p>No physical infrastructure claim here — this is a software-platform and curriculum question, not a lab-buildout one.</p></div>
+                <div class="detail-field"><h3>The Money Side</h3><p>No new funding event drives this piece; the 'why now' is a product launch (GitHub Agent HQ, Oct 2025) and its Feb 2026 expansion into GitHub Actions, not a grant.</p></div>
+                <div class="detail-field"><h3>The Day-to-Day Work</h3><p>The real job GitHub's own control plane implies: someone who assigns agents to tasks, compares their output, reviews agent-authored pull requests, and sets policy on which agents/models are allowed to run in a company's repos.</p></div>
+                <div class="detail-field"><h3>The Data/Systems Side</h3><p>Two Stanford courses and one HBCU degree track name these exact primitives on their own public pages; Missouri S&amp;T offers a different, project-based path to the same skills through industry-sponsored Team Innovation Projects.</p></div>
+              </div>
+
+        <div class="detail-field"><h3>Who We'd Like to Talk To</h3><ul><li>CS students choosing electives or a specialization</li><li>Curriculum designers and department chairs</li><li>Engineering hiring managers writing job descriptions</li><li>Program/workshop builders (bootcamps, corporate training)</li></ul></div>
+        <div class="detail-field"><h3>What We Still Need</h3><ul><li>A broad, coded dataset of CS program syllabi to determine how many teach agent-orchestration primitives under a different course name</li><li>A primary-source (BLS or specific job-board) dataset on agent-orchestration job-posting volume and salary — not a secondhand blog summary</li><li>Placement data for CS224V/CS329Z graduates specifically into agent-orchestration-shaped roles</li><li>Confirmation of how many other universities' project-based programs (like Missouri S&amp;T's) function as an alternate path to these skills</li></ul></div>
+        <div class="detail-field"><h3>What We'll Build From This</h3><ul><li>A syllabus-to-primitive coding tool that scores any CS program's public course catalog against GitHub Agent HQ's real feature set</li><li>A tracked roster of universities that add explicit agent-orchestration/governance coursework over the next several terms</li></ul></div>
+        <div class="detail-field"><h3>What We Found</h3><p>GitHub's own Agent HQ (launched Oct. 28, 2025) and its Feb. 2026 expansion into GitHub Actions turned 'orchestrate, evaluate and secure AI agents' into a real, shipping admin control plane — not a hypothetical job description. On the teaching side, only a small, named set of programs (Stanford's CS224V and CS329Z, N.C. A&amp;T's B.S. in Artificial Intelligence) explicitly name these primitives on their own public pages, and Missouri S&amp;T offers a project-based alternate path through industry-sponsored work. We do not have the broad syllabus or job-posting data needed to say confidently which other programs are or aren't covering this material — that half of the question stays open rather than answered.</p></div>
+        <div class="detail-field"><h3>Sources</h3><ul class="industry-capabilities"><li><span class="material-symbols-outlined">link</span><span><a href="https://github.blog/news-insights/company-news/welcome-home-agents/">GitHub — Introducing Agent HQ: Any agent, any way you work</a></span></li><li><span class="material-symbols-outlined">link</span><span><a href="https://github.blog/changelog/2026-02-13-github-agentic-workflows-are-now-in-technical-preview/">GitHub Changelog — Agentic Workflows now in technical preview</a></span></li><li><span class="material-symbols-outlined">link</span><span><a href="https://cs329z.stanford.edu/">Stanford CS329Z — Engineering AI Agents, Fall 2026</a></span></li><li><span class="material-symbols-outlined">link</span><span><a href="https://web.stanford.edu/class/cs224v/">Stanford CS224V — Agentic AI, Fall 2026</a></span></li><li><span class="material-symbols-outlined">link</span><span><a href="https://www.ncat.edu/coe/departments/cs/undergrad-programs/bs-ai-en.php">N.C. A&amp;T — B.S. Artificial Intelligence, Engineering &amp; Computing Track</a></span></li><li><span class="material-symbols-outlined">link</span><span><a href="https://research.mst.edu/funding/internalfundingopportunities/kummerresearchignitiongrantinitiativeigi/">Missouri S&amp;T — Kummer Research Ignition Grant Initiative</a></span></li></ul></div>
+
+        
+        
+        
+      </article>
+    </main>
+  
+        
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div>
+          <strong>Bot That Lyfe<span class="brand-dot">_</span></strong>
+          <p>Nathan Baker's technical opportunity intelligence practice — tracking funding, research, people, and jobs across a network of U.S. universities at the intersection of computer science, agentic AI, and engineering — and publishing it free.</p>
+        </div>
+        <div><h5><a href="/research-and-case-studies">Research &amp; Case Studies</a></h5></div>
+        <div><ul><li><a href="/work-with-us">Work With Us</a></li><li><a href="/about">About Nathan</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Bot That Lyfe. Independent technical opportunity intelligence, published free.</span>
+      </div>
+    </footer>
+  
+        <script type="module" src="/app.js"></script>
+      </body>
+    </html>
