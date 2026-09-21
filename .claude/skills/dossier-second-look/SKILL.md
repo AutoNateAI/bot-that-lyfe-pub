@@ -1,0 +1,30 @@
+---
+name: dossier-second-look
+description: A conversational walk through the rest of today's dossier after daily-dossier has already published the day's three flagship articles — discuss what else is in it, and optionally turn one or more of those threads into same-day follow-on articles. Use when Nathan says something like "let's go through the rest of the dossier" / "what else was interesting in there" after a daily-dossier run, not for the first three articles of the day (that's daily-dossier).
+---
+
+# Dossier Second Look
+
+`daily-dossier` already ran today: **three** articles are published (Market Signal / University Signal / Builder Signal, spanning the 7-university research pass), `featured: true` is set on whichever one of the three was the strongest finding, and Phase 7 wrote a ranked list of other candidates into `Research Backlog`. This skill is what happens next — a discussion, not a pipeline. Don't run this as a rigid phase sequence; talk through the dossier with Nathan like a colleague looking at the same document, and only reach for `research-brief` once something specific is worth a real page. Note that with three articles already shipped today, "the rest of the dossier" is usually thinner than it used to be — most of what a single-question day would have left on the table is now already covered by one of the three.
+
+## 1. Ground the conversation
+
+Pull the ranked candidate list Phase 7 of `daily-dossier` just wrote (`Research Backlog`, filtered to today's `Radar Date`), and skim the rest of the dossier — the full 7-university pass, not just the three chosen questions — for anything that list might have under-weighted: a stray quote, an unresearched university's finding, a number that didn't make today's articles. Bring both to the conversation. This is exploratory: ask what caught Nathan's eye, don't just recite the ranked list top-to-bottom and wait for a yes/no.
+
+## 2. If something's worth an article
+
+Run `../research-brief/SKILL.md` phases 1-4 exactly as that skill specifies (same checkpoints, same evidence bar, same `\`\`\`chart`/`\`\`\`map`/`\`\`\`graph` fences — see `../research-brief/reference/interactive-blocks.md`). The dossier is still your starting source list the same way it is for `daily-dossier`.
+
+**The one rule that matters here**: the new `investigations[]` entry does **not** get `featured: true`. The day's chosen flagship article keeps that slot — see `../daily-dossier/SKILL.md`'s "Featured placement" section for why. A same-day second (or fourth) article is a real, fully-published page; it's just not the pinned one. It still needs `publishedDate` set to today's date (same as the flagship entries) — that's what puts it in the home page's 3-latest-articles row at all; only `featured` (the single hero/banner slot) stays reserved for the actual chosen flagship. If Nathan explicitly asks to *replace* the featured slot with this instead, that's a deliberate override — move the flag by hand (set it here, clear it from today's original featured entry) rather than doing it automatically.
+
+## 3. Airtable + deploy
+
+Same as `daily-dossier` Phase 5 (write/update the `Research Questions` record, resolve the `Research Backlog` row this closes, link `Universities` and whichever of the seven dimension tables the research pass genuinely touched) and Phase 6 (confirm before `git push` — still a real production deploy). Load `../daily-dossier/reference/airtable-graph.md` for the exact field mapping, same as `daily-dossier` does.
+
+## 4. No forced Phase 7
+
+Don't automatically re-run a backlog-mining pass after a second-look article the way `daily-dossier` does after its three flagship pieces — that's the top-level daily loop's job, not every article's. If the conversation naturally surfaces a new candidate worth logging, add it; don't manufacture one to fill out a ritual.
+
+## What this skill does not do
+
+Pick the day's three flagship questions — that's `daily-dossier`, run first, once per day, per dossier. Distribution copy — same boundary as `research-brief`/`daily-dossier`. Automatically deciding to publish — this whole skill exists because publishing more same-day content is Nathan's call after a real conversation, not a default action.

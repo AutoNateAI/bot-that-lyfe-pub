@@ -1,0 +1,23 @@
+{
+  "name": "bot-that-lyfe-pub",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Bot That Lyfe — university-centered technical opportunity intelligence publication.",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch server.mjs",
+    "build": "node scripts/export-static.mjs",
+    "og-images": "node scripts/generate-og-images.mjs",
+    "og-hero-images": "node scripts/generate-og-hero-images.mjs",
+    "social:post": "node scripts/social-post.mjs",
+    "lab:tools": "node scripts/setup-lab-tools.mjs",
+    "lab:assets": "node scripts/bot-lab-asset-workflow.mjs",
+    "lab:narrate": "node scripts/generate-lab-narration.mjs",
+    "lab:explainer": "node scripts/render-lab-explainer.mjs",
+    "lab:short": "node scripts/render-lab-social-short.mjs"
+  },
+  "dependencies": {
+    "@resvg/resvg-js": "^2.6.2",
+    "sharp": "^0.35.3"
+  }
+}
