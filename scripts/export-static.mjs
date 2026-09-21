@@ -9,6 +9,9 @@ import {
   renderOrganizationDetail,
   renderRegionDetail,
   renderSystemDetail,
+  renderTutorialDetail,
+  renderTutorialPack,
+  renderTutorials,
   renderWorkWithUs,
 } from "../src/pages.mjs";
 import {
@@ -17,6 +20,8 @@ import {
   organizations,
   regions,
   systems,
+  tutorialPacks,
+  tutorials,
 } from "../src/data.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -29,6 +34,7 @@ const routes = [
   ["research-and-case-studies/index.html", renderArticles()],
   ["about/index.html", renderAbout()],
   ["work-with-us/index.html", renderWorkWithUs()],
+  ["courses/index.html", renderTutorials()],
 ];
 
 const TODAY = new Date().toISOString().slice(0, 10);
@@ -108,6 +114,21 @@ for (const investigation of investigations) {
   await writeFile(filePath, renderInvestigationDetail(investigation));
 }
 
+// The 4 free course packs, each with its own lesson pages — see
+// src/data.mjs tutorialPacks/tutorials.
+for (const pack of tutorialPacks) {
+  const packFilePath = path.join(outDir, "courses", pack.handle, "index.html");
+  await mkdir(path.dirname(packFilePath), { recursive: true });
+  await writeFile(packFilePath, renderTutorialPack(pack));
+
+  const packTutorials = tutorials.filter((tutorial) => tutorial.pack === pack.handle);
+  for (const tutorial of packTutorials) {
+    const lessonFilePath = path.join(outDir, "courses", pack.handle, tutorial.handle, "index.html");
+    await mkdir(path.dirname(lessonFilePath), { recursive: true });
+    await writeFile(lessonFilePath, renderTutorialDetail(pack, tutorial));
+  }
+}
+
 // Static redirect stubs for every path this rename moved, so an already-
 // shared or indexed old URL still lands on the new one instead of a 404.
 await writeRedirect("articles", "/research-and-case-studies");
@@ -143,10 +164,13 @@ const sitemapUrls = [
   sitemapEntry("https://botthatlyfe.com/research-and-case-studies", "0.9"),
   sitemapEntry("https://botthatlyfe.com/about", "0.8"),
   sitemapEntry("https://botthatlyfe.com/work-with-us", "0.8"),
+  sitemapEntry("https://botthatlyfe.com/courses", "0.9"),
   ...regions.map((region) => sitemapEntry(`https://botthatlyfe.com/research-and-case-studies/${region.slug}`, region.status === "laboratory" ? "0.9" : "0.4")),
   ...organizations.map((org) => sitemapEntry(`https://botthatlyfe.com/research-and-case-studies/${org.slug}`, org.status === "watchlist" ? "0.4" : "0.8")),
   ...systems.map((system) => sitemapEntry(`https://botthatlyfe.com/research-and-case-studies/${system.slug}`, "0.8")),
   ...investigations.map((investigation) => sitemapEntry(`https://botthatlyfe.com/research-and-case-studies/${investigation.slug}`, "0.8")),
+  ...tutorialPacks.map((pack) => sitemapEntry(`https://botthatlyfe.com/courses/${pack.handle}`, "0.7")),
+  ...tutorials.map((tutorial) => sitemapEntry(`https://botthatlyfe.com/courses/${tutorial.pack}/${tutorial.handle}`, "0.6")),
 ];
 await writeFile(
   path.join(outDir, "sitemap.xml"),
@@ -176,7 +200,9 @@ const detailPageCount =
   regions.length +
   organizations.length +
   systems.length +
-  investigations.length;
+  investigations.length +
+  tutorialPacks.length +
+  tutorials.length;
 
 console.log(
   `Exported ${routes.length + detailPageCount} Bot That Lyfe pages to ${path.relative(rootDir, outDir)}`,

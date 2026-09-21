@@ -879,6 +879,29 @@ export function renderHome(data) {
         `;
       })()}
 
+      ${(() => {
+        const featuredHandles = ["intro-to-javascript-for-beginners", "prompt-and-context-engineering", "civics-and-agentic-ai"];
+        const featuredPacks = featuredHandles
+          .map((handle) => tutorialPacks.find((pack) => pack.handle === handle))
+          .filter(Boolean);
+        if (!featuredPacks.length) return "";
+        return `
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <span class="kicker">${icon("menu_book")} Free Course Library</span>
+            <h2>Learn the skills behind this research, free.</h2>
+            <p>JavaScript, prompt and context engineering, and agentic AI — real curriculum, real code, no cost, no catch.</p>
+          </div>
+          <a class="primary-button" href="/courses">See All 4 Courses ${icon("arrow_forward")}</a>
+        </div>
+        <div class="pack-grid">
+          ${featuredPacks.map((pack) => packCard(pack)).join("")}
+        </div>
+      </section>
+        `;
+      })()}
+
       <section class="newsletter">
         <div>
           <h2>A university, a company, or a student with a real question?</h2>
@@ -2116,7 +2139,7 @@ export function renderConsulting(data) {
         </div>
         <div class="button-row">
           <a class="primary-button" href="/events">See the Build Lab Schedule ${icon("arrow_forward")}</a>
-          <a class="outline-button" href="/tutorials">See the Free Courses</a>
+          <a class="outline-button" href="/courses">See the Free Courses</a>
         </div>
       </section>
     </main>
@@ -2209,10 +2232,10 @@ export function renderTutorials() {
   `;
 
   return pageShell({
-    title: "Free AI & Coding Courses | Bot That Lyfe Lab",
+    title: "Free AI & Coding Courses | Bot That Lyfe",
     active: "tutorials",
     body,
-    canonicalPath: "/tutorials",
+    canonicalPath: "/courses",
     ogImage: "/assets/og/courses.jpg",
     description:
       "A free course library: JavaScript fundamentals, prompt and context engineering, databases, and agentic AI, with Discord support included. No cost, no catch.",
@@ -2229,7 +2252,7 @@ export function renderTutorialPack(pack) {
 
   const body = `
     <main class="tutorials-page pack-page">
-      <nav class="breadcrumbs pack-breadcrumbs"><a href="/">Home</a><span>/</span><a href="/tutorials">Free Courses</a><span>/</span><b>${escapeHtml(pack.title)}</b></nav>
+      <nav class="breadcrumbs pack-breadcrumbs"><a href="/">Home</a><span>/</span><a href="/courses">Free Courses</a><span>/</span><b>${escapeHtml(pack.title)}</b></nav>
       <section class="home-hero tutorials-detail-hero">
         <div class="hero-bg">${packMedia(pack)}</div>
         <div class="hero-content">
@@ -2238,8 +2261,8 @@ export function renderTutorialPack(pack) {
           <h1>${escapeHtml(pack.title)}</h1>
           <p>${escapeHtml(pack.summary)}</p>
           <div class="button-row">
-            <a class="primary-button" href="/programs/ai-agent-systems">Take the Program ${icon("arrow_forward")}</a>
-            <a class="secondary-button" href="/tutorials">All Courses</a>
+            <a class="primary-button" href="https://discord.gg/4HkkuntdSs">Join the Discord ${icon("open_in_new")}</a>
+            <a class="secondary-button" href="/courses">All Courses</a>
           </div>
         </div>
         <aside class="hero-program-panel">
@@ -2252,7 +2275,7 @@ export function renderTutorialPack(pack) {
               <span>${items.length} lesson${items.length === 1 ? "" : "s"}</span>
               <span>${escapeHtml(packStatusLabel(pack))}</span>
               <span>Copy-ready code</span>
-              <span>Program pathway</span>
+              <span>Discord support included</span>
             </div>
           </div>
         </aside>
@@ -2263,8 +2286,8 @@ export function renderTutorialPack(pack) {
         <aside class="docs-sidebar">
           <strong>${escapeHtml(pack.title)}</strong>
           ${tracks.map((track) => `<a href="#${slugify(track)}">${escapeHtml(track)}</a>`).join("")}
-          <a href="/tutorials">All Courses</a>
-          <a href="/for-organizations">For Organizations</a>
+          <a href="/courses">All Courses</a>
+          <a href="/work-with-us">Work With Us</a>
         </aside>
         <div class="docs-content">
           ${comingSoon ? packStatusBanner() : ""}
@@ -2278,7 +2301,7 @@ export function renderTutorialPack(pack) {
     title: `${pack.title} | Bot That Lyfe Tutorials`,
     active: "tutorials",
     body,
-    canonicalPath: `/tutorials/${pack.handle}`,
+    canonicalPath: `/courses/${pack.handle}`,
     ogImage: pack.heroImage || `/assets/og/tutorial-pack-${pack.handle}.jpg`,
     description: pack.summary,
     ogTitle: `${pack.title}: ${comingSoon ? "coming soon." : "start here."}`,
@@ -2294,14 +2317,14 @@ export function renderTutorialDetail(pack, tutorial) {
   const nextTutorial = currentIndex >= 0 && currentIndex < packTutorials.length - 1 ? packTutorials[currentIndex + 1] : null;
   const body = `
     <main class="tutorial-detail-page">
-      <nav class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/tutorials">Free Courses</a><span>/</span><a href="/tutorials/${pack.handle}">${escapeHtml(pack.title)}</a><span>/</span><b>${escapeHtml(tutorial.title)}</b></nav>
+      <nav class="breadcrumbs"><a href="/">Home</a><span>/</span><a href="/courses">Free Courses</a><span>/</span><a href="/courses/${pack.handle}">${escapeHtml(pack.title)}</a><span>/</span><b>${escapeHtml(tutorial.title)}</b></nav>
       <div class="tutorial-detail-layout">
         <aside class="docs-sidebar tutorial-detail-sidebar">
           <strong>${escapeHtml(pack.title)}</strong>
-          ${packTutorials.map((item) => `<a class="${item.handle === tutorial.handle ? "active" : ""}" href="/tutorials/${pack.handle}/${escapeHtml(item.handle)}">${escapeHtml(item.episode)} ${escapeHtml(item.title)}${item.draft ? " (soon)" : ""}</a>`).join("")}
-          <a href="/tutorials">All Courses</a>
-          <a href="/consulting">Consulting</a>
-          <a href="/community">Ask in Discord</a>
+          ${packTutorials.map((item) => `<a class="${item.handle === tutorial.handle ? "active" : ""}" href="/courses/${pack.handle}/${escapeHtml(item.handle)}">${escapeHtml(item.episode)} ${escapeHtml(item.title)}${item.draft ? " (soon)" : ""}</a>`).join("")}
+          <a href="/courses">All Courses</a>
+          <a href="/work-with-us">Work With Us</a>
+          <a href="https://discord.gg/4HkkuntdSs">Ask in Discord</a>
         </aside>
         <article class="tutorial-document">
           <header>
@@ -2314,18 +2337,18 @@ export function renderTutorialDetail(pack, tutorial) {
           ${
             prevTutorial || nextTutorial
               ? `<nav class="tutorial-pager">
-            ${prevTutorial ? `<a class="tutorial-pager-link prev" href="/tutorials/${pack.handle}/${escapeHtml(prevTutorial.handle)}">${icon("arrow_back")}<span><small>Previous</small>${escapeHtml(prevTutorial.title)}</span></a>` : "<span></span>"}
-            ${nextTutorial ? `<a class="tutorial-pager-link next" href="/tutorials/${pack.handle}/${escapeHtml(nextTutorial.handle)}"><span><small>Next</small>${escapeHtml(nextTutorial.title)}</span>${icon("arrow_forward")}</a>` : "<span></span>"}
+            ${prevTutorial ? `<a class="tutorial-pager-link prev" href="/courses/${pack.handle}/${escapeHtml(prevTutorial.handle)}">${icon("arrow_back")}<span><small>Previous</small>${escapeHtml(prevTutorial.title)}</span></a>` : "<span></span>"}
+            ${nextTutorial ? `<a class="tutorial-pager-link next" href="/courses/${pack.handle}/${escapeHtml(nextTutorial.handle)}"><span><small>Next</small>${escapeHtml(nextTutorial.title)}</span>${icon("arrow_forward")}</a>` : "<span></span>"}
           </nav>`
               : ""
           }
           <footer class="tutorial-next-step">
             <div>
-              <span class="kicker">${icon("architecture")} Want to see this at real scale?</span>
-              <h2>The free guide gets you moving. Consulting builds the real thing.</h2>
-              <p>See these same skills — agent workflows, Git strategy, architecture, debugging under pressure — turned into a real internal tool for a real Southeast Missouri business.</p>
+              <span class="kicker">${icon("architecture")} Want to go further?</span>
+              <h2>The free course gets you moving. Work With Us goes further.</h2>
+              <p>Bring a real question or a real system you want built — opportunity research, build coaching, and university or employer partnerships are all on the table, and Nathan reads every message himself.</p>
             </div>
-            <a class="primary-button" href="/consulting">See Consulting ${icon("arrow_forward")}</a>
+            <a class="primary-button" href="/work-with-us">Work With Us ${icon("arrow_forward")}</a>
           </footer>
         </article>
       </div>
@@ -2336,7 +2359,7 @@ export function renderTutorialDetail(pack, tutorial) {
     title: `${tutorial.title} | Bot That Lyfe Tutorials`,
     active: "tutorials",
     body,
-    canonicalPath: `/tutorials/${pack.handle}/${tutorial.handle}`,
+    canonicalPath: `/courses/${pack.handle}/${tutorial.handle}`,
     ogImage: pack.heroImage || `/assets/og/tutorial-${tutorial.pack}-${tutorial.handle}.jpg`,
     description: tutorial.summary,
     ogTitle: `${tutorial.title}: keep the build moving.`,
@@ -2356,7 +2379,7 @@ export function renderCommunity() {
           <p>The four free courses and the in-person program are the structured path. The Discord is where the help never stops: setup and concept questions on the courses, architecture reviews and build support on the program, and project help for builders who already know the pillars and need to design or build something they came up with themselves.</p>
           <div class="button-row">
             <a class="primary-button" href="https://discord.gg/4HkkuntdSs">Join the Discord ${icon("open_in_new")}</a>
-            <a class="secondary-button" href="/tutorials">Start the Free Courses</a>
+            <a class="secondary-button" href="/courses">Start the Free Courses</a>
           </div>
         </div>
         <aside class="hero-program-panel">
@@ -3060,15 +3083,15 @@ function tutorialTrack(track, items, pack) {
           .map(
             (tutorial) => `
           <article class="tutorial-row ${tutorial.draft ? "draft" : ""}">
-            <a class="tutorial-row-media" href="/tutorials/${pack.handle}/${escapeHtml(tutorial.handle)}">
+            <a class="tutorial-row-media" href="/courses/${pack.handle}/${escapeHtml(tutorial.handle)}">
               ${packMedia(pack, Number(tutorial.episode) || 0)}
               <span class="tutorial-index">${escapeHtml(tutorial.episode)}</span>
             </a>
             <div>
-              <h3><a href="/tutorials/${pack.handle}/${escapeHtml(tutorial.handle)}">${escapeHtml(tutorial.title)}</a></h3>
+              <h3><a href="/courses/${pack.handle}/${escapeHtml(tutorial.handle)}">${escapeHtml(tutorial.title)}</a></h3>
               <p>${escapeHtml(tutorial.summary)}</p>
               <div class="tag-row">${tutorial.outcomes.map((outcome) => `<span>${escapeHtml(outcome)}</span>`).join("")}${tutorial.draft ? `<span class="draft-tag">Coming Soon</span>` : ""}</div>
-              <a class="tutorial-link" href="/tutorials/${pack.handle}/${escapeHtml(tutorial.handle)}">${tutorial.draft ? "Preview Outline" : "Open Tutorial"} ${icon("arrow_forward")}</a>
+              <a class="tutorial-link" href="/courses/${pack.handle}/${escapeHtml(tutorial.handle)}">${tutorial.draft ? "Preview Outline" : "Open Tutorial"} ${icon("arrow_forward")}</a>
             </div>
           </article>
         `,
@@ -3088,7 +3111,7 @@ function packStatusBanner() {
     <div class="pack-status-banner">
       <span class="kicker">${icon("hourglass_top")} Coming Soon</span>
       <p>This course's lessons are still being written. The outline below shows what's planned — check back soon, or ask in Discord for early access.</p>
-      <a class="outline-button" href="/community">Ask in Discord</a>
+      <a class="outline-button" href="https://discord.gg/4HkkuntdSs">Ask in Discord ${icon("open_in_new")}</a>
     </div>
   `;
 }
@@ -3097,7 +3120,7 @@ function packCard(pack) {
   const items = tutorials.filter((tutorial) => tutorial.pack === pack.handle);
   const available = pack.status === "Active";
   return `
-    <a class="pack-card ${available ? "" : "coming-soon"}" href="/tutorials/${pack.handle}">
+    <a class="pack-card ${available ? "" : "coming-soon"}" href="/courses/${pack.handle}">
       <div class="pack-card-media">
         ${packMedia(pack)}
         <span class="status-pill ${available ? "live" : ""}">${packStatusLabel(pack)}</span>

@@ -65,6 +65,7 @@ export function footer() {
           <p>Nathan Baker's technical opportunity intelligence practice — tracking funding, research, people, and jobs across a network of U.S. universities at the intersection of computer science, agentic AI, and engineering — and publishing it free.</p>
         </div>
         <div><h5><a href="/research-and-case-studies">Research &amp; Case Studies</a></h5></div>
+        <div><h5><a href="/courses">Free Courses</a></h5></div>
         <div><ul><li><a href="/work-with-us">Work With Us</a></li><li><a href="/about">About Nathan</a></li></ul></div>
       </div>
       <div class="footer-bottom">

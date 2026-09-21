@@ -277,16 +277,17 @@ const server = createServer(async (request, response) => {
       "/about",
       "/work-with-us",
       "/research-and-case-studies",
+      "/courses",
     ]);
     if (pageRoutes.has(url.pathname)) {
-      const programsData = await readJson("data/marketplace/programs.json");
       const renderers = {
         "/": renderHome,
         "/about": renderAbout,
         "/work-with-us": renderWorkWithUs,
         "/research-and-case-studies": renderArticles,
+        "/courses": renderTutorials,
       };
-      html(response, 200, renderers[url.pathname](programsData));
+      html(response, 200, renderers[url.pathname]());
       return;
     }
 
@@ -399,8 +400,24 @@ const server = createServer(async (request, response) => {
       return;
     }
 
-    if (url.pathname.startsWith("/tutorials/")) {
-      gone(response);
+    if (url.pathname.startsWith("/courses/")) {
+      const segments = url.pathname.split("/").filter(Boolean);
+      const [, packHandle, tutorialHandle] = segments;
+      const pack = tutorialPacks.find((item) => item.handle === packHandle);
+      if (!pack) {
+        json(response, 404, { error: "Not found" });
+        return;
+      }
+      if (!tutorialHandle) {
+        html(response, 200, renderTutorialPack(pack));
+        return;
+      }
+      const tutorial = tutorials.find((item) => item.pack === packHandle && item.handle === tutorialHandle);
+      if (!tutorial) {
+        json(response, 404, { error: "Not found" });
+        return;
+      }
+      html(response, 200, renderTutorialDetail(pack, tutorial));
       return;
     }
 

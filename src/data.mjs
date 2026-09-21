@@ -20,6 +20,7 @@
 export const navItems = [
   { label: "Intelligence", href: "/", keys: ["home"] },
   { label: "Research & Case Studies", href: "/research-and-case-studies", keys: ["articles", "investigations", "regions", "organizations", "systems"] },
+  { label: "Free Courses", href: "/courses", keys: ["tutorials"] },
   { label: "Work With Us", href: "/work-with-us", keys: ["work-with-us"] },
   { label: "About", href: "/about", keys: ["about"] },
 ];
