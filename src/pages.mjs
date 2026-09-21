@@ -831,16 +831,16 @@ export function renderHome(data) {
         <div class="hero-bg"><img src="/assets/landing/hero-bg.jpg" alt="" /></div>
         <div class="hero-content">
           <div class="hero-copy">
-            <span class="kicker">${icon("hub")} Technical Opportunity Intelligence</span>
-            <h1>We track how funding, research, and jobs actually move through university tech — and publish it, free.</h1>
-            <p>Where the grant money goes, which labs and professors are doing the work, what it takes to build the same thing yourself, and where the jobs are — we research it, source it, and write it up in plain language, one university at a time.</p>
+            <span class="kicker">${icon("hub")} Technical Opportunity Intelligence, Built for Students</span>
+            <h1>See where university funding, research, and jobs are actually headed — then learn the exact skills to get there. Free.</h1>
+            <p>Which labs just got funded, which skills map to which careers, and where the agentic AI frontier is actually headed — we research it and publish it free. Then four free courses teach you the exact skills behind it: JavaScript, prompt and context engineering, databases, and agentic AI. No paywall, no fluff — just the path from classwork to a career.</p>
             <div class="lab-byline">
               <img src="/assets/nathan-baker.jpeg" alt="Nathan Baker" />
               <div><strong>Nathan Baker</strong><span>Founder, Bot That Lyfe</span></div>
             </div>
             <div class="button-row">
-              <a class="primary-button" href="/research-and-case-studies">Browse the Research ${icon("arrow_forward")}</a>
-              <a class="secondary-button" href="/work-with-us">Work With Us</a>
+              <a class="primary-button" href="/courses">Start the Free Courses ${icon("arrow_forward")}</a>
+              <a class="secondary-button" href="/research-and-case-studies">Browse the Research</a>
             </div>
           </div>
           <a class="hero-program-panel" href="${featuredInvestigation ? `/research-and-case-studies/${featuredInvestigation.slug}` : "/research-and-case-studies?type=Open%20Questions"}">
@@ -921,10 +921,10 @@ export function renderHome(data) {
     canonicalPath: "/",
     ogImage: "/assets/og/default.jpg",
     description:
-      "Bot That Lyfe tracks funding, research, people, technology, and jobs across a network of U.S. universities — real, sourced research articles on the agentic AI frontier and the path from classwork to a career.",
-    ogTitle: "Technical Opportunity Intelligence Lab",
+      "Bot That Lyfe tracks funding, research, people, technology, and jobs across a network of U.S. universities — real, sourced research on the agentic AI frontier, plus four free courses that teach the skills behind it.",
+    ogTitle: "Real Research. Free Courses. Built for Students Chasing Tech's Next Wave.",
     ogDescription:
-      "Real numbers, real sources — how university tech, funding, and hiring actually move, researched and published free by Nathan Baker.",
+      "Where university funding, research, and jobs in agentic AI are actually headed — researched free, plus 4 free courses (JavaScript, prompt engineering, databases, agentic AI) to learn the skills yourself.",
     structuredData: [
       {
         "@context": "https://schema.org",
@@ -1346,9 +1346,9 @@ export function renderAbout() {
         <div>
           <span class="kicker">${icon("hub")} About</span>
           <h1>Raised in Michigan. Rooted in the Bootheel. All in on tracking where tech opportunity actually comes from.</h1>
-          <p>Bot That Lyfe is my independent research practice — where my software engineering and business-analytics background meets the university research economy. I grew up in Michigan, where I first got curious about how systems actually work, and my family is from the Missouri Bootheel, where I spent every summer growing up. I'm building this to trace the real path from university funding and research to the agentic AI frontier and the job market — one university at a time. Coaching and partnership work are also on the table — see <a href="/work-with-us">Work With Us</a>.</p>
+          <p>Bot That Lyfe is my independent research practice — where my software engineering and business-analytics background meets the university research economy. I grew up in Michigan, where I first got curious about how systems actually work, and my family is from the Missouri Bootheel, where I spent every summer growing up. I'm building this to trace the real path from university funding and research to the agentic AI frontier and the job market — one university at a time. And because reading about the path isn't the same as walking it, I also publish four free courses that teach the exact skills behind the research — see <a href="/courses">Free Courses</a>. Coaching and partnership work are also on the table — see <a href="/work-with-us">Work With Us</a>.</p>
           <div class="button-row">
-            <a class="primary-button" href="/work-with-us">Work With Us ${icon("arrow_forward")}</a>
+            <a class="primary-button" href="/courses">Start the Free Courses ${icon("arrow_forward")}</a>
             <a class="secondary-button" href="/research-and-case-studies">Browse the Research</a>
           </div>
         </div>
@@ -1366,6 +1366,7 @@ export function renderAbout() {
         <span class="kicker">${icon("architecture")} Mission</span>
         <h2>The parts of the tech pipeline nobody explains clearly.</h2>
         <p>A lot of what actually shapes a computer-science student's path — which labs just got funded, what a grant actually buys, which courses map to which research, which companies are hiring for which skills right now — never gets written down anywhere a student, a professor, or an employer can just go read it. I research it, cite where every fact comes from, and publish it free.</p>
+        <p>And if you're a student reading this trying to figure out where to actually start, the <a href="/courses">free courses</a> are built for exactly that — the same fundamentals behind every internal tool Bot That Lyfe ships, no cost, no catch.</p>
         <p>I don't pretend to know more than I do. When I haven't found the answer yet, the page says "open question," not a guess dressed up as fact.</p>
       </section>
 
@@ -1430,7 +1431,7 @@ export function renderAbout() {
       "Nathan Baker is the researcher behind Bot That Lyfe, tracking university funding, research, people, and jobs across a network of U.S. universities — a software engineer by background, ex-Microsoft, Citi, and Veterans United.",
     ogTitle: "Nathan Baker — Bot That Lyfe",
     ogDescription:
-      "A software engineering background, now applied to researching how university tech, funding, and hiring actually move — plus still-open coaching and partnership work.",
+      "A software engineering background, now applied to researching how university tech, funding, and hiring actually move — plus 4 free courses for students, and still-open coaching and partnership work.",
     structuredData: [
       {
         "@context": "https://schema.org",

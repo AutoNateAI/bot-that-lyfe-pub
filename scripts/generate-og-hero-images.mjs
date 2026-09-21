@@ -46,12 +46,12 @@ const MODEL = "gpt-image-2.5-flare";
 const QUALITY = "high";
 
 const STYLE =
-  "Photo-realistic editorial photography, dark navy (#0e1a33) background environment with warm gold (#c9a227) accent light, cinematic and serious in tone — a research-lab-meets-agricultural-finance aesthetic, not corporate stock photography. Bold, clean, high-contrast sans-serif display type baked directly into the image as part of the scene (not a sticker or watermark), sized like a professional YouTube thumbnail headline — large, confidently readable at a glance, one strong focal point. Keep every word of the text, and the main subject, inside the central 70% of the frame vertically (leave a quiet margin top and bottom) so it survives a crop. No logos, no fabricated brand marks, no illegible or garbled text, no watermark, no border.";
+  "Photo-realistic editorial photography, dark navy (#0e1a33) background environment with warm gold (#c9a227) accent light, cinematic and serious in tone — a university-research-lab aesthetic, not corporate stock photography. Bold, clean, high-contrast sans-serif display type baked directly into the image as part of the scene (not a sticker or watermark), sized like a professional YouTube thumbnail headline — large, confidently readable at a glance, one strong focal point. Keep every word of the text, and the main subject, inside the central 70% of the frame vertically (leave a quiet margin top and bottom) so it survives a crop. No logos, no fabricated brand marks, no illegible or garbled text, no watermark, no border.";
 
 const jobs = [
   {
     file: "og/default.jpg",
-    prompt: `A wide editorial image for the homepage of an agricultural-economics research lab. Background: an aerial view of Mississippi River-basin farmland at dusk, geometric fields in gold and green, subtly blended into a dark navy panel. Large bold headline text reading "FARM COUNTRY RUNS ON NUMBERS. WE ACTUALLY READ THEM." with a smaller line beneath reading "Bot That Lyfe · Agricultural Economic Systems Intelligence Lab". ${STYLE}`,
+    prompt: `A wide editorial image for the homepage of a technical opportunity intelligence site aimed at computer science and engineering students. Background: a documentary-style shot of a university computer lab at dusk, a student at a laptop reviewing a glowing research dashboard next to an open course/lesson interface (an illustrative dashboard and course UI, not any real product's actual interface), blurred bookshelves and lab equipment behind, no visible face, fading into a dark navy panel with gold light. Large bold headline text reading "RESEARCH THE FRONTIER. LEARN THE SKILLS. FREE." with a smaller line beneath reading "Bot That Lyfe · Research + 4 Free Courses for Students". No logos, no readable screen text, no real product UI. ${STYLE}`,
   },
   {
     file: "og/research-and-case-studies.jpg",
