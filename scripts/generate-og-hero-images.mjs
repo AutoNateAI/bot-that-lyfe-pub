@@ -153,6 +153,18 @@ const jobs = [
     file: "og/north-dakota-soy-crush-yield-finance-2026.jpg",
     prompt: `A wide editorial image about a real agricultural-processing finding. Background: a documentary-style shot of a large modern soybean crush and refining plant complex on the North Dakota prairie at golden hour — tall grain silos, processing towers, and conveyor structures, a loaded grain truck approaching on a gravel road, flat harvested farmland stretching to the horizon, fading into a dark navy panel with gold light. Large bold headline text reading "NORTH DAKOTA BUILT THE CRUSH. THEN YIELDS FELL." with a smaller line beneath reading "Bot That Lyfe · North Dakota Soy Crush & Farm Finance, 2026". No logos, no readable signage. ${STYLE}`,
   },
+  {
+    file: "og/cs-degree-workflow-degree.jpg",
+    prompt: `A wide editorial image about how computer science curricula are adapting to AI agent orchestration jobs. Background: a documentary-style shot of a university computer lab at dusk, a large classroom monitor displaying an abstract diagram of connected workflow nodes and small agent icons (an illustrative diagram, not any real product's actual UI), a professor's silhouette gesturing toward it while students look on from their desks, no visible faces, fading into a dark navy panel with gold light. Large bold headline text reading "ALMOST NO CS PROGRAM TEACHES THIS YET" with a smaller line beneath reading "Bot That Lyfe · Is the New CS Degree a Workflow Degree?". No logos, no readable screen text, no real product UI. ${STYLE}`,
+  },
+  {
+    file: "og/hundred-million-compute-map.jpg",
+    prompt: `A wide editorial image about a federal AI infrastructure funding program. Background: a documentary-style shot of a modern university IT/data-center corridor at dusk, server racks with status lights glowing gold and blue, a large wall-mounted map of the United States with a handful of regions softly highlighted in gold light, a researcher's silhouette studying it from a respectful distance, no visible face, fading into a dark navy panel with gold light. Large bold headline text reading "$100M FOR AI INFRASTRUCTURE. IT WON'T BUY THE COMPUTERS." with a smaller line beneath reading "Bot That Lyfe · The $100M Compute Map". No logos, no real agency seals, no readable screen text. ${STYLE}`,
+  },
+  {
+    file: "og/ai-agents-lab-partner.jpg",
+    prompt: `A wide editorial image about AI agents entering university science labs. Background: a documentary-style shot of a modern university biomedical research lab at dusk, a large lab monitor displaying an abstract network of connected tool icons and data nodes (an AI agent's tool registry, not any real software's actual UI), a researcher's silhouette reviewing the screen from a respectful distance, no visible face, scientific glassware and equipment softly blurred in the foreground, fading into a dark navy panel with gold light. Large bold headline text reading "UNIVERSITIES JUST HANDED AI AGENTS THE KEYS TO THE LAB" with a smaller line beneath reading "Bot That Lyfe · When AI Agents Become the Lab Partner". No logos, no readable screen text, no real product UI. ${STYLE}`,
+  },
 ];
 
 async function generateOne({ file, prompt }) {

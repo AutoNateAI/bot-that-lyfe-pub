@@ -134,7 +134,238 @@ export const investigationStatusLabels = {
   published: "Answered",
 };
 
-export const investigations = [];
+export const investigations = [
+  {
+    slug: "ai-agents-lab-partner",
+    icon: "biotech",
+    status: "published",
+    name: "Universities Just Handed AI Agents the Keys to the Lab. Nobody's Worked Out What It Costs.",
+    question:
+      "Are U.S. universities quietly turning software engineering students into scientific operators as agentic AI moves from coding assistants into autonomous research workflows?",
+    tagline:
+      "Four federally-backed labs and one Stanford curriculum all point the same direction — but Stanford's own cost research says the economics of running an AI 'co-scientist' aren't solved yet.",
+    thumbnail: "/assets/og/ai-agents-lab-partner.jpg",
+    region: "",
+    publishedDate: "2026-09-21",
+    featured: true,
+    commodity: "Agentic AI · University Research",
+    evidence: [
+      {
+        label: "UT Knoxville: $9M + $20M NSF awards, July 2026",
+        note: "One grant for national AI-driven scientific-data infrastructure, one for the ATHENA autonomous-materials-discovery hub.",
+        url: "https://research.utk.edu/2026/07/29/taufer-leads-team-awarded-9m-by-nsf-to-enable-us-transition-to-ai-driven-discovery/",
+      },
+      {
+        label: "Mizzou-led team selected for DOE's inaugural Genesis Mission",
+        note: "A 6-institution AI-driven synthetic-cell-design project, led by a Mizzou mechanical/aerospace engineering professor.",
+        url: "https://engineering.missouri.edu/2026/mizzou-led-team-selected-for-u-s-department-of-energys-inaugural-genesis-mission/",
+      },
+      {
+        label: "Stanford Biomni: 150 tools, 105 packages, 59 databases, 10,000+ labs",
+        note: "Published in Science, July 2026 — the most widely used AI co-scientist system in biomedicine per Stanford's own reporting.",
+        url: "https://news.stanford.edu/stories/2026/07/biomni-ai-powered-biomedical-co-scientist",
+      },
+      {
+        label: "Stanford Digital Economy Lab: agentic tasks burn ~1000x more tokens than chat",
+        note: "May 2026 study of 8 frontier models on SWE-bench Verified — the tension this whole piece turns on.",
+        url: "https://digitaleconomy.stanford.edu/publication/how-do-ai-agents-spend-your-money-analyzing-and-predicting-token-consumption-in-agentic-coding-tasks/",
+      },
+    ],
+    stakeholders: [
+      "University PIs running federally funded AI-for-science labs",
+      "CS/AI grad students choosing a research specialization",
+      "Hiring managers building AI-for-science or agent-evaluation teams",
+      "University tech-transfer offices watching for the next spinout",
+    ],
+    hypothesis:
+      "Our best guess: the technical pattern (tool registries, provenance, evaluation) is genuinely converging across biomedicine, materials science, synthetic biology, and genomics labs — but the labor-market side (a real job title, a real salary band, a real degree track called anything like 'scientific operator') hasn't caught up yet, and the cost side (what an AI-directed experiment actually costs in tokens) is an open, unsolved question even inside the lab that's best positioned to answer it.",
+    graphLayers: {
+      physical:
+        "Federally-funded lab infrastructure at UT Knoxville (the ATHENA autonomous-materials hub) and DOE's multi-institution Genesis Mission compute/experimental stack led out of Missouri.",
+      capital:
+        "$29M in 2026 NSF awards to UT Knoxville alone, a DOE Genesis Mission slot for a Mizzou-led team, and a $450K UCSC seed fund — three different funding tiers, all pointed the same direction.",
+      business:
+        "PIs and grad researchers running closed-loop, AI-directed experiment cycles instead of hand-running every step — Biomni alone is already active in more than 10,000 labs.",
+      information:
+        "The technical pattern repeats everywhere it shows up: a registry of specialized tools, provenance tracking, and evaluation — exactly what Stanford's CS224V and CS329Z now teach as for-credit coursework.",
+    },
+    dataNeeds: [
+      "Confirmed dollar figure for Mizzou's DOE Genesis Mission award",
+      "CS224V/CS329Z enrollment and post-graduation placement data",
+      "A lab-specific (not software-engineering-benchmark) replication of the Digital Economy Lab's token-cost study",
+      "Direct interviews with PIs at UTK, Mizzou, and UCSC on how they're actually staffing these roles",
+    ],
+    artifacts: [
+      "A tracked roster of every federally-funded 'AI-for-science' lab opening in 2026-27, cross-referenced against which universities teach agent-engineering coursework",
+      "A cost-per-experiment model combining the Digital Economy Lab's token-cost findings with a real lab's grant budget",
+    ],
+    findings:
+      "Four independent funders (NSF twice, DOE, and a university's own seed fund) backed AI-agent-driven lab infrastructure within roughly six months of each other in 2026, and the underlying technical pattern — tool registries, provenance, evaluation — is the same at every site and is now taught as Stanford coursework. But no university has created a formal 'scientific operator' job title or degree track, and Stanford's own Digital Economy Lab research shows the token-cost economics of this kind of agentic work are still highly unpredictable, undercutting how confidently any of these labs can currently budget for it.",
+    sources: [
+      { label: "UT Knoxville — $9M NSF AI-Driven Scientific Data Infrastructure Project", url: "https://research.utk.edu/2026/07/29/taufer-leads-team-awarded-9m-by-nsf-to-enable-us-transition-to-ai-driven-discovery/" },
+      { label: "UT Knoxville — $20M NSF ATHENA Autonomous Materials Discovery Hub", url: "https://research.utk.edu/2026/07/23/ut-secures-20m-nsf-grant-to-pioneer-breakthroughs-in-automated-materials-discovery/" },
+      { label: "Mizzou-led team selected for DOE's inaugural Genesis Mission", url: "https://engineering.missouri.edu/2026/mizzou-led-team-selected-for-u-s-department-of-energys-inaugural-genesis-mission/" },
+      { label: "Mizzou launches AERI (AI Education, Research and Infrastructure Center)", url: "https://engineering.missouri.edu/2026/mizzou-launches-new-center-to-advance-study-and-application-of-ai/" },
+      { label: "Missouri S&T — Kummer Research Ignition Grant Initiative (Center for AI and Autonomous Systems)", url: "https://research.mst.edu/funding/internalfundingopportunities/kummerresearchignitiongrantinitiativeigi/" },
+      { label: "UC Santa Cruz Genomics Institute — 2026 seed funding", url: "https://news.ucsc.edu/2026/07/genomics-institute-seed-funding-2026/" },
+      { label: "Open Culture Science (UCSC Genomics Institute spinout)", url: "https://news.ucsc.edu/open-culture-science/" },
+      { label: "Stanford Report — Meet Biomni, an AI-powered biomedical co-scientist", url: "https://news.stanford.edu/stories/2026/07/biomni-ai-powered-biomedical-co-scientist" },
+      { label: "Biomni GitHub repository", url: "https://github.com/snap-stanford/Biomni" },
+      { label: "Stanford CS224V — Agentic AI, Fall 2026", url: "https://web.stanford.edu/class/cs224v/" },
+      { label: "Stanford CS329Z — Engineering AI Agents, Fall 2026", url: "https://cs329z.stanford.edu/" },
+      { label: "Stanford Digital Economy Lab — How Do AI Agents Spend Your Money?", url: "https://digitaleconomy.stanford.edu/publication/how-do-ai-agents-spend-your-money-analyzing-and-predicting-token-consumption-in-agentic-coding-tasks/" },
+    ],
+    sourcePath: "../content/research/ai-agents-lab-partner.md",
+  },
+  {
+    slug: "hundred-million-compute-map",
+    icon: "hub",
+    status: "published",
+    name: "NSF's $100M AI Hub Program Won't Fund the Computers. It'll Fund Whoever Can Already Work Together.",
+    question:
+      "Which university ecosystems are best positioned to capture the NSF's new $100 million State and Regional AI Infrastructure Hubs program — and what student, startup and workforce opportunities appear around those compute hubs before the awards are made?",
+    tagline:
+      "The application deadline is November 4, 2026, and the fine print rewards a region's coordination muscle over its supercomputer — which changes who's actually favored to win.",
+    thumbnail: "/assets/og/hundred-million-compute-map.jpg",
+    region: "",
+    publishedDate: "2026-09-21",
+    commodity: "AI Infrastructure · Federal Funding",
+    evidence: [
+      {
+        label: "NSF State and Regional AI Infrastructure Hubs solicitation (NSF 26-513)",
+        note: "Up to 10 awards, $4M-$12M each over 5 years, ~$100M total — NSF funds coordination/workforce, the consortium provides the compute via cost-share.",
+        url: "https://www.nsf.gov/funding/opportunities/us-national-science-foundation-state-regional-artificial/nsf26-513/solicitation",
+      },
+      {
+        label: "GVSU + Van Andel Institute: AIRII",
+        note: "A university-philanthropy AI research consortium already operating on the exact model this NSF program wants, independent of it.",
+        url: "https://www.gvsu.edu/computing/airii-gvsu-and-van-andel-institute-293",
+      },
+      {
+        label: "GVSU College of Computing SURGE program",
+        note: "A working, paid, Computing+X undergraduate research pipeline — proof-of-execution for the workforce-development piece NSF is funding.",
+        url: "https://www.gvsu.edu/computing/college-of-computing-surge-255",
+      },
+    ],
+    stakeholders: [
+      "University research-development offices assembling a hub proposal",
+      "State science/technology policy offices",
+      "Regional philanthropies considering a university AI partnership",
+      "Founders and investors watching for the next university-adjacent spinout",
+    ],
+    hypothesis:
+      "Our best guess: because NSF structured this program around cost-share coordination rather than direct compute funding, regions that have already proven they can assemble a university-philanthropy-industry consortium (like GVSU/Van Andel) are better positioned to win than regions with larger raw federal research dollars but no standing multi-sector coalition (like UT Knoxville) — but this is untested until real proposals are scored, and we have no visibility into who is actually applying.",
+    graphLayers: {
+      physical:
+        "No hub compute has been built yet — every existing node mapped here (GVSU/Van Andel, Missouri's two AI centers, UT Knoxville/ORNL, N.C. A&T) is pre-existing infrastructure, not hub-funded infrastructure.",
+      capital:
+        "Up to $100M across as many as 10 awards ($4M-$12M each over 5 years), structured as a cost-share — NSF's money funds coordination and workforce, not hardware.",
+      business:
+        "The real competitive skill this program tests is getting a university, a state or local government, a philanthropy, and industry partners to co-commit to a 5-year plan together — not simply having the most research grants.",
+      information:
+        "GVSU's SURGE program (paid Computing+X undergraduate research) is the clearest working example in this pass of the exact workforce-development deliverable this NSF program is funding more of.",
+    },
+    dataNeeds: [
+      "A confirmed list of which states/regions are actually submitting proposals by the Nov. 4, 2026 deadline",
+      "Consortium partner lists for any of the five ecosystems mapped here, specific to this NSF program",
+      "Whether UT Knoxville or N.C. A&T are assembling a multi-sector regional bid beyond their existing federal research grants",
+      "The actual award announcements, once NSF makes them (expected after the Nov. 4, 2026 deadline)",
+    ],
+    artifacts: [
+      "A tracked roster of every publicly-announced NSF hub proposal or consortium-formation announcement between now and November 2026",
+      "A side-by-side comparison of each winning consortium's cost-share structure once awards are announced",
+    ],
+    findings:
+      "NSF's $100M State and Regional AI Infrastructure Hubs program (up to 10 awards, $4M-$12M each, proposals due Nov. 4, 2026) funds consortium coordination and workforce development, not compute itself — the actual hardware and operating cost is a cost-share obligation on the consortium. That structural detail means the strongest-positioned regions in this radar pass aren't necessarily the ones with the largest existing federal research grants (UT Knoxville's $29M in 2026 NSF awards), but the ones that have already proven they can build a multi-sector coalition, like Grand Valley State's philanthropy-backed AIRII partnership with the Van Andel Institute and its already-running SURGE workforce pipeline. No awards have been made as of this writing.",
+    sources: [
+      { label: "NSF State and Regional AI Infrastructure Hubs — program announcement", url: "https://www.nsf.gov/news/new-nsf-state-regional-ai-infrastructure-hubs-will-power-ai" },
+      { label: "NSF 26-513 — full solicitation", url: "https://www.nsf.gov/funding/opportunities/us-national-science-foundation-state-regional-artificial/nsf26-513/solicitation" },
+      { label: "GVSU College of Computing — AIRII (GVSU and Van Andel Institute)", url: "https://www.gvsu.edu/computing/airii-gvsu-and-van-andel-institute-293" },
+      { label: "GVSU College of Computing — SURGE program", url: "https://www.gvsu.edu/computing/college-of-computing-surge-255" },
+      { label: "UT Knoxville — $9M NSF AI-Driven Scientific Data Infrastructure Project", url: "https://research.utk.edu/2026/07/29/taufer-leads-team-awarded-9m-by-nsf-to-enable-us-transition-to-ai-driven-discovery/" },
+      { label: "UT Knoxville — $20M NSF ATHENA Autonomous Materials Discovery Hub", url: "https://research.utk.edu/2026/07/23/ut-secures-20m-nsf-grant-to-pioneer-breakthroughs-in-automated-materials-discovery/" },
+      { label: "North Carolina A&T — $10M Accelerate-DAQ award", url: "https://www.ncat.edu/news/2026/09/10-million-dow-grant.php" },
+      { label: "Mizzou launches AERI (AI Education, Research and Infrastructure Center)", url: "https://engineering.missouri.edu/2026/mizzou-launches-new-center-to-advance-study-and-application-of-ai/" },
+      { label: "Missouri S&T — Kummer Research Ignition Grant Initiative", url: "https://research.mst.edu/funding/internalfundingopportunities/kummerresearchignitiongrantinitiativeigi/" },
+    ],
+    sourcePath: "../content/research/hundred-million-compute-map.md",
+  },
+  {
+    slug: "cs-degree-workflow-degree",
+    icon: "school",
+    status: "published",
+    name: "GitHub Just Made Agent Orchestration a Normal Part of Shipping Code. Almost No CS Program Teaches It Yet.",
+    question:
+      "If employers increasingly hire engineers to orchestrate, evaluate and secure AI agents, which university curricula are already teaching the workflow skills that map to the emerging job — and which are still teaching around it?",
+    tagline:
+      "GitHub's own Agent HQ control plane is the real, shipping version of 'orchestrate, evaluate and secure' — and only a small, named set of programs teach it directly. We don't yet know how many don't.",
+    thumbnail: "/assets/og/cs-degree-workflow-degree.jpg",
+    region: "",
+    publishedDate: "2026-09-21",
+    commodity: "Agentic AI · Curriculum",
+    evidence: [
+      {
+        label: "GitHub Agent HQ — launched Oct 28, 2025",
+        note: "A real admin control plane for assigning, comparing, and governing multi-provider coding agents inside a repo.",
+        url: "https://github.blog/news-insights/company-news/welcome-home-agents/",
+      },
+      {
+        label: "GitHub Agentic Workflows in GitHub Actions — public preview, Feb 2026",
+        note: "Agents now run natively in CI/CD for issue triage, PR review, and failure analysis.",
+        url: "https://github.blog/changelog/2026-02-13-github-agentic-workflows-are-now-in-technical-preview/",
+      },
+      {
+        label: "Stanford CS329Z — Engineering AI Agents",
+        note: "Tool use, agent loops, compound AI systems, DSPy, evaluation — students build agent components from scratch.",
+        url: "https://cs329z.stanford.edu/",
+      },
+      {
+        label: "N.C. A&T B.S. Artificial Intelligence",
+        note: "Names 'Agentic AI' directly as a core undergraduate degree topic.",
+        url: "https://www.ncat.edu/coe/departments/cs/undergrad-programs/bs-ai-en.php",
+      },
+    ],
+    stakeholders: [
+      "CS students choosing electives or a specialization",
+      "Curriculum designers and department chairs",
+      "Engineering hiring managers writing job descriptions",
+      "Program/workshop builders (bootcamps, corporate training)",
+    ],
+    hypothesis:
+      "Our best guess: the specific, nameable skills GitHub's Agent HQ now requires (assigning/comparing agents, reviewing agent-authored PRs, setting agent/model governance policy) are currently taught explicitly at only a small, named set of programs — but we don't have the syllabus dataset needed to say confidently which other programs are or aren't covering the same material under a different name, so the 'who's teaching around it' half of this question stays genuinely open.",
+    graphLayers: {
+      physical:
+        "No physical infrastructure claim here — this is a software-platform and curriculum question, not a lab-buildout one.",
+      capital:
+        "No new funding event drives this piece; the 'why now' is a product launch (GitHub Agent HQ, Oct 2025) and its Feb 2026 expansion into GitHub Actions, not a grant.",
+      business:
+        "The real job GitHub's own control plane implies: someone who assigns agents to tasks, compares their output, reviews agent-authored pull requests, and sets policy on which agents/models are allowed to run in a company's repos.",
+      information:
+        "Two Stanford courses and one HBCU degree track name these exact primitives on their own public pages; Missouri S&T offers a different, project-based path to the same skills through industry-sponsored Team Innovation Projects.",
+    },
+    dataNeeds: [
+      "A broad, coded dataset of CS program syllabi to determine how many teach agent-orchestration primitives under a different course name",
+      "A primary-source (BLS or specific job-board) dataset on agent-orchestration job-posting volume and salary — not a secondhand blog summary",
+      "Placement data for CS224V/CS329Z graduates specifically into agent-orchestration-shaped roles",
+      "Confirmation of how many other universities' project-based programs (like Missouri S&T's) function as an alternate path to these skills",
+    ],
+    artifacts: [
+      "A syllabus-to-primitive coding tool that scores any CS program's public course catalog against GitHub Agent HQ's real feature set",
+      "A tracked roster of universities that add explicit agent-orchestration/governance coursework over the next several terms",
+    ],
+    findings:
+      "GitHub's own Agent HQ (launched Oct. 28, 2025) and its Feb. 2026 expansion into GitHub Actions turned 'orchestrate, evaluate and secure AI agents' into a real, shipping admin control plane — not a hypothetical job description. On the teaching side, only a small, named set of programs (Stanford's CS224V and CS329Z, N.C. A&T's B.S. in Artificial Intelligence) explicitly name these primitives on their own public pages, and Missouri S&T offers a project-based alternate path through industry-sponsored work. We do not have the broad syllabus or job-posting data needed to say confidently which other programs are or aren't covering this material — that half of the question stays open rather than answered.",
+    sources: [
+      { label: "GitHub — Introducing Agent HQ: Any agent, any way you work", url: "https://github.blog/news-insights/company-news/welcome-home-agents/" },
+      { label: "GitHub Changelog — Agentic Workflows now in technical preview", url: "https://github.blog/changelog/2026-02-13-github-agentic-workflows-are-now-in-technical-preview/" },
+      { label: "Stanford CS329Z — Engineering AI Agents, Fall 2026", url: "https://cs329z.stanford.edu/" },
+      { label: "Stanford CS224V — Agentic AI, Fall 2026", url: "https://web.stanford.edu/class/cs224v/" },
+      { label: "N.C. A&T — B.S. Artificial Intelligence, Engineering & Computing Track", url: "https://www.ncat.edu/coe/departments/cs/undergrad-programs/bs-ai-en.php" },
+      { label: "Missouri S&T — Kummer Research Ignition Grant Initiative", url: "https://research.mst.edu/funding/internalfundingopportunities/kummerresearchignitiongrantinitiativeigi/" },
+    ],
+    sourcePath: "../content/research/cs-degree-workflow-degree.md",
+  },
+];
 
 // The nine regional industries Bot That Lyfe Consulting builds internal AI tooling
 // for, and the weekly free live-build sessions organized around them (see
