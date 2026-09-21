@@ -30,7 +30,7 @@ jobs:
         run: |
           node --version
           npm --version
-          npm ci || {
+          npm install || {
             cat /home/runner/.npm/_logs/*-debug-0.log
             exit 1
           }
