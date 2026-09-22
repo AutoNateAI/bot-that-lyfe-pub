@@ -165,6 +165,18 @@ const jobs = [
     file: "og/ai-agents-lab-partner.jpg",
     prompt: `A wide editorial image about AI agents entering university science labs. Background: a documentary-style shot of a modern university biomedical research lab at dusk, a large lab monitor displaying an abstract network of connected tool icons and data nodes (an AI agent's tool registry, not any real software's actual UI), a researcher's silhouette reviewing the screen from a respectful distance, no visible face, scientific glassware and equipment softly blurred in the foreground, fading into a dark navy panel with gold light. Large bold headline text reading "UNIVERSITIES JUST HANDED AI AGENTS THE KEYS TO THE LAB" with a smaller line beneath reading "Bot That Lyfe · When AI Agents Become the Lab Partner". No logos, no readable screen text, no real product UI. ${STYLE}`,
   },
+  {
+    file: "og/who-owns-the-ai-workforce-pipeline.jpg",
+    prompt: `A wide editorial image about who governs the AI and semiconductor workforce pipeline. Background: a documentary-style shot of a university engineering advisory-board conference room at dusk, a long table with a semiconductor wafer and a folder of program documents on it, a large wall map or org-chart-style diagram softly glowing in the background showing abstract connected nodes (an illustrative governance diagram, not any real seal or logo), no visible faces, fading into a dark navy panel with gold light. Large bold headline text reading "WHO OWNS THE AI WORKFORCE PIPELINE?" with a smaller line beneath reading "Bot That Lyfe · Purdue, the Navy, the NSF, and Amazon". No logos, no real agency seals, no readable document text. ${STYLE}`,
+  },
+  {
+    file: "og/university-becoming-ai-utility.jpg",
+    prompt: `A wide editorial image about a university treating AI compute as shared campus infrastructure. Background: a documentary-style shot of a modern university data-center corridor at dusk, glowing server racks in gold and blue light, a wall panel display showing an abstract network of connected access points radiating out to icons representing many different academic disciplines (an illustrative diagram, not any real product's UI), no visible faces, fading into a dark navy panel with gold light. Large bold headline text reading "THE SUPERCOMPUTER BECAME PLUMBING" with a smaller line beneath reading "Bot That Lyfe · The University Is Becoming an AI Utility". No logos, no real product UI, no readable screen text. ${STYLE}`,
+  },
+  {
+    file: "og/agentic-ai-meets-physical-world.jpg",
+    prompt: `A wide editorial image about AI agents moving from software into physical robotics and lab equipment. Background: a documentary-style shot of a university robotics lab at dusk, a robotic arm carefully gripping a glass lab plate with visible precision, scientific equipment and a microscope softly blurred nearby, a faint overlay of an abstract security/verification icon glowing subtly in the background (illustrative, not a real product UI or seal), no visible faces, fading into a dark navy panel with gold light. Large bold headline text reading "AGENTIC AI JUST LEFT THE BROWSER" with a smaller line beneath reading "Bot That Lyfe · Agentic AI Meets the Physical World". No logos, no readable screen text, no real product UI. ${STYLE}`,
+  },
 ];
 
 async function generateOne({ file, prompt }) {

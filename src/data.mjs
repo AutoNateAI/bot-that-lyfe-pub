@@ -148,7 +148,6 @@ export const investigations = [
     thumbnail: "/assets/og/ai-agents-lab-partner.jpg",
     region: "",
     publishedDate: "2026-09-21",
-    featured: true,
     commodity: "Agentic AI · University Research",
     evidence: [
       {
@@ -365,6 +364,223 @@ export const investigations = [
       { label: "Missouri S&T — Kummer Research Ignition Grant Initiative", url: "https://research.mst.edu/funding/internalfundingopportunities/kummerresearchignitiongrantinitiativeigi/" },
     ],
     sourcePath: "../content/research/cs-degree-workflow-degree.md",
+  },
+  {
+    slug: "who-owns-the-ai-workforce-pipeline",
+    icon: "precision_manufacturing",
+    status: "published",
+    name: "Purdue's $100 Million AI Workforce Program Answers to the Navy. Nobody Else's Does.",
+    question:
+      "As universities move from standalone AI courses to industry-governed pipelines, compute infrastructure, internships, and federally funded consortia, who is actually shaping the technical workforce: faculty, federal agencies, or the companies sitting on advisory boards?",
+    tagline:
+      "Three real programs each claim a piece of \"the AI workforce pipeline\" this year — one reports to the Navy, one to the NSF, and one to Amazon. None of them report to the same place.",
+    thumbnail: "/assets/og/who-owns-the-ai-workforce-pipeline.jpg",
+    region: "",
+    publishedDate: "2026-09-22",
+    featured: true,
+    commodity: "Semiconductor Workforce · Federal Funding",
+    evidence: [
+      {
+        label: "Purdue SCALE surpasses $100M, becomes Purdue's largest federally funded effort",
+        note: "35 partner universities, 75+ government/industry partners, 1,175 current students, 339 alumni placed in defense microelectronics jobs, 64% of alumni in defense/defense contracting.",
+        url: "https://www.purdue.edu/newsroom/2026/Q2/scale-expands-its-national-impact-becomes-purdues-largest-federally-funded-research-effort/",
+      },
+      {
+        label: "Naval Surface Warfare Center, Crane Division administers the SCALE contract",
+        note: "Confirms the federal office managing SCALE's day-to-day funding is a Navy weapons division, not an education agency.",
+        url: "https://www.manufacturingdive.com/news/defense-purdue-scale-microelectronics-workforce-program-contract/819553/",
+      },
+      {
+        label: "Purdue-Illinois semiconductor workforce MOU, signed Sept. 18, 2026",
+        note: "Purdue's own announcement: the partnership is \"governed in part by a shared industry advisory board\" covering fabs, chip design, verification/testing, and advanced packaging.",
+        url: "https://engineering.purdue.edu/Engr/AboutUs/News/Features/2026/2026-0910-purdue-uiuc-semiconductor-workforce-initiative",
+      },
+      {
+        label: "NSF's $35M NAIRR Operations Center, co-led by UT Austin's TACC",
+        note: "A 5-year cooperative award building open national AI compute/data access — no defense-clearance gate, no named industry advisory board.",
+        url: "https://fedscoop.com/nsf-announces-35-million-stand-up-ai-research-resource-operations-center-nairr/",
+      },
+    ],
+    stakeholders: [
+      "Professors and department chairs running SCALE-affiliated microelectronics programs",
+      "Employers seeking a seat on a university curriculum advisory board",
+      "Students choosing between a defense-microelectronics track and an agentic-AI software track",
+      "Workforce-policy staff at DoD, NSF, and state economic-development offices",
+    ],
+    hypothesis:
+      "Our best guess: no single entity currently owns \"the AI workforce pipeline\" because at least three separately governed programs (SCALE under DoD/NSWC Crane, the NAIRR Operations Center under NSF, the Howard AI Network under AWS) are each building a different, non-overlapping slice of it under a different authority — and the Purdue-Illinois shared industry advisory board is the clearest evidence yet of employers gaining a formal governance seat inside at least one of those slices.",
+    graphLayers: {
+      physical:
+        "SCALE's classroom/apprenticeship network across 35 campuses, TACC's compute infrastructure feeding the national NAIRR portal, and Howard's AWS-hosted cloud/bootcamp infrastructure — three physically separate build-outs.",
+      capital:
+        "More than $100M in Department of War funding (SCALE, through FY2027), $35M in NSF funding (NAIRR Operations Center, 5-year award), and an undisclosed AWS investment in Howard's regional-lead role.",
+      business:
+        "Day-to-day governance sits with a Navy office (NSWC Crane) for SCALE, an NSF cooperative-agreement structure for NAIRR-OC, and Amazon's own program terms for the Howard AI Network — plus a new named industry advisory board inside the Purdue-Illinois MOU specifically.",
+      information:
+        "SCALE's industry/government partners maintain a living skills list that partner universities update coursework against; NAIRR-OC's information layer is a national compute/data access portal, not a curriculum feed.",
+    },
+    dataNeeds: [
+      "A public roster of the Purdue-Illinois shared industry advisory board's actual member companies",
+      "Confirmation of whether Illinois students gain access to SCALE's federal funding pool specifically, or only shared curriculum and events",
+      "Placement or outcome data for the NAIRR Operations Center and the Howard AI Network, both too new to have reported results",
+      "A syllabus-level comparison of what SCALE's industry-identified skills list actually adds to coursework each year",
+    ],
+    artifacts: [
+      "A tracked roster of AI/semiconductor workforce programs by funding source and governance model — Workforce Capital Graph",
+      "A comparison table of which advisory boards are public, named, and seated vs. informal or undisclosed",
+    ],
+    findings:
+      "Three real, currently operating programs each claim a piece of \"the AI workforce pipeline\" in 2026, and each answers to a different authority: Purdue's SCALE program (>$100M, 35 universities) is funded by the Department of War and administered by the Naval Surface Warfare Center, Crane Division, training almost exclusively for defense-cleared microelectronics jobs (64% of alumni land in defense or defense contracting) — not agentic AI software work, despite the \"AI workforce\" framing. The NSF's $35M NAIRR Operations Center, co-led by UT Austin's TACC, runs on an open-access mandate with no defense gate and no named industry board. Howard University's AI Network runs on Amazon's own commercial terms as one of five AWS-selected regional leads. The clearest evidence of employers gaining actual governance power is the Sept. 18, 2026 Purdue-Illinois MOU, explicitly \"governed in part by a shared industry advisory board\" — but even SCALE's full six-year output (1,750 students supported since 2020) is under 1% of the 127,000-157,000-worker national semiconductor shortfall projected for 2030, meaning no single one of these pipelines is close to sized for the problem it's aimed at.",
+    sources: [
+      { label: "Purdue — SCALE expands its national impact, becomes Purdue's largest federally funded research effort", url: "https://www.purdue.edu/newsroom/2026/Q2/scale-expands-its-national-impact-becomes-purdues-largest-federally-funded-research-effort/" },
+      { label: "Manufacturing Dive — Defense Department increases microelectronics workforce program contract to $100M", url: "https://www.manufacturingdive.com/news/defense-purdue-scale-microelectronics-workforce-program-contract/819553/" },
+      { label: "SCALE — About the program (industry/government-informed curriculum)", url: "https://www.scale4me.org/about/" },
+      { label: "Purdue College of Engineering — Purdue and University of Illinois team up to strengthen semiconductor workforce", url: "https://engineering.purdue.edu/Engr/AboutUs/News/Features/2026/2026-0910-purdue-uiuc-semiconductor-workforce-initiative" },
+      { label: "FedScoop — NSF announces up to $35 million to stand up AI research resource operations center", url: "https://fedscoop.com/nsf-announces-35-million-stand-up-ai-research-resource-operations-center-nairr/" },
+      { label: "HPCwire — NAIRR Shifts from Pilot into Operations Mode", url: "https://www.hpcwire.com/2026/09/03/nairr-shifts-from-pilot-into-operations-mode/" },
+      { label: "The Dig at Howard University — Howard University Launches Howard AI Network powered by AWS", url: "https://thedig.howard.edu/all-stories/howard-university-launches-howard-ai-network-powered-aws-accelerate-ai-research-infrastructure-and" },
+      { label: "SEMI — SEMI Foundation and NSF launch first four Regional Nodes of the National Network for Microelectronics Education", url: "https://www.semi.org/en/semi-press-release/semi-foundation-and-the-us-national-science-foundation-launch-first-four-regional-nodes-of-the-national-network-for-microelectronics-education-nnme" },
+    ],
+    sourcePath: "../content/research/who-owns-the-ai-workforce-pipeline.md",
+  },
+  {
+    slug: "university-becoming-ai-utility",
+    icon: "hub",
+    status: "published",
+    name: "Florida Turned Its Supercomputer Into Plumbing. 30,800 People Now Just Use It.",
+    question:
+      "What changes when a university stops treating AI as a course or lab and starts operating it like shared infrastructure — compute, models, data, training, governance, and access for thousands of users?",
+    tagline:
+      "UF's own case study says the $85M in hardware wasn't the hard part — six years of faculty hiring and executive alignment was. That's the part actually worth copying.",
+    thumbnail: "/assets/og/university-becoming-ai-utility.jpg",
+    region: "",
+    publishedDate: "2026-09-22",
+    commodity: "AI Infrastructure · Campus Access",
+    evidence: [
+      {
+        label: "UF AI Year in Review: 30,800+ NaviGator users, 200+ AI courses, $566M in HiPerGator-enabled research",
+        note: "UF's own July 2026 report — NaviGator AI gateway offers 70 LLMs; HiPerGator directly enabled $566M in externally funded research in the last academic year.",
+        url: "https://news.ufl.edu/2026/07/ai-year-in-review/",
+      },
+      {
+        label: "Warrington Case Series: \"Building an AI University\" (May 2026)",
+        note: "UF's own case study: the $85M funding stack was 'the catalyst,' but faculty hiring and executive alignment across all 16 colleges is what the case study credits as the actual driver.",
+        url: "https://news.ufl.edu/2026/05/warrington-press-building-ai-university/",
+      },
+      {
+        label: "NSF awards UF Water Institute $1.79M for HiPerGator-built environmental AI forecasting",
+        note: "A hydrologist, an ECE professor, a CS professor, and an agronomist as co-PIs — a non-CS team winning a federal grant on shared AI infrastructure they didn't have to build.",
+        url: "https://waterinstitute.ufl.edu/water-institute-team-awarded-1-79m-nsf-grant-for-ai-powered-environmental-forecasting/",
+      },
+    ],
+    stakeholders: [
+      "Non-CS faculty considering an AI-enabled grant proposal",
+      "University administrators weighing a campus-wide AI infrastructure investment",
+      "Students outside computer science deciding whether AI coursework applies to their major",
+      "Vendors/founders building access-layer tools for university compute",
+    ],
+    hypothesis:
+      "Our best guess: institutions that treat AI as shared infrastructure (broad faculty distribution across colleges, a direct-access gateway layer, executive sponsorship that survives multiple budget cycles) diffuse real capability faster than departments redesigning curricula on their own — but UF's own case study is a self-assessment, not independent evaluation, and we don't yet have a comparable cost/outcome breakdown from a university attempting this without a nine-figure alumni gift.",
+    graphLayers: {
+      physical:
+        "HiPerGator 4's Blackwell SuperPOD compute layer at UF, plus UT Austin's TACC as a national-scale comparison point inside the $35M NSF NAIRR Operations Center.",
+      capital:
+        "$85M funding stack behind HiPerGator (a $25M NVIDIA co-founder gift, $25M from NVIDIA, $15M from UF, $20M recurring from the state of Florida), against $566M in externally funded research the university attributes to HiPerGator access in one year.",
+      business:
+        "106 AI-focused faculty hired across all 16 UF colleges (2020-22), not concentrated in engineering/CS — the staffing decision UF's own case study credits over the hardware itself.",
+      information:
+        "NaviGator AI, UF's direct-access gateway offering 70 LLMs to any student, faculty, or staff member — the layer that turns raw compute into something usable without a grant or a CS collaborator.",
+    },
+    dataNeeds: [
+      "An independent (non-UF-authored) assessment of the Warrington Case Series' causal claims",
+      "A course-level breakdown of what 'completed at least one AI course' actually covers for the 71%-of-graduates figure",
+      "A comparable cost/outcome breakdown from a university attempting a similar model without a comparable alumni gift",
+      "Confirmation of how much of the $566M HiPerGator-enabled research figure is AI research specifically vs. any HiPerGator-supported research broadly",
+    ],
+    artifacts: [
+      "A University AI Infrastructure Scorecard comparing compute access, model gateway breadth, course diffusion, and governance model across institutions",
+      "A tracked roster of non-CS-led federal grants built on shared university AI compute",
+    ],
+    findings:
+      "The University of Florida's HiPerGator supercomputer and NaviGator AI gateway (30,800+ users, 200+ AI-designated courses, $566M in externally funded research UF attributes to HiPerGator access in the last academic year alone) is the clearest working example in this radar pass of a university operating AI as shared infrastructure rather than a departmental resource. UF's own case study argues the $85M funding stack that bought the hardware in 2020 was 'the catalyst,' not the cause — what the university credits with making it work is six years of faculty hiring distributed across all 16 colleges and sustained executive sponsorship, evidenced concretely by a Water Institute-led team of a hydrologist, an ECE professor, a CS professor, and an agronomist winning a $1.79M NSF grant built directly on HiPerGator compute. That staffing-and-governance lesson, unlike the nine-figure gift that started it, is the part plausibly replicable at a university without UF's specific funding history.",
+    sources: [
+      { label: "University of Florida — AI Year in Review, July 2026", url: "https://news.ufl.edu/2026/07/ai-year-in-review/" },
+      { label: "University of Florida — Warrington Case Series: \"Building an AI University,\" May 2026", url: "https://news.ufl.edu/2026/05/warrington-press-building-ai-university/" },
+      { label: "University of Florida — HiPerGator 4 unveiling, fastest supercomputer in higher education", url: "https://news.ufl.edu/2025/10/hipergator-4-unveiling/" },
+      { label: "UF Water Institute — $1.79M NSF grant for AI-powered environmental forecasting", url: "https://waterinstitute.ufl.edu/water-institute-team-awarded-1-79m-nsf-grant-for-ai-powered-environmental-forecasting/" },
+      { label: "FedScoop — NSF announces up to $35 million to stand up AI research resource operations center", url: "https://fedscoop.com/nsf-announces-35-million-stand-up-ai-research-resource-operations-center-nairr/" },
+    ],
+    sourcePath: "../content/research/university-becoming-ai-utility.md",
+  },
+  {
+    slug: "agentic-ai-meets-physical-world",
+    icon: "precision_manufacturing",
+    status: "published",
+    name: "An AI Agent Just Learned to Turn a Jammed Microscope Knob. MIT Spent Today Asking What Happens If One Gets Hacked.",
+    question:
+      "Are the most commercially important AI agents about to leave browsers and IDEs and enter laboratories, factories, robots, and supply chains — and what new verification, cybersecurity, and systems skills does that create?",
+    tagline:
+      "Same week, two campuses: UT Austin built a robot with the force-sensitivity for real lab dexterity, and MIT spent an invitation-only roundtable asking how you'd verify an agent like that before trusting it. Neither has the other's answer yet.",
+    thumbnail: "/assets/og/agentic-ai-meets-physical-world.jpg",
+    region: "",
+    publishedDate: "2026-09-22",
+    commodity: "Agentic AI · Robotics",
+    evidence: [
+      {
+        label: "MIT CTL Supply Chain Cybersecurity Roundtable, Sept. 22-23, 2026 (today)",
+        note: "Invitation-only; introduces a new Supply Chain Cybersecurity Lab; discusses agent privilege/autonomy trade-offs, prompt injection, model modification, and non-human identity risk.",
+        url: "https://ctl.mit.edu/events/roundtable-supply-chains-under-cyberattack",
+      },
+      {
+        label: "UT Austin wins DOE Genesis Mission award for SAFE-BOLT force-aware lab robotics",
+        note: "PI Volkan Isler; one of 5 UT Austin awards out of 5,000+ national applicants to the $293M DOE Genesis Mission; builds force-aware bimanual robots for real lab dexterity tasks.",
+        url: "https://www.cs.utexas.edu/news/2026/ut-computer-science-wins-doe-genesis-mission-award-bring-autonomous-robotics-scientific",
+      },
+      {
+        label: "ASPIRE: Agentic Skill Discovery for Robotics (UT Austin RPL + NVIDIA GEAR)",
+        note: "+77% on LIBERO-Pro perturbed manipulation, +72% on Robosuite bimanual handover, +32% on BEHAVIOR-1K long-horizon tasks — self-reported benchmark results.",
+        url: "https://arxiv.org/abs/2607.00272",
+      },
+    ],
+    stakeholders: [
+      "Robotics/controls engineers considering a security specialization",
+      "Enterprise AI-security teams whose threat model doesn't yet cover embodied agents",
+      "PIs building agentic-robotics capability work",
+      "Founders building agent-verification tooling",
+    ],
+    hypothesis:
+      "Our best guess: agent capability research (like ASPIRE's skill-discovery gains) and agent risk research (like MIT's supply-chain cybersecurity roundtable) are advancing on separate tracks in 2026, with no public evidence yet that either community has built verification or cybersecurity tooling specific to physical/embodied agents rather than adapted from software-agent security practice — a real, currently unclaimed gap between the two.",
+    graphLayers: {
+      physical:
+        "UT Austin's force-aware bimanual lab robot (SAFE-BOLT), built with the Materials Discovery Research Institute and Medra AI — real physical dexterity and sensory-perception engineering, not simulation-only.",
+      capital:
+        "UT Austin's SAFE-BOLT award is one of 5 UT Austin projects funded out of the $293M DOE Genesis Mission (5,000+ national applicants); MIT CTL's roundtable and new Supply Chain Cybersecurity Lab are internally funded center initiatives, not a new external grant.",
+      business:
+        "MIT's roundtable brings senior supply-chain, cybersecurity, and risk leaders into a room to debate agent-privilege trade-offs; UT Austin's ASPIRE work is a research-lab-to-benchmark pipeline (UT Austin RPL + NVIDIA GEAR), not an enterprise deployment yet.",
+      information:
+        "ASPIRE's expanding skill library (code-as-policy, evolutionary search) is the information layer letting a robot compound experience across tasks and embodiments — with no described cybersecurity verification layer on top of it in the published work.",
+    },
+    dataNeeds: [
+      "Any public reporting connecting MIT's agent-cybersecurity work specifically to physical/embodied agents rather than enterprise software agents",
+      "Independent (non-self-reported) evaluation of ASPIRE's benchmark claims",
+      "What cybersecurity or adversarial-robustness testing, if any, is planned for SAFE-BOLT's robot once built",
+      "A transcript or public readout from the invitation-only MIT roundtable, which this piece could not access directly",
+    ],
+    artifacts: [
+      "An Agent Operations Lab concept: a small agent demo with permissions, evals, execution traces, latency/cost tracking, and one deliberately injected failure mode",
+      "A tracked comparison of agent-verification tooling built specifically for embodied/physical agents vs. adapted from software-agent security practice",
+    ],
+    findings:
+      "Two real, independently sourced 2026 developments sit on opposite sides of the same unresolved problem. MIT's Center for Transportation and Logistics is holding an invitation-only roundtable today and tomorrow (Sept. 22-23) specifically to debate AI-agent privilege, autonomy, and cybersecurity risk in physical supply chains, launching a new Supply Chain Cybersecurity Lab because its own leadership judged the browser-and-code threat model insufficient for what's coming. Meanwhile UT Austin's Robot Perception and Learning Lab, working with NVIDIA's GEAR team, published ASPIRE — an agentic skill-discovery system reporting up to 77% improvement in manipulation under perturbation — and separately won a DOE Genesis Mission award (SAFE-BOLT) to build force-aware robots for real lab dexterity work. Neither institution's public materials show the other's problem being solved: MIT's cybersecurity framing doesn't yet address embodied/physical agents specifically, and UT Austin's robotics work doesn't describe a cybersecurity verification layer. The frontier genuinely is moving from software into physical operations; the tooling to verify it safely is visibly still catching up.",
+    sources: [
+      { label: "MIT CTL — Roundtable: Supply Chains Under (Cyber)Attack", url: "https://ctl.mit.edu/events/roundtable-supply-chains-under-cyberattack" },
+      { label: "UT Austin Computer Science — UT Computer Science Wins DOE Genesis Mission Award to Bring Autonomous Robotics to Scientific Research", url: "https://www.cs.utexas.edu/news/2026/ut-computer-science-wins-doe-genesis-mission-award-bring-autonomous-robotics-scientific" },
+      { label: "UT News — Department of Energy's New AI-for-Science 'Genesis Mission' Awards Funding to 5 UT Research Projects", url: "https://news.utexas.edu/2026/07/22/department-of-energys-new-ai-for-science-genesis-mission-awards-funding-to-5-ut-research-projects/" },
+      { label: "ASPIRE: Agentic Skill Discovery for Robotics (arXiv 2607.00272)", url: "https://arxiv.org/abs/2607.00272" },
+      { label: "MimicDroid: In-Context Learning for Humanoid Robot Manipulation from Human Play Videos (arXiv 2509.09769)", url: "https://arxiv.org/pdf/2509.09769" },
+      { label: "UT Austin Robot Perception and Learning Lab", url: "https://rpl.cs.utexas.edu/" },
+    ],
+    sourcePath: "../content/research/agentic-ai-meets-physical-world.md",
   },
 ];
 
