@@ -1,0 +1,216 @@
+<!doctype html>
+    <html lang="en">
+      <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>The Context Window — Free Animated AI & CS Course | Bot That Lyfe</title>
+        <meta name="description" content="The Context Window: Prompting, Context, Memory &amp; Graphs — how to think with AI. A free animated computer-science course — 6 episodes on prompt engineering, context engineering, verifying AI output, SQL databases and graphs, plus a free course workbook (PDF)." />
+        <meta name="robots" content="index,follow" />
+        <link rel="canonical" href="https://botthatlyfe.com/courses/the-context-window" />
+        <link rel="icon" href="/assets/brand/favicon.ico" />
+        <link rel="apple-touch-icon" href="/assets/brand/logo.png" />
+        <meta property="og:title" content="The Context Window — a free animated course on thinking with AI" />
+        <meta property="og:description" content="The Context Window: Prompting, Context, Memory &amp; Graphs — how to think with AI. A free animated computer-science course — 6 episodes on prompt engineering, context engineering, verifying AI output, SQL databases and graphs, plus a free course workbook (PDF)." />
+        <meta property="og:url" content="https://botthatlyfe.com/courses/the-context-window" />
+        <meta property="og:image" content="https://botthatlyfe.com/assets/courses/the-context-window/cover.jpg" />
+        <meta property="og:site_name" content="Bot That Lyfe" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="The Context Window — a free animated course on thinking with AI" />
+        <meta name="twitter:description" content="The Context Window: Prompting, Context, Memory &amp; Graphs — how to think with AI. A free animated computer-science course — 6 episodes on prompt engineering, context engineering, verifying AI output, SQL databases and graphs, plus a free course workbook (PDF)." />
+        <meta name="twitter:image" content="https://botthatlyfe.com/assets/courses/the-context-window/cover.jpg" />
+        <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Bot That Lyfe","url":"https://botthatlyfe.com","logo":"https://botthatlyfe.com/assets/brand/logo.png","founder":{"@type":"Person","name":"Nathan Baker","jobTitle":"Founder, Bot That Lyfe"}}</script>
+        <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Bot That Lyfe","url":"https://botthatlyfe.com","description":"Bot That Lyfe tracks funding, research, people, technology, and jobs across a network of U.S. universities — the agentic AI frontier, the university research economy, and the path from classwork to a career — researched, sourced, and published free by Nathan Baker."}</script>
+        <script type="application/ld+json">{"@context":"https://schema.org","@type":"Course","name":"The Context Window","description":"The Context Window: Prompting, Context, Memory & Graphs — how to think with AI. A free animated computer-science course — 6 episodes on prompt engineering, context engineering, verifying AI output, SQL databases and graphs, plus a free course workbook (PDF).","provider":{"@type":"Organization","name":"Bot That Lyfe","sameAs":"https://botthatlyfe.com"},"isAccessibleForFree":true,"hasCourseInstance":{"@type":"CourseInstance","courseMode":"online","courseWorkload":"PT26M"}}</script>
+        <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoObject","name":"Why AI Gives You Bad Answers (Prompt Engineering Basics) | The Context Window Ep 1","description":"Why does the smartest tool you've ever used act dumb for you? Dre types four words into an AI coding agent and gets 47 changed files. Nia asks a perfect question and trusts a confident wrong answer. Two opposite failures — one fix.","thumbnailUrl":"https://botthatlyfe.com/assets/courses/the-context-window/ep1.jpg","uploadDate":"2026-10-02","duration":"PT4M49S","embedUrl":"https://www.youtube.com/embed/9cxuMaFkHmA","contentUrl":"https://www.youtube.com/watch?v=9cxuMaFkHmA"}</script>
+        <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoObject","name":"Context Engineering: Why More Context Makes AI Worse | The Context Window Ep 2","description":"Brent pastes the whole repo, two years of Slack, a pitch deck and his LinkedIn into the chat — and the agent writes him a LinkedIn post. Dre gives it nothing and it invents a function. What a context window really is, why models get lost in the middle, and the four moves of context engineering.","thumbnailUrl":"https://botthatlyfe.com/assets/courses/the-context-window/ep2.jpg","uploadDate":"2026-10-02","duration":"PT4M15S","embedUrl":"https://www.youtube.com/embed/RuCjxTCo9pE","contentUrl":"https://www.youtube.com/watch?v=RuCjxTCo9pE"}</script>
+        <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoObject","name":"How to Write a Prompt: Role, Task, Constraints, Format | The Context Window Ep 3","description":"\"You are the greatest copywriter who ever lived\" produces \"Dear Valued Customer\" and a subject line that says \"Synergy?\". Nia — ten years writing city grant scopes — rebuilds the prompt one row at a time: role, task, constraints, format, and a definition of done.","thumbnailUrl":"https://botthatlyfe.com/assets/courses/the-context-window/ep3.jpg","uploadDate":"2026-10-02","duration":"PT3M26S","embedUrl":"https://www.youtube.com/embed/EmtejGgu_cc","contentUrl":"https://www.youtube.com/watch?v=EmtejGgu_cc"}</script>
+        <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoObject","name":"AI Hallucinations & Fake npm Packages (Slopsquatting) | The Context Window Ep 4","description":"The agent hands Dre two beautiful lines of code: a package that doesn't exist and a JavaScript method that never did. Three commands, ten seconds, two fabrications. Why models confabulate (and so do brains), how attackers exploit invented package names, and the boring fix.","thumbnailUrl":"https://botthatlyfe.com/assets/courses/the-context-window/ep4.jpg","uploadDate":"2026-10-02","duration":"PT4M14S","embedUrl":"https://www.youtube.com/embed/_Vqb-RtiaI4","contentUrl":"https://www.youtube.com/watch?v=_Vqb-RtiaI4"}</script>
+        <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoObject","name":"SQL & Databases Explained: The JOIN That Lies | The Context Window Ep 5","description":"Two entries, one Tomas — and every count was off by one in the direction that flattered them. Why human memory is a remix, what a database actually gives you, tables and foreign keys, and the JOIN that silently inflates COUNT().","thumbnailUrl":"https://botthatlyfe.com/assets/courses/the-context-window/ep5.jpg","uploadDate":"2026-10-02","duration":"PT4M27S","embedUrl":"https://www.youtube.com/embed/zyATACYNqMg","contentUrl":"https://www.youtube.com/watch?v=zyATACYNqMg"}</script>
+        <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoObject","name":"Graph Databases & Recursive SQL for AI Context | The Context Window Ep 6","description":"Demo Day is tomorrow and one question breaks the database: who's the shortest way in? When relationships loop and carry their own facts, they're a graph. Nodes, edges, recursive queries — and feeding the graph to an AI as context. The season finale.","thumbnailUrl":"https://botthatlyfe.com/assets/courses/the-context-window/ep6.jpg","uploadDate":"2026-10-02","duration":"PT4M28S","embedUrl":"https://www.youtube.com/embed/eiP1R1rJd7Y","contentUrl":"https://www.youtube.com/watch?v=eiP1R1rJd7Y"}</script>
+        <script>
+          (function () {
+            var stored = localStorage.getItem("anai-theme");
+            var theme = stored || "light";
+            document.documentElement.setAttribute("data-theme", theme);
+          })();
+        </script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,420..680&family=Space+Grotesk:wght@500;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/styles.css" />
+      </head>
+      <body>
+        
+    <header class="top-shell ">
+      <nav class="top-nav">
+        <a class="brand" href="/">Bot That Lyfe<span class="brand-dot">_</span></a>
+        <div class="nav-links" data-mobile-menu><a class="" href="/">Intelligence</a><a class="" href="/research-and-case-studies">Research & Case Studies</a><a class="active" href="/courses">Free Courses</a><a class="" href="/work-with-us">Work With Us</a><a class="" href="/about">About</a></div>
+        <div class="nav-actions">
+          <button class="mobile-menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-mobile-menu-toggle><span class="material-symbols-outlined">menu</span></button>
+          <button class="theme-toggle" aria-label="Toggle dark mode" data-theme-toggle><span class="material-symbols-outlined">dark_mode</span></button>
+          <a class="nav-cta" href="/work-with-us">Work With Us</a>
+        </div>
+      </nav>
+    </header>
+  
+        
+    <main class="tutorials-page season-page">
+      <nav class="breadcrumbs pack-breadcrumbs"><a href="/">Home</a><span>/</span><a href="/courses">Free Courses</a><span>/</span><b>The Context Window</b></nav>
+      <section class="home-hero tutorials-detail-hero">
+        <div class="hero-bg"><img src="/assets/courses/the-context-window/cover.jpg" alt="" /></div>
+        <div class="hero-content">
+        <div class="hero-copy">
+          <span class="kicker"><span class="material-symbols-outlined">movie</span> Season 1 · 6 episodes · 26 minutes · free</span>
+          <h1>The Context Window</h1>
+          <p>A six-episode animated CS series. Five people at a tiny AI studio have thirty days until Demo Day — and every episode, the way they work with AI breaks in a new, very human way. The Operator, the voice in everybody's head, takes us inside the machine (and the brain) to show why, then teaches the fix with real prompts, real code, and real SQL.</p>
+          <div class="button-row">
+            <a class="primary-button" href="https://www.youtube.com/playlist?list=PLVomZxd75ZEs">Watch the season <span class="material-symbols-outlined">play_circle</span></a>
+            <a class="secondary-button" href="/assets/courses/the-context-window/the-context-window-workbook.pdf" download>Free course workbook (PDF) <span class="material-symbols-outlined">download</span></a>
+          </div>
+        </div>
+        <aside class="hero-program-panel">
+          <div class="season-embed"><iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=PLVomZxd75ZEs" title="The Context Window" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <div class="hero-panel-body">
+            <span class="kicker"><span class="material-symbols-outlined">school</span> Context Engineering: From Prompts to Knowledge Graphs</span>
+            <h2>Prompting, Context, Memory &amp; Graphs — how to think with AI</h2>
+            <div class="hero-facts">
+              <span>6 animated episodes</span>
+              <span>Workbook + exercises</span>
+              <span>Real prompts, code &amp; SQL</span>
+              <span>Discord support included</span>
+            </div>
+          </div>
+        </aside>
+        </div>
+      </section>
+
+      <section class="section" id="episodes">
+        <div class="section-head">
+          <div>
+            <span class="kicker"><span class="material-symbols-outlined">video_library</span> The Season</span>
+            <h2>Watch in order. Each episode is one skill.</h2>
+            <p>Every episode goes inside the machine — and the brain — to show why the skill works, then teaches it with the real artifact. Each one links to the written lesson that goes deeper.</p>
+          </div>
+        </div>
+        <div class="season-grid">
+          
+          <article class="season-ep">
+            <a class="season-ep-thumb" href="https://www.youtube.com/watch?v=9cxuMaFkHmA&list=PLVomZxd75ZEs&index=1"><img src="/assets/courses/the-context-window/ep1.jpg" alt="Why AI Gives You Bad Answers (Prompt Engineering Basics) | The Context Window Ep 1" loading="lazy" /><span>4:49</span></a>
+            <div class="season-ep-body">
+              <span class="kicker">Episode 1</span>
+              <h3><a href="https://www.youtube.com/watch?v=9cxuMaFkHmA&list=PLVomZxd75ZEs&index=1">Garbage In</a></h3>
+              <p>A vague prompt gets the most average answer. A trusted answer gets you a confident mistake.</p>
+              <ul><li>What a language model actually does: predict the next token, over and over</li><li>The two opposite failures: asking too little, trusting too much</li><li>How to name what went wrong instead of blaming the tool</li></ul>
+              <div class="season-ep-links">
+                <a href="https://www.youtube.com/watch?v=9cxuMaFkHmA&list=PLVomZxd75ZEs&index=1"><span class="material-symbols-outlined">play_circle</span> Watch</a>
+                <a href="/courses/prompt-and-context-engineering/why-prompting-is-a-skill"><span class="material-symbols-outlined">menu_book</span> Garbage In, Garbage Out</a>
+              </div>
+            </div>
+          </article>
+          <article class="season-ep">
+            <a class="season-ep-thumb" href="https://www.youtube.com/watch?v=RuCjxTCo9pE&list=PLVomZxd75ZEs&index=2"><img src="/assets/courses/the-context-window/ep2.jpg" alt="Context Engineering: Why More Context Makes AI Worse | The Context Window Ep 2" loading="lazy" /><span>4:15</span></a>
+            <div class="season-ep-body">
+              <span class="kicker">Episode 2</span>
+              <h3><a href="https://www.youtube.com/watch?v=RuCjxTCo9pE&list=PLVomZxd75ZEs&index=2">The Room, Not Just the Ask</a></h3>
+              <p>A model can only work with what's in its context window. Too little and it guesses; too much and it drowns.</p>
+              <ul><li>What the context window is — and what fills it without you noticing</li><li>Why flooding it backfires ('lost in the middle')</li><li>Four context-engineering moves and a project context file</li></ul>
+              <div class="season-ep-links">
+                <a href="https://www.youtube.com/watch?v=RuCjxTCo9pE&list=PLVomZxd75ZEs&index=2"><span class="material-symbols-outlined">play_circle</span> Watch</a>
+                <a href="/courses/prompt-and-context-engineering/give-it-the-room-not-just-the-ask"><span class="material-symbols-outlined">menu_book</span> Give It the Room, Not Just the Ask</a><a href="/courses/prompt-and-context-engineering/feeding-it-the-right-files"><span class="material-symbols-outlined">menu_book</span> Feeding It the Right Files</a>
+              </div>
+            </div>
+          </article>
+          <article class="season-ep">
+            <a class="season-ep-thumb" href="https://www.youtube.com/watch?v=EmtejGgu_cc&list=PLVomZxd75ZEs&index=3"><img src="/assets/courses/the-context-window/ep3.jpg" alt="How to Write a Prompt: Role, Task, Constraints, Format | The Context Window Ep 3" loading="lazy" /><span>3:26</span></a>
+            <div class="season-ep-body">
+              <span class="kicker">Episode 3</span>
+              <h3><a href="https://www.youtube.com/watch?v=EmtejGgu_cc&list=PLVomZxd75ZEs&index=3">Role, Task, Constraints, Format</a></h3>
+              <p>A prompt is a scope of work. Four lines turn a wish into a spec — and you decide what done looks like before you start.</p>
+              <ul><li>The four-row prompt: Role, Task, Constraints, Format (+ Done)</li><li>Why a role works like priming</li><li>Treat the first answer as a draft, not a verdict</li></ul>
+              <div class="season-ep-links">
+                <a href="https://www.youtube.com/watch?v=EmtejGgu_cc&list=PLVomZxd75ZEs&index=3"><span class="material-symbols-outlined">play_circle</span> Watch</a>
+                <a href="/courses/prompt-and-context-engineering/structuring-the-ask"><span class="material-symbols-outlined">menu_book</span> Structuring the Ask</a>
+              </div>
+            </div>
+          </article>
+          <article class="season-ep">
+            <a class="season-ep-thumb" href="https://www.youtube.com/watch?v=_Vqb-RtiaI4&list=PLVomZxd75ZEs&index=4"><img src="/assets/courses/the-context-window/ep4.jpg" alt="AI Hallucinations &amp; Fake npm Packages (Slopsquatting) | The Context Window Ep 4" loading="lazy" /><span>4:14</span></a>
+            <div class="season-ep-body">
+              <span class="kicker">Episode 4</span>
+              <h3><a href="https://www.youtube.com/watch?v=_Vqb-RtiaI4&list=PLVomZxd75ZEs&index=4">That's Not a Source</a></h3>
+              <p>Fluent isn't factual. A sentence isn't a source — check what would hurt if it were wrong.</p>
+              <ul><li>Why models produce plausible fabrications (and why people do too)</li><li>The ten-second verification kit</li><li>Package hallucinations and slopsquatting — the security risk</li><li>Closing ambiguity before the model closes it for you</li></ul>
+              <div class="season-ep-links">
+                <a href="https://www.youtube.com/watch?v=_Vqb-RtiaI4&list=PLVomZxd75ZEs&index=4"><span class="material-symbols-outlined">play_circle</span> Watch</a>
+                <a href="/courses/prompt-and-context-engineering/when-it-gets-it-wrong"><span class="material-symbols-outlined">menu_book</span> When It Gets It Wrong</a>
+              </div>
+            </div>
+          </article>
+          <article class="season-ep">
+            <a class="season-ep-thumb" href="https://www.youtube.com/watch?v=zyATACYNqMg&list=PLVomZxd75ZEs&index=5"><img src="/assets/courses/the-context-window/ep5.jpg" alt="SQL &amp; Databases Explained: The JOIN That Lies | The Context Window Ep 5" loading="lazy" /><span>4:27</span></a>
+            <div class="season-ep-body">
+              <span class="kicker">Episode 5</span>
+              <h3><a href="https://www.youtube.com/watch?v=zyATACYNqMg&list=PLVomZxd75ZEs&index=5">The Missing Ledger</a></h3>
+              <p>Memory is a storyteller; a database is a witness. Model the truth once, then ask it precise questions.</p>
+              <ul><li>File vs. in-memory object vs. database — three different deals</li><li>Tables, primary keys, foreign keys: one row per truth</li><li>SELECT, WHERE, JOIN — and the JOIN that silently inflates COUNT</li><li>Querying from code so the answer is the same every time</li></ul>
+              <div class="season-ep-links">
+                <a href="https://www.youtube.com/watch?v=zyATACYNqMg&list=PLVomZxd75ZEs&index=5"><span class="material-symbols-outlined">play_circle</span> Watch</a>
+                <a href="/courses/relational-databases-and-graphs/why-he-needs-a-scoreboard"><span class="material-symbols-outlined">menu_book</span> The Missing Ledger</a><a href="/courses/relational-databases-and-graphs/tables-rows-and-relationships"><span class="material-symbols-outlined">menu_book</span> The Blueprint</a><a href="/courses/relational-databases-and-graphs/asking-questions-with-sql"><span class="material-symbols-outlined">menu_book</span> Talking to the Data</a>
+              </div>
+            </div>
+          </article>
+          <article class="season-ep">
+            <a class="season-ep-thumb" href="https://www.youtube.com/watch?v=eiP1R1rJd7Y&list=PLVomZxd75ZEs&index=6"><img src="/assets/courses/the-context-window/ep6.jpg" alt="Graph Databases &amp; Recursive SQL for AI Context | The Context Window Ep 6" loading="lazy" /><span>4:28</span></a>
+            <div class="season-ep-body">
+              <span class="kicker">Episode 6</span>
+              <h3><a href="https://www.youtube.com/watch?v=eiP1R1rJd7Y&list=PLVomZxd75ZEs&index=6">The Web Under the Table</a></h3>
+              <p>When relationships repeat, loop, and carry their own facts, they're a graph. The connections are the knowledge — for brains, neural nets, and your AI's context.</p>
+              <ul><li>The tell that a table should be a graph</li><li>Nodes, directed edges, hops, cycles — and traversal with WITH RECURSIVE</li><li>Feeding a graph path to an AI as context, with sources</li></ul>
+              <div class="season-ep-links">
+                <a href="https://www.youtube.com/watch?v=eiP1R1rJd7Y&list=PLVomZxd75ZEs&index=6"><span class="material-symbols-outlined">play_circle</span> Watch</a>
+                <a href="/courses/relational-databases-and-graphs/when-relationships-get-tangled"><span class="material-symbols-outlined">menu_book</span> The Web Under the Table</a><a href="/courses/relational-databases-and-graphs/building-the-monitor"><span class="material-symbols-outlined">menu_book</span> The Scoreboard Comes Alive</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="value-grid season-downloads">
+          <article><span><span class="material-symbols-outlined">menu_book</span></span><h3>Course workbook</h3><p>One page per episode: the big idea, the science underneath, key terms, an exercise on a real problem, a template to keep, and the checks before anything ships.</p><a class="primary-button" href="/assets/courses/the-context-window/the-context-window-workbook.pdf" download>Download the workbook (PDF) <span class="material-symbols-outlined">download</span></a></article>
+          <article><span><span class="material-symbols-outlined">account_balance</span></span><h3>For educators &amp; teams</h3><p>Deans, CS and data-science faculty, career-services and experiential-learning directors, and L&amp;D leaders at employers who hire them. The program brief covers outcomes, format, where it fits, delivery options, and assessment ideas.</p><a class="secondary-button" href="/assets/courses/the-context-window/the-context-window-program-brief.pdf" download>Download the program brief (PDF) <span class="material-symbols-outlined">download</span></a></article>
+          <article><span><span class="material-symbols-outlined">forum</span></span><h3>Stuck? Ask.</h3><p>The Discord is open all day: setup help, concept help, and a place to talk through the system you're building.</p><a class="secondary-button" href="https://discord.gg/4HkkuntdSs">Join the Discord <span class="material-symbols-outlined">open_in_new</span></a></article>
+        </div>
+      </section>
+
+      <section class="section compact">
+        <div class="section-head">
+          <div>
+            <span class="kicker"><span class="material-symbols-outlined">target</span> What you'll be able to do</span>
+            <h2>Outcomes</h2>
+            <ul class="season-outcomes"><li>Write specific, structured prompts (role, task, constraints, format, definition of done) for real engineering tasks</li><li>Engineer context: choose what a model sees, summarize instead of paste, and maintain a project context file</li><li>Verify AI output against ground truth and recognize package hallucinations and slopsquatting risk</li><li>Design a relational schema, query it with SQL, and spot JOIN fan-out errors</li><li>Recognize when data is a graph, traverse it with a recursive query, and use graph retrieval as AI context</li></ul>
+          </div>
+        </div>
+      </section>
+    </main>
+  
+        
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div>
+          <strong>Bot That Lyfe<span class="brand-dot">_</span></strong>
+          <p>Nathan Baker's technical opportunity intelligence practice — tracking funding, research, people, and jobs across a network of U.S. universities at the intersection of computer science, agentic AI, and engineering — and publishing it free.</p>
+        </div>
+        <div><h5><a href="/research-and-case-studies">Research &amp; Case Studies</a></h5></div>
+        <div><h5><a href="/courses">Free Courses</a></h5></div>
+        <div><ul><li><a href="/work-with-us">Work With Us</a></li><li><a href="/about">About Nathan</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Bot That Lyfe. Independent technical opportunity intelligence, published free.</span>
+      </div>
+    </footer>
+  
+        <script type="module" src="/app.js"></script>
+      </body>
+    </html>
