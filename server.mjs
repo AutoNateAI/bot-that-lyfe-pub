@@ -34,8 +34,10 @@ import {
   renderSystemDetail,
   renderSystems,
   renderTutorialDetail,
+  renderSeason,
   renderTutorialPack,
   renderTutorials,
+  seasons,
   renderWorkWithUs,
 } from "./src/pages.mjs";
 import {
@@ -403,6 +405,11 @@ const server = createServer(async (request, response) => {
     if (url.pathname.startsWith("/courses/")) {
       const segments = url.pathname.split("/").filter(Boolean);
       const [, packHandle, tutorialHandle] = segments;
+      const season = seasons.find((item) => item.handle === packHandle);
+      if (season && !tutorialHandle) {
+        html(response, 200, renderSeason(season));
+        return;
+      }
       const pack = tutorialPacks.find((item) => item.handle === packHandle);
       if (!pack) {
         json(response, 404, { error: "Not found" });
