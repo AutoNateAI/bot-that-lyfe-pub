@@ -18,11 +18,75 @@
 // instead of scattered under /regions/:slug, /organizations/:slug, etc. —
 // see renderArticles and the shared card helpers in src/pages.mjs.
 export const navItems = [
-  { label: "Intelligence", href: "/", keys: ["home"] },
-  { label: "Research & Case Studies", href: "/research-and-case-studies", keys: ["articles", "investigations", "regions", "organizations", "systems"] },
-  { label: "Free Courses", href: "/courses", keys: ["tutorials"] },
+  { label: "Watch", href: "/series", keys: ["series", "home"] },
+  { label: "Courses & Workbooks", href: "/courses", keys: ["tutorials"] },
+  { label: "Research", href: "/research-and-case-studies", keys: ["articles", "investigations", "regions", "organizations", "systems"] },
   { label: "Work With Us", href: "/work-with-us", keys: ["work-with-us"] },
   { label: "About", href: "/about", keys: ["about"] },
+];
+
+// ---- the weekly series (edutainment) layer -------------------------------------------------------------
+// Imagery is rendered from the series itself by mindfulness-content (npm run site-stills → /assets/series/).
+export const channel = {
+  youtube: "https://www.youtube.com/@autonate?sub_confirmation=1",
+  discord: "https://discord.gg/4HkkuntdSs",
+  trailer: { src: "/assets/video/bot-that-lyfe-trailer.mp4", vertical: "/assets/video/bot-that-lyfe-trailer-vertical.mp4", poster: "/assets/series/cast-rooftop.jpg" },
+};
+
+export const domains = [
+  {
+    key: "politics",
+    title: "Politics & Policy",
+    image: "/assets/series/domain-politics.jpg",
+    story: "AI legislation, public procurement, public records, a city posting an RFP for a chatbot.",
+    principles: "Document AI, retrieval over public records, agentic research pipelines, evaluation and audit trails.",
+  },
+  {
+    key: "business",
+    title: "Business & Markets",
+    image: "/assets/series/domain-business.jpg",
+    story: "Earnings calls, pricing moves, operations under pressure, the next hiring wave.",
+    principles: "Data modeling, forecasting, workflow automation, and agents that act on real systems.",
+  },
+  {
+    key: "law",
+    title: "Law & Compliance",
+    image: "/assets/series/domain-law.jpg",
+    story: "Copyright rulings on training data, contracts, privacy, the compliance deadline nobody planned for.",
+    principles: "Provenance, verification, access control and auditability — building AI you can defend.",
+  },
+  {
+    key: "agriculture",
+    title: "Agriculture & Food Systems",
+    image: "/assets/series/domain-agriculture.jpg",
+    story: "Farm bills, commodity margins, water rights, precision agriculture in the field.",
+    principles: "Sensor data, time series, geospatial analysis and decision support.",
+  },
+  {
+    key: "sustainability",
+    title: "Sustainability & Energy",
+    image: "/assets/series/domain-sustainability.jpg",
+    story: "Grid demand, data-center power, climate risk, the economics of clean energy.",
+    principles: "Forecasting, optimization, simulation and systems thinking.",
+  },
+  {
+    key: "more",
+    title: "And Whatever Moves Next",
+    image: "/assets/series/domain-news.jpg",
+    story: "Education and the workforce, health, cities and infrastructure — wherever the work is changing this week.",
+    principles: "The same fundamentals, applied where the story is.",
+  },
+];
+
+export const lessonMoments = [
+  { image: "/assets/series/lesson-code.jpg", title: "Real code, typed live", text: "Diffs, bugs and fixes you can copy into your own project." },
+  { image: "/assets/series/lesson-context.jpg", title: "The context window, visualized", text: "What the model can actually see — and what it loses in the middle." },
+  { image: "/assets/series/lesson-prompt.jpg", title: "Prompt anatomy", text: "Role, task, constraints, format — graded, row by row." },
+  { image: "/assets/series/lesson-terminal.jpg", title: "Verification, in ten seconds", text: "The commands that catch a confident fabrication before it ships." },
+  { image: "/assets/series/lesson-sql.jpg", title: "SQL that tells the truth", text: "Tables, joins, and the query that lies without an error." },
+  { image: "/assets/series/lesson-graph.jpg", title: "Graphs and agents", text: "Traversals, recursive queries, and graphs as context for AI." },
+  { image: "/assets/series/lesson-brain.jpg", title: "Inside the machine — and the brain", text: "The neuroscience and neural-network ideas that make each skill click." },
+  { image: "/assets/series/lesson-confessional.jpg", title: "A cast you'll actually remember", text: "Five builders, one deadline, and the mistakes everyone makes once." },
 ];
 
 // Tutorials, Consulting, Events, Community, For Organizations, and The Lab

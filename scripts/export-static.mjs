@@ -10,6 +10,7 @@ import {
   renderRegionDetail,
   renderSystemDetail,
   renderSeason,
+  renderSeries,
   renderTutorialDetail,
   renderTutorialPack,
   seasons,
@@ -37,6 +38,7 @@ const routes = [
   ["about/index.html", renderAbout()],
   ["work-with-us/index.html", renderWorkWithUs()],
   ["courses/index.html", renderTutorials()],
+  ["series/index.html", renderSeries()],
 ];
 
 const TODAY = new Date().toISOString().slice(0, 10);
@@ -174,6 +176,7 @@ const sitemapUrls = [
   sitemapEntry("https://botthatlyfe.com/about", "0.8"),
   sitemapEntry("https://botthatlyfe.com/work-with-us", "0.8"),
   sitemapEntry("https://botthatlyfe.com/courses", "0.9"),
+  sitemapEntry("https://botthatlyfe.com/series", "1.0"),
   ...regions.map((region) => sitemapEntry(`https://botthatlyfe.com/research-and-case-studies/${region.slug}`, region.status === "laboratory" ? "0.9" : "0.4")),
   ...organizations.map((org) => sitemapEntry(`https://botthatlyfe.com/research-and-case-studies/${org.slug}`, org.status === "watchlist" ? "0.4" : "0.8")),
   ...systems.map((system) => sitemapEntry(`https://botthatlyfe.com/research-and-case-studies/${system.slug}`, "0.8")),

@@ -35,6 +35,7 @@ import {
   renderSystems,
   renderTutorialDetail,
   renderSeason,
+  renderSeries,
   renderTutorialPack,
   renderTutorials,
   seasons,
@@ -280,6 +281,7 @@ const server = createServer(async (request, response) => {
       "/work-with-us",
       "/research-and-case-studies",
       "/courses",
+      "/series",
     ]);
     if (pageRoutes.has(url.pathname)) {
       const renderers = {
@@ -288,6 +290,7 @@ const server = createServer(async (request, response) => {
         "/work-with-us": renderWorkWithUs,
         "/research-and-case-studies": renderArticles,
         "/courses": renderTutorials,
+        "/series": renderSeries,
       };
       html(response, 200, renderers[url.pathname]());
       return;

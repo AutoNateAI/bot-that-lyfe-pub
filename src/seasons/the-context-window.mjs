@@ -47,6 +47,27 @@ export default {
   },
   "playlistId": "PLVomZxd75ZEs",
   "playlistUrl": "https://www.youtube.com/playlist?list=PLVomZxd75ZEs",
+  "shortsPlaylistUrl": "https://www.youtube.com/playlist?list=PLKdKTD8XAMHo",
+  "shorts": [
+    {
+      "episode": 1,
+      "videoId": "webME0Em7z8",
+      "url": "https://youtube.com/shorts/webME0Em7z8",
+      "title": "Why does your AI act dumb for you?"
+    },
+    {
+      "episode": 2,
+      "videoId": "L7dFAR8fxCc",
+      "url": "https://youtube.com/shorts/L7dFAR8fxCc",
+      "title": "What if your AI isn't dumb... it's just drowning?"
+    },
+    {
+      "episode": 3,
+      "videoId": "ZKtWWPNGd58",
+      "url": "https://youtube.com/shorts/ZKtWWPNGd58",
+      "title": "What's the difference between a wish... and a spec?"
+    }
+  ],
   "minutes": 26,
   "episodes": [
     {

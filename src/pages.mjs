@@ -29,6 +29,9 @@ import {
   toolsMenu,
   tutorialPacks,
   tutorials,
+  channel,
+  domains,
+  lessonMoments,
 } from "./data.mjs";
 import { seasons } from "./seasons/index.mjs";
 import {
@@ -826,39 +829,46 @@ export function renderHome(data) {
     .sort((a, b) => (b.publishedDate || "").localeCompare(a.publishedDate || "") || (b.featured ? 1 : 0) - (a.featured ? 1 : 0))
     .slice(0, 3);
 
+  const season = seasons[0];
   const body = `
     <main class="lab-home">
       <section class="home-hero lab-masthead">
-        <div class="hero-bg"><img src="/assets/landing/hero-bg.jpg" alt="" /></div>
+        <div class="hero-bg"><img src="/assets/series/cast-rooftop.jpg" alt="" /></div>
         <div class="hero-content">
           <div class="hero-copy">
-            <span class="kicker">${icon("hub")} Technical Opportunity Intelligence, Built for Students</span>
-            <h1>See where university funding, research, and jobs are actually headed — then learn the exact skills to get there. Free.</h1>
-            <p>Which labs just got funded, which skills map to which careers, and where the agentic AI frontier is actually headed — we research it and publish it free. Then four free courses teach you the exact skills behind it: JavaScript, prompt and context engineering, databases, and agentic AI. No paywall, no fluff — just the path from classwork to a career.</p>
+            <span class="kicker">${icon("live_tv")} Free Edutainment for the AI Economy</span>
+            <h1>Learn the work that's coming — through the stories happening right now.</h1>
+            <p>Bot That Lyfe drops a new animated series on YouTube every week, with a free workbook attached. We take what's moving in politics, business, law, agriculture, sustainability and beyond, and break down the engineering, data, AI and agentic AI principles underneath it — so college students and working professionals stay engaged with real course material and ready for the work hitting the market.</p>
+            <div class="button-row">
+              <a class="primary-button" href="/series">Start watching ${icon("play_circle")}</a>
+              <a class="secondary-button" href="${season ? `/courses/${season.handle}` : "/courses"}">Get the free workbook ${icon("download")}</a>
+            </div>
             <div class="lab-byline">
               <img src="/assets/nathan-baker.jpeg" alt="Nathan Baker" />
-              <div><strong>Nathan Baker</strong><span>Founder, Bot That Lyfe</span></div>
-            </div>
-            <div class="button-row">
-              <a class="primary-button" href="/courses">Start the Free Courses ${icon("arrow_forward")}</a>
-              <a class="secondary-button" href="/research-and-case-studies">Browse the Research</a>
+              <div><strong>Nathan Baker</strong><span>Founder, Bot That Lyfe · AutoNateAI</span></div>
             </div>
           </div>
-          <a class="hero-program-panel" href="${featuredInvestigation ? `/research-and-case-studies/${featuredInvestigation.slug}` : "/research-and-case-studies?type=Open%20Questions"}">
+          <aside class="hero-program-panel">
+            ${trailerPlayer()}
             <div class="hero-panel-body">
-              <span class="kicker">${icon("help_center")} Featured Research Question</span>
-              <h2>${featuredInvestigation ? escapeHtml(featuredInvestigation.name) : "Nothing open yet"}</h2>
-              <p>${featuredInvestigation ? escapeHtml(featuredInvestigation.question) : "Check back soon for the next open question."}</p>
+              <span class="kicker">${icon("movie")} Watch the trailer</span>
+              <h2>The news is the syllabus.</h2>
               <div class="hero-facts">
-                <span>Every Number, Sourced</span>
-                <span>Never a Guess Dressed as Fact</span>
-                <span>University Tech, Actually Explained</span>
-                <span>Free. Public. No Pitch Deck.</span>
+                <span>New series weekly</span>
+                <span>Free workbooks</span>
+                <span>Engineering · Data · AI · Agents</span>
+                <span>Always free</span>
               </div>
             </div>
-          </a>
+          </aside>
         </div>
       </section>
+
+      ${nowStreamingSection(season)}
+      ${howItWorksSection()}
+      ${domainsSection()}
+      ${lessonGallerySection()}
+      ${audienceSection()}
 
       ${(() => {
         const featuredCards = latestInvestigations.map((investigation) => investigationCard(investigation));
@@ -867,11 +877,11 @@ export function renderHome(data) {
       <section class="section">
         <div class="section-head">
           <div>
-            <span class="kicker">${icon("landscape")} Featured Research</span>
-            <h2>The latest research, most recent first.</h2>
-            <p>Every article on this site is real, sourced research — no "coming soon" filler.</p>
+            <span class="kicker">${icon("query_stats")} The Research Behind the Drops</span>
+            <h2>Every episode starts with real, sourced research.</h2>
+            <p>Funding, policy, markets, labs and jobs — researched and cited before it ever becomes a story.</p>
           </div>
-          <a class="primary-button" href="/research-and-case-studies">Browse Everything ${icon("arrow_forward")}</a>
+          <a class="primary-button" href="/research-and-case-studies">Browse the research ${icon("arrow_forward")}</a>
         </div>
         <div class="industry-grid home-featured-grid${featuredCards.length < 3 ? " home-featured-grid-sparse" : ""}">
           ${featuredCards.join("")}
@@ -880,33 +890,26 @@ export function renderHome(data) {
         `;
       })()}
 
-      ${(() => {
-        const featuredHandles = ["intro-to-javascript-for-beginners", "prompt-and-context-engineering", "civics-and-agentic-ai"];
-        const featuredPacks = featuredHandles
-          .map((handle) => tutorialPacks.find((pack) => pack.handle === handle))
-          .filter(Boolean);
-        if (!featuredPacks.length) return "";
-        return `
       <section class="section">
         <div class="section-head">
           <div>
-            <span class="kicker">${icon("menu_book")} Free Course Library</span>
-            <h2>Learn the skills behind this research, free.</h2>
-            <p>JavaScript, prompt and context engineering, and agentic AI — real curriculum, real code, no cost, no catch.</p>
+            <span class="kicker">${icon("menu_book")} Courses & Workbooks</span>
+            <h2>Go deeper with the written courses.</h2>
+            <p>Every season links to full written lessons — JavaScript, prompt and context engineering, databases and graphs, and agentic AI — with copy-ready code.</p>
           </div>
-          <a class="primary-button" href="/courses">See All 4 Courses ${icon("arrow_forward")}</a>
+          <a class="primary-button" href="/courses">All courses ${icon("arrow_forward")}</a>
         </div>
         <div class="pack-grid">
-          ${featuredPacks.map((pack) => packCard(pack)).join("")}
+          ${tutorialPacks.map((pack) => packCard(pack)).join("")}
         </div>
       </section>
-        `;
-      })()}
+
+      ${subscribeBand()}
 
       <section class="newsletter">
         <div>
-          <h2>A university, a company, or a student with a real question?</h2>
-          <p>Reach out directly — research briefs, opportunity mapping, and build coaching around agentic AI and university tech are all on the table.</p>
+          <h2>A university, an employer, or a team that wants its own season?</h2>
+          <p>We build custom seasons and program briefs around your domain — the stories your students or staff actually face, with workbooks and outcomes you can assess.</p>
           <div class="button-row">
             <a class="primary-button" href="/work-with-us">Work With Us ${icon("arrow_forward")}</a>
           </div>
@@ -916,27 +919,32 @@ export function renderHome(data) {
   `;
 
   return pageShell({
-    title: "Bot That Lyfe | Technical Opportunity Intelligence Lab",
+    title: "Bot That Lyfe — Free Weekly AI, Data & Engineering Series for Students and Professionals",
     active: "home",
     body,
     canonicalPath: "/",
     ogImage: "/assets/og/default.jpg",
     description:
-      "Bot That Lyfe tracks funding, research, people, technology, and jobs across a network of U.S. universities — real, sourced research on the agentic AI frontier, plus four free courses that teach the skills behind it.",
-    ogTitle: "Real Research. Free Courses. Built for Students Chasing Tech's Next Wave.",
+      "A new animated series every week on YouTube with a free workbook: real stories from politics, business, law, agriculture and sustainability, broken down into the engineering, data, AI and agentic AI principles underneath. Free edutainment for college students and professionals.",
+    ogTitle: "Learn the work that's coming — through the stories happening right now.",
     ogDescription:
-      "Where university funding, research, and jobs in agentic AI are actually headed — researched free, plus 4 free courses (JavaScript, prompt engineering, databases, agentic AI) to learn the skills yourself.",
+      "Free weekly animated episodes + workbooks that turn the news into engineering, data, AI and agentic AI skills. For students and professionals.",
     structuredData: [
       {
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "Bot That Lyfe",
         "url": "https://botthatlyfe.com",
-        "description": "Bot That Lyfe tracks funding, research, people, technology, and jobs across a network of U.S. universities, from agentic AI research to the job market.",
-        "founder": {
-          "@type": "Person",
-          "name": "Nathan Baker",
-        },
+        "logo": "https://botthatlyfe.com/assets/og/default.jpg",
+        "sameAs": ["https://www.youtube.com/@autonate"],
+        "description": "Free weekly edutainment: animated episodes and workbooks that connect real-world stories to engineering, data, AI and agentic AI principles.",
+        "founder": { "@type": "Person", "name": "Nathan Baker" },
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Bot That Lyfe",
+        "url": "https://botthatlyfe.com",
       },
     ],
   });
@@ -1334,6 +1342,8 @@ export function renderAbout() {
     ["Creation", "Publish real analysis, build guides, and tools — not just observations."],
   ];
   const faqs = [
+    ["Why animated episodes?", "Because attention is the scarcest resource in learning. A story with a cast you care about keeps you watching; a concept engine that shows the real code, SQL or prompt on screen makes it concrete; and a workbook turns it into a skill. It's edutainment with a syllabus — and every season adds up to a course."],
+    ["Is it really free?", "Yes. Every episode, Short, workbook and written lesson is free. Universities, employers and teams can work with us on custom seasons and program briefs — that's how this stays free for everyone else."],
     ["Why universities?", "Because they're where the money, the research, and the next generation of engineers all actually meet. A federal grant lands at a university, funds a lab, trains students, and eventually turns into open-source projects, startups, and jobs. Tracing that whole chain — grant to lab to student to career — is the most direct way to see where computer science, agentic AI, and engineering are actually headed."],
     ["Do you only cover a few schools?", "No. The radar rotates across a deliberately built network of U.S. universities — research-intensive, regional, and community-connected — 7 a day, so the whole network gets covered on a regular cycle, not just the usual handful of famous names."],
     ["Are you a professor or a recruiter?", "No — I'm a software engineer and business analyst by background. I'm not pretending otherwise. What I bring is the ability to research a system carefully, source it honestly, and explain it clearly — the same way I'd document any other complex system."],
@@ -1346,8 +1356,8 @@ export function renderAbout() {
       <section class="about-hero">
         <div>
           <span class="kicker">${icon("hub")} About</span>
-          <h1>Raised in Michigan. Rooted in the Bootheel. All in on tracking where tech opportunity actually comes from.</h1>
-          <p>Bot That Lyfe is my independent research practice — where my software engineering and business-analytics background meets the university research economy. I grew up in Michigan, where I first got curious about how systems actually work, and my family is from the Missouri Bootheel, where I spent every summer growing up. I'm building this to trace the real path from university funding and research to the agentic AI frontier and the job market — one university at a time. And because reading about the path isn't the same as walking it, I also publish four free courses that teach the exact skills behind the research — see <a href="/courses">Free Courses</a>. Coaching and partnership work are also on the table — see <a href="/work-with-us">Work With Us</a>.</p>
+          <h1>Raised in Michigan. Rooted in the Bootheel. Building the free classroom for the AI economy.</h1>
+          <p>Bot That Lyfe is where my software engineering and business-analytics background meets storytelling. Every week we take a real story — a policy vote, a court ruling, a farm bill, a market shift, a strain on the grid — and turn it into an animated episode on YouTube and a free workbook that teach the engineering, data, AI and agentic AI principles underneath it. The research practice that started this site still runs under every drop: funding, labs, people, policy and jobs, sourced and cited. I grew up in Michigan, where I first got curious about how systems actually work, and my family is from the Missouri Bootheel, where I spent every summer growing up — which is why agriculture, small towns and public institutions show up in the stories as much as Silicon Valley does. Start with <a href="/series">the series</a>, go deeper in <a href="/courses">Courses &amp; Workbooks</a>, or bring us a project through <a href="/work-with-us">Work With Us</a>.</p>
           <div class="button-row">
             <a class="primary-button" href="/courses">Start the Free Courses ${icon("arrow_forward")}</a>
             <a class="secondary-button" href="/research-and-case-studies">Browse the Research</a>
@@ -1423,16 +1433,16 @@ export function renderAbout() {
   `;
 
   return pageShell({
-    title: "About Nathan Baker | Bot That Lyfe",
+    title: "About Nathan Baker — Founder of Bot That Lyfe",
     active: "about",
     body,
     canonicalPath: "/about",
     ogImage: "/assets/og/about.jpg",
     description:
-      "Nathan Baker is the researcher behind Bot That Lyfe, tracking university funding, research, people, and jobs across a network of U.S. universities — a software engineer by background, ex-Microsoft, Citi, and Veterans United.",
-    ogTitle: "Nathan Baker — Bot That Lyfe",
+      "Nathan Baker builds Bot That Lyfe: free weekly animated episodes and workbooks that turn real-world stories into engineering, data, AI and agentic AI skills — backed by sourced research. Software engineer by background, ex-Microsoft, Citi, and Veterans United.",
+    ogTitle: "Meet the builder behind Bot That Lyfe's weekly AI & engineering series",
     ogDescription:
-      "A software engineering background, now applied to researching how university tech, funding, and hiring actually move — plus 4 free courses for students, and still-open coaching and partnership work.",
+      "A software engineer turning the week's news into free animated lessons on engineering, data, AI and agents — with workbooks for students and professionals.",
     structuredData: [
       {
         "@context": "https://schema.org",
@@ -1472,20 +1482,20 @@ export function renderWorkWithUs() {
         <div class="hero-content">
           <div class="hero-copy">
             <span class="kicker">${icon("handshake")} Work With Us</span>
-            <h1>Bring me a real question. I'll tell you straight whether it's a fit.</h1>
-            <p>Students, university departments/labs, employers, and event organizers anywhere in the country — if there's a real opportunity question, a research partnership, or a hiring/recruiting need, tell me about it below. I read every message myself.</p>
+            <h1>Bring a season to your campus, team, or company.</h1>
+            <p>Universities, departments, employers and training teams: we build custom seasons — animated episodes, workbooks and a program brief with assessable outcomes — around the stories and systems your people actually face. Students and builders with a real question are welcome too. I read every message myself.</p>
           </div>
           <aside class="hero-program-panel">
             <img src="/assets/landing/work-with-us-panel.jpg" alt="" />
             <div class="hero-panel-body">
               <span class="kicker">${icon("checklist")} Who This Is For</span>
-              <h2>Students, universities, employers, event organizers.</h2>
-              <p>Anywhere in the country — if you've got a real question about university tech, funding, or the job market, this is the place to start.</p>
+              <h2>Universities, employers, teams — and students with a real question.</h2>
+              <p>Every season ships with a program brief: outcomes, delivery options (flipped classroom, workshops, self-paced) and assessment ideas. Pilots are easy.</p>
               <div class="hero-facts">
+                <span>Custom Seasons for Your Domain</span>
+                <span>Program Briefs &amp; Outcomes</span>
+                <span>Workshops &amp; Cohorts</span>
                 <span>Opportunity Research</span>
-                <span>Build Coaching</span>
-                <span>University &amp; Employer Partnerships</span>
-                <span>National, Not Just One Campus</span>
               </div>
             </div>
           </aside>
@@ -1546,14 +1556,14 @@ export function renderWorkWithUs() {
   `;
 
   return pageShell({
-    title: "Work With Us | Bot That Lyfe",
+    title: "Custom AI & Engineering Seasons for Universities and Teams | Bot That Lyfe",
     active: "work-with-us",
     body,
     canonicalPath: "/work-with-us",
-    ogImage: "/assets/landing/work-with-us-hero.jpg",
-    description: "Opportunity research, build coaching, and university/employer partnerships around agentic AI and university tech — tell Nathan Baker what you need.",
-    ogTitle: "Work With Us | Bot That Lyfe",
-    ogDescription: "Bring a real question — opportunity research, build coaching, and university/employer partnerships, national in scope.",
+    ogImage: "/assets/og/work-with-us.jpg",
+    description: "Custom animated seasons, workbooks and program briefs for universities, employers and training teams — engineering, data, AI and agentic AI taught through the stories your people actually face.",
+    ogTitle: "Bring a season to your campus, team, or company.",
+    ogDescription: "Custom animated episodes + workbooks + program briefs on engineering, data, AI and agents — built around your domain. Pilots are easy.",
   });
 }
 
@@ -2168,9 +2178,9 @@ export function renderTutorials() {
         <div class="hero-bg"><img src="/assets/landing/learning-path.jpg" alt="" /></div>
         <div class="hero-content">
         <div class="hero-copy">
-          <span class="kicker">${icon("menu_book")} Free Course Library</span>
-          <h1>Sharpen your technical skills. Free.</h1>
-          <p>A free library of technical courses — JavaScript fundamentals, prompt and context engineering, databases, and agentic AI — with real curriculum, real code, and Discord support the whole way through. No enrollment, no cost, no catch.</p>
+          <span class="kicker">${icon("menu_book")} Courses &amp; Workbooks</span>
+          <h1>Every season becomes a course. Every course is free.</h1>
+          <p>Watch the animated season, then go deeper here: free workbooks (PDF) for every episode, full written lessons with copy-ready code — JavaScript, prompt and context engineering, databases and graphs, agentic AI — and Discord support the whole way through. No enrollment, no cost, no catch.</p>
           <div class="button-row">
             <a class="primary-button" href="https://discord.gg/4HkkuntdSs">Join the Discord ${icon("open_in_new")}</a>
             <a class="secondary-button" href="#catalog">Browse the Courses</a>
@@ -2235,19 +2245,192 @@ export function renderTutorials() {
   `;
 
   return pageShell({
-    title: "Free AI & Coding Courses | Bot That Lyfe",
+    title: "Free AI, Data & Coding Courses + Workbooks | Bot That Lyfe",
     active: "tutorials",
     body,
     canonicalPath: "/courses",
     ogImage: "/assets/og/courses.jpg",
     description:
-      "A free course library: JavaScript fundamentals, prompt and context engineering, databases, and agentic AI, with Discord support included. No cost, no catch.",
-    ogTitle: "Sharpen your technical skills. Free.",
+      "Free courses and workbooks behind every Bot That Lyfe season: prompt and context engineering, databases and graphs, JavaScript and agentic AI — animated episodes, PDF workbooks, written lessons, Discord help.",
+    ogTitle: "Every season becomes a course. Every course is free.",
     ogDescription:
-      "A free course library with real curriculum and real code, plus a Discord community for help along the way. No enrollment, no cost, no catch.",
+      "Animated episodes + free PDF workbooks + written lessons with real code: prompt engineering, SQL & graphs, JavaScript, agentic AI.",
   });
 }
 
+
+
+// ---------------------------------------------------------------- the weekly series (edutainment) sections
+function trailerPlayer(extraClass = "") {
+  return `<div class="trailer-player ${extraClass}"><video controls preload="metadata" playsinline poster="${channel.trailer.poster}"><source src="${channel.trailer.src}" type="video/mp4" /></video></div>`;
+}
+
+function howItWorksSection() {
+  const steps = [
+    { n: "01", icon: "public", title: "The world moves.", text: "Every week we pick a real story that is changing how work gets done — a policy vote, a court ruling, a market shift, a farm bill, a grid warning.", image: "/assets/series/domain-news.jpg" },
+    { n: "02", icon: "neurology", title: "We go underneath it.", text: "An animated episode breaks down the engineering, data, AI and agentic AI principles inside that story — and the science of why they work, so it actually sticks.", image: "/assets/series/principles-brain.jpg" },
+    { n: "03", icon: "construction", title: "You build the skill.", text: "A free workbook with exercises, templates and real code; written lessons that go deeper; and a Discord full of people building the same things.", image: "/assets/series/lesson-code.jpg" },
+  ];
+  return `
+      <section class="section" id="how-it-works">
+        <div class="section-head">
+          <div>
+            <span class="kicker">${icon("route")} How It Works</span>
+            <h2>Real stories in. Real skills out.</h2>
+            <p>Edutainment with a syllabus: the story keeps you watching, the structure makes it stick, and the workbook makes it yours.</p>
+          </div>
+        </div>
+        <div class="how-grid">
+          ${steps.map((st) => `<article class="how-step"><img src="${st.image}" alt="" loading="lazy" /><div><span class="how-n">${st.n}</span><h3>${icon(st.icon)} ${st.title}</h3><p>${st.text}</p></div></article>`).join("")}
+        </div>
+      </section>`;
+}
+
+function domainsSection(heading = "One method, every domain.") {
+  return `
+      <section class="section" id="domains">
+        <div class="section-head">
+          <div>
+            <span class="kicker">${icon("hub")} The Domains We Cover</span>
+            <h2>${heading}</h2>
+            <p>The same fundamentals — systems design, data, AI and agents — show up in every industry the news touches. We follow the story wherever it breaks.</p>
+          </div>
+        </div>
+        <div class="domain-grid">
+          ${domains
+            .map(
+              (d) => `<article class="domain-card"><img src="${d.image}" alt="${escapeHtml(d.title)}" loading="lazy" /><div><h3>${escapeHtml(d.title)}</h3><p>${escapeHtml(d.story)}</p><p class="domain-principles"><b>Underneath it:</b> ${escapeHtml(d.principles)}</p></div></article>`,
+            )
+            .join("")}
+        </div>
+      </section>`;
+}
+
+function lessonGallerySection() {
+  return `
+      <section class="section" id="inside-an-episode">
+        <div class="section-head">
+          <div>
+            <span class="kicker">${icon("visibility")} Inside an Episode</span>
+            <h2>See exactly what you're walking into.</h2>
+            <p>Every frame below is from a real episode. No stock footage, no talking-head lecture — a story you'll want to finish, with the real artifact on screen.</p>
+          </div>
+        </div>
+        <div class="moment-grid">
+          ${lessonMoments.map((m) => `<figure class="moment"><img src="${m.image}" alt="${escapeHtml(m.title)}" loading="lazy" /><figcaption><b>${escapeHtml(m.title)}</b><span>${escapeHtml(m.text)}</span></figcaption></figure>`).join("")}
+        </div>
+      </section>`;
+}
+
+function nowStreamingSection(season) {
+  if (!season) return "";
+  const shorts = season.shorts || [];
+  return `
+      <section class="section" id="now-streaming">
+        <div class="section-head">
+          <div>
+            <span class="kicker">${icon("live_tv")} Now Streaming · ${escapeHtml(season.season)}</span>
+            <h2>${escapeHtml(season.title)}</h2>
+            <p>${escapeHtml(season.subtitle)}. ${season.episodes.length} episodes, ${season.minutes} minutes, a free workbook — start here.</p>
+          </div>
+          <div class="button-row">
+            <a class="primary-button" href="${season.playlistUrl}">Watch on YouTube ${icon("play_circle")}</a>
+            <a class="secondary-button" href="/courses/${season.handle}">Episodes &amp; workbook</a>
+          </div>
+        </div>
+        <div class="season-grid compact-season-grid">
+          ${season.episodes
+            .map(
+              (ep) => `<a class="season-ep season-ep-mini" href="${ep.url}"><div class="season-ep-thumb"><img src="${ep.thumb}" alt="${escapeHtml(ep.youtubeTitle)}" loading="lazy" /><span>${mmss(ep.seconds)}</span></div><div class="season-ep-body"><span class="kicker">Episode ${ep.n}</span><h3>${escapeHtml(ep.title)}</h3></div></a>`,
+            )
+            .join("")}
+        </div>
+        ${
+          shorts.length
+            ? `<div class="shorts-row">
+          <div><span class="kicker">${icon("bolt")} 60-second cuts</span><h3>Short on time? Start with a Short.</h3>${season.shortsPlaylistUrl ? `<a class="secondary-button" href="${season.shortsPlaylistUrl}">All Shorts ${icon("arrow_forward")}</a>` : ""}</div>
+          ${shorts.map((sh) => `<a class="short-card" href="${sh.url}"><img src="https://i.ytimg.com/vi/${sh.videoId}/hqdefault.jpg" alt="${escapeHtml(sh.title)}" loading="lazy" /><span>${escapeHtml(sh.title)}</span></a>`).join("")}
+        </div>`
+            : ""
+        }
+      </section>`;
+}
+
+function audienceSection() {
+  const who = [
+    { icon: "school", title: "College students", text: "Stay ahead of the syllabus. Learn the tools and judgment internships and first jobs now assume — with stories you'll actually remember on exam day." },
+    { icon: "work", title: "Working professionals", text: "Upskill without a bootcamp. Twenty minutes a week to understand how AI and agents are reshaping your industry — and how to build with them." },
+    { icon: "account_balance", title: "Educators & teams", text: "Every season ships with a program brief: outcomes, delivery options and assessment ideas for courses, cohorts and onboarding." },
+  ];
+  return `
+      <section class="section">
+        <div class="section-head"><div><span class="kicker">${icon("groups")} Who It's For</span><h2>Built for people who want to be ready.</h2></div></div>
+        <div class="value-grid">${who.map((w) => `<article><span>${icon(w.icon)}</span><h3>${w.title}</h3><p>${w.text}</p></article>`).join("")}</div>
+      </section>`;
+}
+
+function subscribeBand() {
+  return `
+      <section class="newsletter subscribe-band">
+        <div>
+          <span class="kicker">${icon("notifications_active")} A new series every week</span>
+          <h2>Subscribe once. Learn every week.</h2>
+          <p>New episodes and Shorts land on YouTube every week, each with a free workbook here. Join the Discord to build alongside everyone else.</p>
+          <div class="button-row">
+            <a class="primary-button" href="${channel.youtube}">Subscribe on YouTube ${icon("open_in_new")}</a>
+            <a class="secondary-button" href="${channel.discord}">Join the Discord ${icon("forum")}</a>
+          </div>
+        </div>
+      </section>`;
+}
+
+export function renderSeries() {
+  const season = seasons[0];
+  const body = `
+    <main class="lab-home series-page">
+      <section class="home-hero lab-masthead">
+        <div class="hero-bg"><img src="/assets/series/cast-rooftop.jpg" alt="" /></div>
+        <div class="hero-content">
+          <div class="hero-copy">
+            <span class="kicker">${icon("live_tv")} The Series · New Drops Weekly</span>
+            <h1>The news is the syllabus.</h1>
+            <p>Every week Bot That Lyfe releases a new animated episode on YouTube — a real story from politics, business, law, agriculture or sustainability, broken down into the engineering, data, AI and agentic AI principles underneath it. Every episode comes with a free workbook. Every season adds up to a course.</p>
+            <div class="button-row">
+              <a class="primary-button" href="${season ? season.playlistUrl : channel.youtube}">Start watching ${icon("play_circle")}</a>
+              <a class="secondary-button" href="${channel.youtube}">Subscribe ${icon("notifications")}</a>
+            </div>
+          </div>
+          <aside class="hero-program-panel">
+            ${trailerPlayer()}
+            <div class="hero-panel-body">
+              <span class="kicker">${icon("movie")} Trailer · 1:44</span>
+              <h2>The Weekly Drop</h2>
+              <div class="hero-facts"><span>New episode weekly</span><span>Free workbooks</span><span>Real code, data &amp; prompts</span><span>Discord support</span></div>
+            </div>
+          </aside>
+        </div>
+      </section>
+      ${nowStreamingSection(season)}
+      ${howItWorksSection()}
+      ${domainsSection("Where the next drops come from.")}
+      ${lessonGallerySection()}
+      ${subscribeBand()}
+    </main>`;
+  return pageShell({
+    title: "The Series — Free Weekly AI, Data & Engineering Episodes | Bot That Lyfe",
+    active: "series",
+    body,
+    canonicalPath: "/series",
+    ogImage: "/assets/og/series.jpg",
+    description:
+      "A new animated episode every week: real stories from politics, business, law, agriculture and sustainability, broken down into the engineering, data, AI and agentic AI principles underneath — with a free workbook. Built for college students and professionals.",
+    ogTitle: "The news is the syllabus. A new AI & engineering episode every week — free.",
+    ogDescription: "Real-world stories → the engineering, data, AI and agents underneath them. Animated episodes, free workbooks, every week.",
+    structuredData: [
+      { "@context": "https://schema.org", "@type": "VideoObject", name: "Bot That Lyfe — The Weekly Drop", description: "Trailer: a new animated series every week that turns real-world stories into engineering, data, AI and agentic AI lessons — with free workbooks.", thumbnailUrl: "https://botthatlyfe.com/assets/series/cast-rooftop.jpg", contentUrl: `https://botthatlyfe.com${channel.trailer.src}`, uploadDate: "2026-10-02", duration: "PT1M44S" },
+    ],
+  });
+}
 
 // ---------------------------------------------------------------- animated course seasons
 // Data is generated by mindfulness-content (npm run course-site -- <slug>) into src/seasons/<slug>.mjs.
@@ -2355,7 +2538,7 @@ export function renderSeason(season) {
     active: "tutorials",
     body,
     canonicalPath: `/courses/${season.handle}`,
-    ogImage: season.cover,
+    ogImage: `/assets/og/season-${season.handle}.jpg`,
     description,
     ogTitle: `${season.title} — a free animated course on thinking with AI`,
     ogDescription: description,
@@ -2443,9 +2626,9 @@ export function renderTutorialPack(pack) {
     active: "tutorials",
     body,
     canonicalPath: `/courses/${pack.handle}`,
-    ogImage: pack.heroImage || `/assets/og/tutorial-pack-${pack.handle}.jpg`,
+    ogImage: `/assets/og/tutorial-pack-${pack.handle}.jpg`,
     description: pack.summary,
-    ogTitle: `${pack.title}: ${comingSoon ? "coming soon." : "start here."}`,
+    ogTitle: `${comingSoon ? "Coming soon" : "Free course"}: ${pack.title} — real code, real stories, free workbook.`,
     ogDescription: pack.summary,
   });
 }
@@ -2497,13 +2680,13 @@ export function renderTutorialDetail(pack, tutorial) {
   `;
 
   return pageShell({
-    title: `${tutorial.title} | Bot That Lyfe Tutorials`,
+    title: `${tutorial.title} — Free ${pack.title} Lesson | Bot That Lyfe`,
     active: "tutorials",
     body,
     canonicalPath: `/courses/${pack.handle}/${tutorial.handle}`,
-    ogImage: pack.heroImage || `/assets/og/tutorial-${tutorial.pack}-${tutorial.handle}.jpg`,
+    ogImage: `/assets/og/tutorial-${tutorial.pack}-${tutorial.handle}.jpg`,
     description: tutorial.summary,
-    ogTitle: `${tutorial.title}: keep the build moving.`,
+    ogTitle: `Free lesson · ${tutorial.title}`,
     ogDescription: tutorial.summary,
   });
 }
@@ -2590,8 +2773,8 @@ export function renderArticles() {
       <section class="about-hero">
         <div>
           <span class="kicker">${icon("search")} Research & Case Studies</span>
-          <h1>Everything we've researched, in one place.</h1>
-          <p>Real, sourced investigations into university funding, research, technology, and jobs. Search below for what applies to you.</p>
+          <h1>The research behind every drop.</h1>
+          <p>Real, sourced investigations into funding, policy, markets, labs, technology and jobs — the signal we turn into each week's series. Every number is cited. Search below for what applies to you.</p>
         </div>
         ${
           featured
@@ -2624,14 +2807,14 @@ export function renderArticles() {
   `;
 
   return pageShell({
-    title: "Research & Case Studies | Bot That Lyfe",
+    title: "Research & Case Studies — The Signal Behind Every Episode | Bot That Lyfe",
     active: "articles",
     body,
     canonicalPath: "/research-and-case-studies",
     ogImage: "/assets/og/research-and-case-studies.jpg",
     description:
-      "Real, sourced research articles on university funding, research, technology, and jobs — all in one searchable place.",
-    ogTitle: "Research & Case Studies | Bot That Lyfe",
+      "Sourced research on funding, policy, markets, labs, technology and jobs across AI and engineering — the real-world signal behind every Bot That Lyfe episode.",
+    ogTitle: "The research behind every drop — sourced, cited, free.",
     ogDescription:
       "Everything Bot That Lyfe has researched about university funding, research, technology, and jobs — search or filter to find what applies to you.",
   });

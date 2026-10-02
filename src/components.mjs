@@ -62,14 +62,14 @@ export function footer() {
       <div class="footer-grid">
         <div>
           <strong>Bot That Lyfe<span class="brand-dot">_</span></strong>
-          <p>Nathan Baker's technical opportunity intelligence practice — tracking funding, research, people, and jobs across a network of U.S. universities at the intersection of computer science, agentic AI, and engineering — and publishing it free.</p>
+          <p>Free edutainment for the AI economy: a new animated series every week that turns real-world stories into engineering, data, AI and agentic AI skills — with free workbooks for college students and professionals.</p>
         </div>
-        <div><h5><a href="/research-and-case-studies">Research &amp; Case Studies</a></h5></div>
-        <div><h5><a href="/courses">Free Courses</a></h5></div>
+        <div><h5><a href="/series">Watch the Series</a></h5><ul><li><a href="https://www.youtube.com/@autonate?sub_confirmation=1">YouTube</a></li><li><a href="https://discord.gg/4HkkuntdSs">Discord</a></li></ul></div>
+        <div><h5><a href="/courses">Courses &amp; Workbooks</a></h5><ul><li><a href="/research-and-case-studies">Research &amp; Case Studies</a></li></ul></div>
         <div><ul><li><a href="/work-with-us">Work With Us</a></li><li><a href="/about">About Nathan</a></li></ul></div>
       </div>
       <div class="footer-bottom">
-        <span>&copy; 2026 Bot That Lyfe. Independent technical opportunity intelligence, published free.</span>
+        <span>&copy; 2026 Bot That Lyfe. A new series every week. Always free.</span>
       </div>
     </footer>
   `;
@@ -79,7 +79,7 @@ const SITE_NAME = "Bot That Lyfe";
 const SITE_URL = "https://botthatlyfe.com";
 const DEFAULT_OG_IMAGE = "/assets/og/default.jpg";
 const DEFAULT_DESCRIPTION =
-  "Bot That Lyfe tracks funding, research, people, technology, and jobs across a network of U.S. universities — the agentic AI frontier, the university research economy, and the path from classwork to a career — researched, sourced, and published free by Nathan Baker.";
+  "Bot That Lyfe: free weekly animated episodes and workbooks that turn real-world stories — politics, business, law, agriculture, sustainability — into engineering, data, AI and agentic AI skills for college students and professionals.";
 
 function absoluteUrl(value = "/") {
   if (/^https?:\/\//.test(value)) return value;
