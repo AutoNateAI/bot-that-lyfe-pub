@@ -1193,15 +1193,3 @@ if (sponsorshipForm) {
     }
   });
 }
-
-// --- Season player: our season cover until clicked, then YouTube's playlist player (its own poster is Ep 1's thumbnail) ---
-document.querySelectorAll("[data-yt-playlist]").forEach((button) => {
-  button.addEventListener("click", () => {
-    const iframe = document.createElement("iframe");
-    iframe.src = `https://www.youtube-nocookie.com/embed/videoseries?list=${button.dataset.ytPlaylist}&autoplay=1`;
-    iframe.title = button.getAttribute("aria-label") || "Season playlist";
-    iframe.allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
-    iframe.allowFullscreen = true;
-    button.replaceWith(iframe);
-  });
-});
