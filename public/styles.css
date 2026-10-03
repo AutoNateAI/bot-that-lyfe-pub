@@ -5702,6 +5702,13 @@ a.lab-card .industry-card::before {
 .season-banner-card .primary-button { display: inline-flex; margin-top: 8px; }
 .season-embed { position: relative; aspect-ratio: 16/9; border-radius: 14px; overflow: hidden; background: #000; }
 .season-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.season-poster { position: absolute; inset: 0; width: 100%; height: 100%; padding: 0; border: 0; background: #000; cursor: pointer; }
+.season-poster img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.season-poster-play { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 76px; height: 54px; display: grid; place-items: center; border-radius: 14px; background: #ff0033; color: #fff; box-shadow: 0 6px 24px rgba(0,0,0,.45); transition: transform .15s ease; }
+.season-poster-play .material-symbols-outlined { font-size: 40px; }
+.season-poster:hover .season-poster-play, .season-poster:focus-visible .season-poster-play { transform: translate(-50%, -50%) scale(1.08); }
+.season-poster-count { position: absolute; right: 10px; bottom: 10px; display: inline-flex; align-items: center; gap: 4px; padding: 4px 9px; border-radius: 6px; background: rgba(0,0,0,.78); color: #fff; font-size: 13px; font-weight: 600; }
+.season-poster-count .material-symbols-outlined { font-size: 18px; }
 .season-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: var(--gutter); }
 .season-ep { display: flex; flex-direction: column; border-radius: 16px; overflow: hidden; background: var(--surface); border: 1px solid var(--outline); }
 .season-ep-thumb { position: relative; display: block; aspect-ratio: 16/9; }

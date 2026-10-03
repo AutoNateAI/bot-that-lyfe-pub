@@ -49,6 +49,7 @@ export default {
     }
   ],
   "cover": "/assets/courses/search-party/cover.jpg",
+  "poster": "/assets/courses/search-party/season-cover.jpg",
   "pdfs": {
     "student": "/assets/courses/search-party/search-party-workbook.pdf",
     "admin": "/assets/courses/search-party/search-party-program-brief.pdf"

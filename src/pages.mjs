@@ -2485,7 +2485,11 @@ export function renderSeason(season) {
           </div>
         </div>
         <aside class="hero-program-panel">
-          <div class="season-embed"><iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=${season.playlistId}" title="${escapeHtml(season.title)}" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <div class="season-embed">${
+            season.poster
+              ? `<button type="button" class="season-poster" data-yt-playlist="${season.playlistId}" aria-label="Play ${escapeHtml(season.title)} — all ${season.episodes.length} episodes"><img src="${season.poster}" alt="${escapeHtml(season.title)} season cover" /><span class="season-poster-play">${icon("play_arrow")}</span><span class="season-poster-count">${icon("playlist_play")} ${season.episodes.length} episodes</span></button>`
+              : `<iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=${season.playlistId}" title="${escapeHtml(season.title)}" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
+          }</div>
           <div class="hero-panel-body">
             <span class="kicker">${icon("school")} ${escapeHtml(season.course)}</span>
             <h2>${escapeHtml(season.subtitle)}</h2>
