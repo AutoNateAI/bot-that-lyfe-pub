@@ -26,6 +26,7 @@ import {
   tutorialPacks,
   tutorials,
 } from "../src/data.mjs";
+import { escapeHtml } from "../src/components.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, "..");
@@ -123,6 +124,48 @@ for (const season of seasons) {
   const filePath = path.join(outDir, "courses", season.handle, "index.html");
   await mkdir(path.dirname(filePath), { recursive: true });
   await writeFile(filePath, renderSeason(season));
+}
+
+// Share links /watch/<handle> → the season's YouTube playlist. iMessage stacks the several og:image sizes YouTube's
+// playlist page lists into a collage; this page has exactly one landscape og:image (the season cover) and forwards on
+// load (an instant meta refresh/redirect leaves Apple's link preview blank — forwarding after load keeps it).
+for (const season of seasons.filter((s) => s.playlistUrl)) {
+  const filePath = path.join(outDir, "watch", season.handle, "index.html");
+  const title = season.page?.ogTitle ?? season.title;
+  const description = season.page?.description ?? season.logline;
+  const image = `https://botthatlyfe.com${season.og}`;
+  await mkdir(path.dirname(filePath), { recursive: true });
+  await writeFile(
+    filePath,
+    `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>${escapeHtml(title)}</title>
+<meta name="robots" content="noindex" />
+<link rel="canonical" href="https://botthatlyfe.com/courses/${season.handle}" />
+<meta property="og:type" content="video.other" />
+<meta property="og:site_name" content="Bot That Lyfe" />
+<meta property="og:title" content="${escapeHtml(title)}" />
+<meta property="og:description" content="${escapeHtml(description)}" />
+<meta property="og:url" content="https://botthatlyfe.com/watch/${season.handle}" />
+<meta property="og:image" content="${image}" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="${escapeHtml(title)}" />
+<meta name="twitter:description" content="${escapeHtml(description)}" />
+<meta name="twitter:image" content="${image}" />
+<style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#050a18;color:#fff;font:600 18px system-ui,sans-serif}a{color:#7ff3ff}</style>
+</head>
+<body>
+<p>Opening <a href="${season.playlistUrl}">${escapeHtml(season.title)} on YouTube</a>…</p>
+<script>addEventListener("load", () => location.replace(${JSON.stringify(season.playlistUrl)}));</script>
+</body>
+</html>
+`,
+  );
 }
 
 // The 4 free course packs, each with its own lesson pages — see
