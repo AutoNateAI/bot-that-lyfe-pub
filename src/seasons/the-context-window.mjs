@@ -45,6 +45,9 @@ export default {
     "student": "/assets/courses/the-context-window/the-context-window-workbook.pdf",
     "admin": "/assets/courses/the-context-window/the-context-window-program-brief.pdf"
   },
+  "released": "",
+  "page": null,
+  "og": "/assets/og/season-the-context-window.jpg",
   "playlistId": "PLVomZxd75ZEs",
   "playlistUrl": "https://www.youtube.com/playlist?list=PLVomZxd75ZEs",
   "shortsPlaylistUrl": "https://www.youtube.com/playlist?list=PLKdKTD8XAMHo",
@@ -66,6 +69,24 @@ export default {
       "videoId": "ZKtWWPNGd58",
       "url": "https://youtube.com/shorts/ZKtWWPNGd58",
       "title": "What's the difference between a wish... and a spec?"
+    },
+    {
+      "episode": 4,
+      "videoId": "8MYTrxMFzgQ",
+      "url": "https://youtube.com/shorts/8MYTrxMFzgQ",
+      "title": "Your AI just told you something beautiful. Is it true?"
+    },
+    {
+      "episode": 5,
+      "videoId": "5Dd96TVAIzM",
+      "url": "https://youtube.com/shorts/5Dd96TVAIzM",
+      "title": "Your memory isn't a recording. It's a remix."
+    },
+    {
+      "episode": 6,
+      "videoId": "VmVUuBDXtrw",
+      "url": "https://youtube.com/shorts/VmVUuBDXtrw",
+      "title": "What if the knowledge isn't in the things... but in the connections?"
     }
   ],
   "minutes": 26,
@@ -74,38 +95,53 @@ export default {
       "n": 1,
       "title": "Garbage In",
       "youtubeTitle": "Why AI Gives You Bad Answers (Prompt Engineering Basics) | The Context Window Ep 1",
-      "summary": "Why does the smartest tool you've ever used act dumb for you? Dre types four words into an AI coding agent and gets 47 changed files. Nia asks a perfect question and trusts a confident wrong answer. Two opposite failures — one fix.",
+      "summary": "Prompt engineering basics, as a comedy. Why does the smartest tool you've ever used act dumb for you? Dre types four words into an AI coding agent and gets 47 changed files. Nia asks a perfect question and trusts a confident wrong answer. Two opposite failures — one fix.",
       "big": "A vague prompt gets the most average answer. A trusted answer gets you a confident mistake.",
       "learn": [
         "What a language model actually does: predict the next token, over and over",
         "The two opposite failures: asking too little, trusting too much",
         "How to name what went wrong instead of blaming the tool"
       ],
-      "videoId": "9cxuMaFkHmA",
-      "url": "https://www.youtube.com/watch?v=9cxuMaFkHmA&list=PLVomZxd75ZEs&index=1",
-      "seconds": 289,
+      "videoId": "sN4yRCMuZ7M",
+      "url": "https://www.youtube.com/watch?v=sN4yRCMuZ7M&list=PLVomZxd75ZEs&index=1",
+      "seconds": 294,
       "thumb": "/assets/courses/the-context-window/ep1.jpg",
       "lessons": [
         {
           "href": "/courses/prompt-and-context-engineering/why-prompting-is-a-skill",
           "title": "Garbage In, Garbage Out: Why Prompting Is a Skill"
         }
+      ],
+      "activity": {
+        "title": "The four-word autopsy",
+        "steps": [
+          "Find a prompt you sent an AI tool this week that disappointed you.",
+          "Rewrite it with: the exact file or input, the exact problem, one thing it must not touch, and what the finished output looks like.",
+          "Run both. Write two sentences on what changed — and what the first answer was 'averaging' toward."
+        ]
+      },
+      "journal": "In <file>, <function> breaks when <specific case>.\nFix only that. Don't touch <area>.\nShow me <the changed function / a diff / a one-line note>.",
+      "talk": [
+        "Did I say which part?",
+        "Did I say what not to touch?",
+        "Do I know exactly what it changed?",
+        "Did I check the answer against the source?"
       ]
     },
     {
       "n": 2,
       "title": "The Room, Not Just the Ask",
       "youtubeTitle": "Context Engineering: Why More Context Makes AI Worse | The Context Window Ep 2",
-      "summary": "Brent pastes the whole repo, two years of Slack, a pitch deck and his LinkedIn into the chat — and the agent writes him a LinkedIn post. Dre gives it nothing and it invents a function. What a context window really is, why models get lost in the middle, and the four moves of context engineering.",
+      "summary": "Context engineering explained: why more context can make AI worse. Brent pastes the whole repo, two years of Slack, a pitch deck and his LinkedIn into the chat — and the agent writes him a LinkedIn post. Dre gives it nothing and it invents a function. What a context window really is, why models get lost in the middle, and the four moves of context engineering.",
       "big": "A model can only work with what's in its context window. Too little and it guesses; too much and it drowns.",
       "learn": [
         "What the context window is — and what fills it without you noticing",
         "Why flooding it backfires ('lost in the middle')",
         "Four context-engineering moves and a project context file"
       ],
-      "videoId": "RuCjxTCo9pE",
-      "url": "https://www.youtube.com/watch?v=RuCjxTCo9pE&list=PLVomZxd75ZEs&index=2",
-      "seconds": 255,
+      "videoId": "ZtCitp9lJCg",
+      "url": "https://www.youtube.com/watch?v=ZtCitp9lJCg&list=PLVomZxd75ZEs&index=2",
+      "seconds": 261,
       "thumb": "/assets/courses/the-context-window/ep2.jpg",
       "lessons": [
         {
@@ -116,35 +152,66 @@ export default {
           "href": "/courses/prompt-and-context-engineering/feeding-it-the-right-files",
           "title": "Feeding It the Right Files: Practical Context Engineering"
         }
+      ],
+      "activity": {
+        "title": "Build the room",
+        "steps": [
+          "Pick a real bug or task. List every file/document you'd normally paste in.",
+          "Cross out everything the task doesn't touch. Summarize anything longer than a page into its decisions.",
+          "Start the session with: 'Before you change anything: what files can you see, and what are you assuming?'",
+          "Write a 6-line project context file (AGENTS.md / CLAUDE.md) with the rules you keep repeating."
+        ]
+      },
+      "journal": "# Project context\n- Runtime + versions, and \"no new dependencies without asking\"\n- Where the important logic lives (and what not to duplicate)\n- House rules (never delete TODOs, tests before refactors)\n- Files to ask before touching",
+      "talk": [
+        "Did I give it only what the task touches?",
+        "Did I summarize instead of paste?",
+        "Did I ask what it can see before it acted?",
+        "Is the context written down once, not re-explained daily?"
       ]
     },
     {
       "n": 3,
       "title": "Role, Task, Constraints, Format",
       "youtubeTitle": "How to Write a Prompt: Role, Task, Constraints, Format | The Context Window Ep 3",
-      "summary": "\"You are the greatest copywriter who ever lived\" produces \"Dear Valued Customer\" and a subject line that says \"Synergy?\". Nia — ten years writing city grant scopes — rebuilds the prompt one row at a time: role, task, constraints, format, and a definition of done.",
+      "summary": "How to write a prompt that works: role, task, constraints, format. \"You are the greatest copywriter who ever lived\" produces \"Dear Valued Customer\" and a subject line that says \"Synergy?\". Nia — ten years writing city grant scopes — rebuilds the prompt one row at a time: role, task, constraints, format, and a definition of done.",
       "big": "A prompt is a scope of work. Four lines turn a wish into a spec — and you decide what done looks like before you start.",
       "learn": [
         "The four-row prompt: Role, Task, Constraints, Format (+ Done)",
         "Why a role works like priming",
         "Treat the first answer as a draft, not a verdict"
       ],
-      "videoId": "EmtejGgu_cc",
-      "url": "https://www.youtube.com/watch?v=EmtejGgu_cc&list=PLVomZxd75ZEs&index=3",
-      "seconds": 206,
+      "videoId": "_O5cSc6aKHc",
+      "url": "https://www.youtube.com/watch?v=_O5cSc6aKHc&list=PLVomZxd75ZEs&index=3",
+      "seconds": 211,
       "thumb": "/assets/courses/the-context-window/ep3.jpg",
       "lessons": [
         {
           "href": "/courses/prompt-and-context-engineering/structuring-the-ask",
           "title": "Structuring the Ask: Role, Task, Constraints, Format"
         }
+      ],
+      "activity": {
+        "title": "Scope it like a contract",
+        "steps": [
+          "Take a real message you need to write (a follow-up, a bug report, a cover letter).",
+          "Write the four rows. Then add DONE: three checkable criteria.",
+          "Generate, then do one revision pass that cuts something and adds one specific detail.",
+          "Check the result against DONE. If it fails, fix the prompt, not just the output."
+        ]
+      },
+      "journal": "ROLE: <who is speaking, to whom>\nTASK: <one job, named>\nCONSTRAINTS: <length · tone · must include · must avoid>\nFORMAT: <the shape of the answer>\nDONE: <3 checkable criteria>",
+      "talk": [
+        "Is the role a lens or a compliment?",
+        "Is there exactly one task?",
+        "Could someone else check DONE without asking me?"
       ]
     },
     {
       "n": 4,
       "title": "That's Not a Source",
       "youtubeTitle": "AI Hallucinations & Fake npm Packages (Slopsquatting) | The Context Window Ep 4",
-      "summary": "The agent hands Dre two beautiful lines of code: a package that doesn't exist and a JavaScript method that never did. Three commands, ten seconds, two fabrications. Why models confabulate (and so do brains), how attackers exploit invented package names, and the boring fix.",
+      "summary": "AI hallucinations in code: fake npm packages, invented methods, and slopsquatting. The agent hands Dre two beautiful lines of code: a package that doesn't exist and a JavaScript method that never did. Three commands, ten seconds, two fabrications. Why models confabulate (and so do brains), how attackers exploit invented package names, and the boring fix.",
       "big": "Fluent isn't factual. A sentence isn't a source — check what would hurt if it were wrong.",
       "learn": [
         "Why models produce plausible fabrications (and why people do too)",
@@ -152,22 +219,36 @@ export default {
         "Package hallucinations and slopsquatting — the security risk",
         "Closing ambiguity before the model closes it for you"
       ],
-      "videoId": "_Vqb-RtiaI4",
-      "url": "https://www.youtube.com/watch?v=_Vqb-RtiaI4&list=PLVomZxd75ZEs&index=4",
-      "seconds": 254,
+      "videoId": "ZNSkFVa9U9s",
+      "url": "https://www.youtube.com/watch?v=ZNSkFVa9U9s&list=PLVomZxd75ZEs&index=4",
+      "seconds": 258,
       "thumb": "/assets/courses/the-context-window/ep4.jpg",
       "lessons": [
         {
           "href": "/courses/prompt-and-context-engineering/when-it-gets-it-wrong",
           "title": "When It Gets It Wrong: Hallucination, Ambiguity, and Trusting Nothing You Haven't Checked"
         }
+      ],
+      "activity": {
+        "title": "Catch one in the wild",
+        "steps": [
+          "Ask an AI tool for code that uses a library you've never used.",
+          "Before running anything: `npm view <package>` (or pip index / docs) for every import, and check every method it calls exists.",
+          "Rewrite the prompt to close two ambiguities (e.g., dedupe key, keep first vs last) and compare."
+        ]
+      },
+      "journal": "npm view <package> name        # does it exist?\nnode -p \"typeof [].someMethod\" # does the method exist?\n# read the official docs · run it on a tiny real input",
+      "talk": [
+        "Does every package and method actually exist?",
+        "Did I close the ambiguities that matter?",
+        "Am I verifying what would hurt — not arithmetic?"
       ]
     },
     {
       "n": 5,
       "title": "The Missing Ledger",
       "youtubeTitle": "SQL & Databases Explained: The JOIN That Lies | The Context Window Ep 5",
-      "summary": "Two entries, one Tomas — and every count was off by one in the direction that flattered them. Why human memory is a remix, what a database actually gives you, tables and foreign keys, and the JOIN that silently inflates COUNT().",
+      "summary": "SQL and databases explained for beginners, as a comedy. Two entries, one Tomas — and every count was off by one in the direction that flattered them. Why human memory is a remix, what a database actually gives you, tables and foreign keys, and the JOIN that silently inflates COUNT().",
       "big": "Memory is a storyteller; a database is a witness. Model the truth once, then ask it precise questions.",
       "learn": [
         "File vs. in-memory object vs. database — three different deals",
@@ -175,9 +256,9 @@ export default {
         "SELECT, WHERE, JOIN — and the JOIN that silently inflates COUNT",
         "Querying from code so the answer is the same every time"
       ],
-      "videoId": "zyATACYNqMg",
-      "url": "https://www.youtube.com/watch?v=zyATACYNqMg&list=PLVomZxd75ZEs&index=5",
-      "seconds": 267,
+      "videoId": "yMpGZT1OGPs",
+      "url": "https://www.youtube.com/watch?v=yMpGZT1OGPs&list=PLVomZxd75ZEs&index=5",
+      "seconds": 271,
       "thumb": "/assets/courses/the-context-window/ep5.jpg",
       "lessons": [
         {
@@ -192,22 +273,36 @@ export default {
           "href": "/courses/relational-databases-and-graphs/asking-questions-with-sql",
           "title": "Talking to the Data: Asking Questions with SQL"
         }
+      ],
+      "activity": {
+        "title": "Build the ledger",
+        "steps": [
+          "Create people, ideas and feedback tables in SQLite (feedback points at both with foreign keys).",
+          "Insert 5 people (one duplicate under two spellings), 3 ideas, 8 feedback rows (one person comments 3 times).",
+          "Count 'people who gave feedback on idea 3' with COUNT() after a JOIN, then with COUNT(DISTINCT person_id). Explain the difference in one sentence."
+        ]
+      },
+      "journal": "SELECT COUNT(DISTINCT person_id) AS people\nFROM feedback\nWHERE idea_id = 3;",
+      "talk": [
+        "Does each real-world thing exist exactly once?",
+        "Am I counting rows or the things I actually mean?",
+        "Is the question answered by code, not by memory?"
       ]
     },
     {
       "n": 6,
       "title": "The Web Under the Table",
       "youtubeTitle": "Graph Databases & Recursive SQL for AI Context | The Context Window Ep 6",
-      "summary": "Demo Day is tomorrow and one question breaks the database: who's the shortest way in? When relationships loop and carry their own facts, they're a graph. Nodes, edges, recursive queries — and feeding the graph to an AI as context. The season finale.",
+      "summary": "Graph databases explained: nodes, edges, recursive SQL and GraphRAG. Demo Day is tomorrow and one question breaks the database: who's the shortest way in? When relationships loop and carry their own facts, they're a graph. Nodes, edges, recursive queries — and feeding the graph to an AI as context. The season finale.",
       "big": "When relationships repeat, loop, and carry their own facts, they're a graph. The connections are the knowledge — for brains, neural nets, and your AI's context.",
       "learn": [
         "The tell that a table should be a graph",
         "Nodes, directed edges, hops, cycles — and traversal with WITH RECURSIVE",
         "Feeding a graph path to an AI as context, with sources"
       ],
-      "videoId": "eiP1R1rJd7Y",
-      "url": "https://www.youtube.com/watch?v=eiP1R1rJd7Y&list=PLVomZxd75ZEs&index=6",
-      "seconds": 268,
+      "videoId": "a4X9csrwQPg",
+      "url": "https://www.youtube.com/watch?v=a4X9csrwQPg&list=PLVomZxd75ZEs&index=6",
+      "seconds": 272,
       "thumb": "/assets/courses/the-context-window/ep6.jpg",
       "lessons": [
         {
@@ -218,6 +313,20 @@ export default {
           "href": "/courses/relational-databases-and-graphs/building-the-monitor",
           "title": "The Scoreboard Comes Alive: Building the Monitor"
         }
+      ],
+      "activity": {
+        "title": "Shortest way in",
+        "steps": [
+          "Add an introductions table (from_name, to_name, venue, date) with at least one person introduced twice and one cycle.",
+          "Write the WITH RECURSIVE query that finds the shortest path from you to a target, without walking in circles.",
+          "Give an AI only that path plus the source rows and ask it to draft an intro request. Compare with giving it the whole table."
+        ]
+      },
+      "journal": "WITH RECURSIVE path(person, hops, route) AS (\n  SELECT 'Nia', 0, 'Nia'\n  UNION ALL\n  SELECT i.to_name, p.hops + 1, p.route || ' → ' || i.to_name\n  FROM introductions i JOIN path p ON i.from_name = p.person\n  WHERE p.hops < 4 AND instr(p.route, i.to_name) = 0\n)\nSELECT route FROM path WHERE person = 'Fairview Parks'\nORDER BY hops LIMIT 1;",
+      "talk": [
+        "Does this relationship have facts of its own? → its own table",
+        "Can my traversal loop forever? → stop on revisits",
+        "Am I giving the AI the path, or the haystack?"
       ]
     }
   ]
